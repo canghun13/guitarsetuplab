@@ -57,6 +57,9 @@ Supporting content로 문서화·험 진단·수리 접수·pot/cap 선택·게�
 
 ### 배포·외부 상태 (2026-07-31 20:55 KST 재확인)
 
+- 검증 배포 commit: `ae97c3b5724e4989c524d827e7891df7f583feba`; GitHub Actions Quality checks와 Pages build/deployment 모두 success.
+- Production의 home, Electronics hub, Repair Quote, String Tension Matcher, `assets/calculations.js`, sitemap은 모두 200. sitemap URL은 53개(공개 HTML 54개 중 404 제외).
+- Production String Tension Matcher에서 실제 입력 후 비교표/total 출력과 console error/warning 0을 재확인했다.
 - Apex DNS: GitHub Pages A 4개 (`185.199.108.153`–`185.199.111.153`).
 - Apex HTTPS: 일반 인증서 검증으로 `200 OK`, GitHub.com server.
 - www DNS: `www.guitarsetuplab.com CNAME canghun13.github.io`.
