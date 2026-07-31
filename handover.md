@@ -1145,7 +1145,17 @@ Real Chromium generated 16 final PDFs for A4 and US Letter: Guitar Repair Intake
 
 Physical printer limitation: a correct browser/PDF cannot guarantee that a viewer, driver, or printer avoids scaling. Users must select Actual size / 100%, disable Fit to page, and measure both printed bars. Outside-tolerance templates must not be used for cutting.
 
-## Operations snapshot before this release
+## Release verification
+
+- Implementation commit: `8a7bab274e5fa7795597abb0455ea251112bd581`
+- Push: successful to `origin/main`
+- GitHub Actions `Quality checks`: success
+- GitHub Actions `pages build and deployment`: success
+- Production verification: home, Build hub, Fret Position, Fret Slot, Nut Spacing, Multiscale, geometry module, print stylesheet, and sitemap all returned 200.
+- Production home contains `Five connected benches`; production sitemap contains 70 URLs and the new fret-template route.
+- The final handover-only commit follows this implementation commit; the final report records its exact SHA and verifies `HEAD == origin/main`.
+
+## Operations snapshot
 
 - Apex DNS: GitHub Pages A records `185.199.108.153` through `185.199.111.153`.
 - Apex HTTPS: 200 OK, GitHub Pages.
