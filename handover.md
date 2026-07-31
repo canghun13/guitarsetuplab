@@ -5,13 +5,13 @@
 - 저장소 URL: `https://github.com/canghun13/guitarsetuplab`
 - 현재 branch: `main`
 - 세션 시작 원격 commit: `d99d727dae66df01bed9c5915e44ec5e08af35b3`
-- 최신 구현·검증 commit: `aaafa90f7254f18212d5c17ed88bb2f5779ea46d` (이 handover 갱신 커밋은 그 다음 커밋이며, 최종 hash는 `git rev-parse HEAD`로 확인)
+- 최신 구현·배포 commit: `ba4d7d510f8169fdce0aaaf9c4349a357f7ad9fb` (이 handover 갱신 커밋은 그 다음 커밋이며, 최종 hash는 `git rev-parse HEAD`로 확인)
 - 배포 URL: `https://guitarsetuplab.com/`
-- GitHub Pages: 배포 workflow 구현, push 후 실행 상태 확인 필요
+- GitHub Pages: branch/root 배포 성공 (`ba4d7d5`), production의 홈·asset·도구·sitemap 실제 200 응답 확인
 - GA4: `G-TGT88WMVDG`를 공개 HTML 32개 전체에 1회 초기화로 적용, 정적 검사 Pass
 - GSC: Not verified
-- Cloudflare: Not verified. 사용자 관리 영역의 DNS baseline은 기존 문서 14절 참조
-- HTTPS: Not verified
+- Cloudflare: DNS 레코드 응답은 apex A 4개와 `www → canghun13.github.io` CNAME으로 확인. Cloudflare zone/proxy 설정 자체는 Not verified
+- HTTPS: apex `https://guitarsetuplab.com/` 200 확인. `www`는 올바른 apex redirect를 반환하지만 현재 TLS 인증서 신뢰 오류가 있어 미완료
 - 실제 공개 HTML: 32 (홈/기본 5, 허브 4, 도구 18, 가이드 3, 참조 2)
 - 실제 작동 도구: 18
 - 카테고리별 도구: 진단·셋업 8, 측정·조정 6, 검사 1, 문서 3
@@ -24,7 +24,7 @@
 - 공통 header/footer/mobile nav, 결과·경고·Reset·Copy·Print 패턴 구현.
 - About, Contact, Privacy, 404, robots.txt, sitemap.xml, llms.txt, favicon, canonical, Open Graph, JSON-LD, GA4 구현.
 - 18개 도구의 고유 입력과 전용 계산·진단·문서 생성 로직 구현.
-- GitHub Pages Actions 배포 workflow 및 `site/CNAME` 구현.
+- 현재 GitHub Pages 설정에 맞춰 root와 `site/` 산출물을 동일하게 생성하고 `.nojekyll`/CNAME을 적용. Quality checks와 Pages workflow 성공.
 - 정적 테스트와 실제 브라우저 QA 수행; 모바일 표 overflow와 Copy 비동기 오류를 발견·수정 후 회귀 확인.
 
 ### 구현된 도구
@@ -65,15 +65,14 @@
 
 ### 남은 작업
 
-- push 후 GitHub Actions Pages workflow 성공 여부와 production artifact 확인.
-- `https://guitarsetuplab.com/`, apex/www/HTTPS 및 canonical host 실제 응답 확인.
-- Cloudflare DNS/zone와 GSC domain property 및 sitemap 제출 상태는 계정 권한이 필요한 사용자 관리 영역이므로 검증 필요.
+- `www.guitarsetuplab.com`의 TLS 인증서 발급/전파를 재확인하고 HTTPS redirect를 일반 인증서 검증으로 통과시킬 것.
+- Cloudflare zone 설정과 GSC domain property 및 sitemap 제출 상태는 계정 권한이 필요한 사용자 관리 영역이므로 검증 필요.
 - 초기 목표 45–50개 도구/65–75개 페이지 중 현재 18개/32개. 페이지 수를 위한 filler 없이 검증된 후속 도구를 구현할 것.
 - 모든 계산 도구의 독립 수치 회귀 fixture와 print-to-PDF 시각 회귀 자동화를 후속 강화.
 
 ### 다음 작업 우선순위
 
-1. 배포 workflow, custom domain, HTTPS, apex/www를 확인하고 실패 시 Pages 설정을 수정.
+1. `www` TLS 인증서 상태를 재확인하고 GSC domain property에 sitemap을 제출.
 2. Ground Hum Diagnostic(고전압·앰프 내부 작업 제외), Repair Intake Form, Repair Quote Generator, Parts & Labor Job Sheet 구현.
 3. 제조사 unit-weight 출처를 확정한 뒤 String Tension Matcher 구현.
 4. Pickup Wiring Selector→Phase→Hum 및 Pot/Cap 비교 cluster 구현.
@@ -81,13 +80,13 @@
 
 ### 알려진 위험과 사용자 관리 영역
 
-- 배포·DNS·GSC·HTTPS는 아직 실제 검증 전이며 완료로 간주하지 않는다.
+- apex production과 DNS 응답은 검증했지만 `www` TLS, Cloudflare 계정 설정, GSC는 완료로 간주하지 않는다.
 - 진단 결과는 물리 검사나 수리 보장이 아니며 비가역 작업을 확정하지 않는다.
 - Cloudflare DNS, GitHub repository Pages environment 설정, GSC verification/sitemap 제출은 사용자의 외부 계정 관리 영역이다.
-- 마지막 push 상태와 `HEAD == origin/main`은 아래 최종 push 후 이 문서의 상단 및 최종 작업 보고에서 확인한다.
+- `ba4d7d5` push 성공 및 당시 `HEAD == origin/main`. 이 handover 커밋 push 후 최종 작업 보고에서 다시 확인한다.
 
 Last updated: 2026-07-31  
-Project status: Planning / repository not yet created  
+Project status: Initial build deployed / expansion backlog remains
 Primary language: English  
 Target market: Global
 
@@ -102,7 +101,7 @@ Target market: Global
 - Google Analytics industry: **Arts & Entertainment**
 - Contact email: **canghun13@naver.com**
 - Google Analytics measurement ID: **G-TGT88WMVDG**
-- GitHub repository URL: **TBD**
+- GitHub repository URL: **https://github.com/canghun13/guitarsetuplab**
 - Production URL: **https://guitarsetuplab.com/**
 - GitHub Pages custom domain: **guitarsetuplab.com**
 
