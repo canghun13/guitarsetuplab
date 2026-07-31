@@ -1155,6 +1155,16 @@ Physical printer limitation: a correct browser/PDF cannot guarantee that a viewe
 - Production home contains `Five connected benches`; production sitemap contains 70 URLs and the new fret-template route.
 - The final handover-only commit follows this implementation commit; the final report records its exact SHA and verifies `HEAD == origin/main`.
 
+### Closeout verification — 2026-07-31
+
+- Starting closeout commit: `ee94093916b934d3cbe4964701f9986f09bdae40`.
+- Working tree was clean before this handover-only update; no unfinished implementation change was found or removed.
+- Rebuilt static output and ran `scripts/test.mjs` plus `scripts/geometry-test.mjs`: PASS, 71 HTML pages, 41 tools, 0 failures, 65 geometry assertions.
+- Latest GitHub Actions Quality checks and Pages deployment for `ee94093`: completed successfully.
+- Production recheck: `/`, `/categories/luthier.html`, `/tools/fret-position-template.html`, and `/sitemap.xml` returned 200.
+- Exact next session task: resolve the `www.guitarsetuplab.com` certificate mismatch, then verify the normal HTTPS redirect and record the resulting certificate/SAN and redirect status. Do not change site features as part of that operational task.
+- This closeout entry is committed and pushed separately; final SHA and `HEAD == origin/main` are verified after the push.
+
 ## Operations snapshot
 
 - Apex DNS: GitHub Pages A records `185.199.108.153` through `185.199.111.153`.
