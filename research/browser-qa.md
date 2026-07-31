@@ -1,32 +1,40 @@
-# 브라우저 QA
+# Browser QA
 
-검사일: 2026-07-31. 로컬 서버 `http://127.0.0.1:4173/`를 실제 브라우저에서 검사했다.
+Checked: 2026-07-31 against `http://127.0.0.1:4173/` in the Codex in-app browser.
 
-## 화면 폭
+## Responsive sweep
 
-| 요청 폭 | 실제 콘텐츠 폭 | 수평 오버플로 | 결과 |
-|---:|---:|---:|---|
-| 1440 | 1425 | 0 | Pass |
-| 1280 | 1265 | 0 | Pass |
-| 1024 | 1009 | 0 | Pass |
-| 768 | 753 | 0 | Pass |
-| 390 | 375 | 0 | Pass |
+Seven representative routes were checked at every requested width: home, Electronics hub, Repair Quote, Parts and Labor Job Sheet, Ground Hum Diagnostic, String Tension Matcher, and the existing Fret Buzz Diagnostic.
 
-브라우저의 스크롤바 15px를 제외한 실제 layout viewport와 `scrollWidth`가 일치하는지 확인했다. 800px 이하에서 작업 폼과 결과가 한 열로 쌓이고 모바일 메뉴가 열리며 `aria-expanded`가 갱신된다.
+| Requested width | Layout viewport | Routes | Horizontal overflow | Navigation |
+|---:|---:|---:|---:|---|
+| 1440 | 1425 | 7 | 0 | desktop links |
+| 1280 | 1265 | 7 | 0 | desktop links |
+| 1024 | 1009 | 7 | 0 | desktop links |
+| 768 | 753 | 7 | 0 | mobile toggle |
+| 390 | 375 | 7 | 0 | mobile toggle |
 
-## 상호작용 시나리오
+The 15px difference is the browser scrollbar. At 768px and 390px the menu button was visible; clicking it set `aria-expanded="true"`, opened the nav, and displayed it as a flex column.
 
-- Fret Buzz: 1–4 fret + raised/worn clue가 low-relief/local-fret 분기를 만들고, loose/moving fret 입력은 별도 중단 안내를 반환함.
-- Action Converter: 2.000mm→0.0787in≈5/64in, 0.07874in→2.000mm, 음수 입력 오류 처리를 확인함.
-- Measurement Sheet: 날짜·긴 악기명·긴 메모를 입력해 빈 Customer 행 숨김, 줄바꿈, Copy, Reset, Print 버튼을 확인함.
-- Copy: 실제 클립보드 텍스트와 `Copied` 상태를 새 브라우저 탭에서 회귀 확인함.
-- Console: 수정 후 새 탭 기준 error/warning 0건.
+## Interactive scenarios
 
-## 시각 확인 및 수정
+- Repair Quote: 2.5 × $60 labor plus 2 × $12.50 parts, $5 discount, 10% tax, and $50 deposit produced $187 total and $137 balance. Copy contained the balance; Reset cleared inputs and restored the initial result.
+- Ground Hum: cable/room/amplifier substitution results produced three external-source priorities. A second scenario with those sources still present plus touch increase, recent wiring, and a loose jack prioritized guitar-side jack and continuity checks. Outputs differed and retained the “never open an amplifier” boundary.
+- String Tension: supported guitar and bass sets produced different per-string/total tables. An unsupported `81w` gauge returned “Unit-weight data unavailable” and explicitly refused a diameter-only estimate.
+- Maintenance Schedule: occasional/home and daily/touring/seasonal-swing/active/floating-tremolo inputs produced different schedules. The latter added shorter string intervals, battery testing, hardware/tremolo inspection, and weekly humidity checks.
+- Series/Parallel/Coil Split: two-conductor input blocked parallel and split. Four-conductor plus shield with a push-pull DPDT exposed all three mode descriptions.
+- Repair Intake: long customer wording and an unbroken serial identifier wrapped inside the result at 390px; empty Contact was suppressed.
 
-- 1440px 홈에서 작업대/정밀 기록표 시각 체계, 헤더, 히어로, CTA를 확인함.
-- 390px 홈에서 제목 줄바꿈, 버튼 쌓임, 티켓, 모바일 메뉴를 확인함.
-- 390px 문서 결과에서 긴 악기명이 전역 수평 스크롤을 유발하는 문제를 발견해 결과 표에 고정 레이아웃과 강제 줄바꿈을 적용함. 수정 후 `scrollWidth === clientWidth` 확인.
-- 비동기 Copy 처리 후 이벤트 객체의 `currentTarget`이 사라져 버튼 상태가 갱신되지 않는 문제를 발견해 버튼 참조를 사전 보존하도록 수정함.
+## Visual and print checks
 
-Print는 브라우저의 인쇄 대화상자를 자동 승인하지 않고, 인쇄 전용 CSS와 Print 진입 버튼의 존재를 확인했다.
+Desktop Electronics hub and mobile generated maintenance record were visually inspected. One mobile defect was found: table headings used emergency character wrapping, splitting short words. CSS was changed so headings wrap only at normal word boundaries while long values retain `overflow-wrap:anywhere`; the generated record then measured `scrollWidth === clientWidth`.
+
+Print QA covered the representative document result structure, Print controls, black-on-white `@media print` rules, hidden navigation/form/action controls, non-sticky result panels, visible labels/units, fixed-layout result tables, and long-value wrapping. The in-app browser surface does not expose a print-to-PDF or print-media emulation API, so physical/PDF pagination and printer scale were not visually automated in this session.
+
+Final captured console errors/warnings: 0.
+
+## Severity
+
+- HIGH: 0
+- MEDIUM: 0
+- Accepted limitation: print-to-PDF page breaks and physical scaling require a manual printer/PDF check.

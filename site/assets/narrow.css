@@ -3,6 +3,8 @@
 .result{min-width:0;overflow:hidden}
 .result table{display:table;table-layout:fixed}
 .result th{width:30%}
-.result th,.result td{white-space:normal;overflow-wrap:anywhere;vertical-align:top}
+.result th,.result td{white-space:normal;vertical-align:top}
+.result th{overflow-wrap:normal;word-break:normal}
+.result td{overflow-wrap:anywhere}
 label,input,select,textarea{min-width:0}
 @media print{.result{overflow:visible}}

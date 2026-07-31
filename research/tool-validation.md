@@ -59,3 +59,24 @@
 | Maintenance Schedule Generator | 유지관리 / 소유자 | 계절·사용량 반복 가치 | 환경·연주량 기반 일정 | 69 | Deferred | Measurement Sheet |
 
 초기 구현은 Accepted 중 사용자 흐름을 가장 잘 연결하는 18개로 확정했다. Deferred는 기각이 아니라 데이터·정확도·브라우저 출력 검증이 더 필요한 후속 범위다.
+
+## 두 번째 확장 판정 갱신
+
+2026-07-31 두 번째 확장에서 아래 12개를 추가 검증 후 구현했다.
+
+| 도구 | 이전 판정 | 현재 상태 | 구현 근거 |
+|---|---|---|---|
+| Guitar Repair Intake Form | Deferred | Implemented | 고객 진술·관찰·권한을 분리한 실제 인쇄 티켓 |
+| Repair Quote Generator | Deferred | Implemented | cent-safe 품목/세금/할인/보증금/잔액 계산과 오류 처리 |
+| Parts and Labor Job Sheet | Deferred | Implemented | 진단·작업·부품·시간·최종 테스트를 처리하는 기술자 기록 |
+| Customer Approval Checklist | Deferred | Implemented | 법적 서명 대신 검토한 선택과 연락 범위를 기록 |
+| Maintenance Schedule Generator | Deferred | Implemented | 사용량·이동·습도·트레몰로·active 전자장치별 일정 분기 |
+| Ground Hum Diagnostic Wizard | Deferred | Implemented | 케이블·룸·pedalboard·amp/interface·guitar 대체시험, amp 내부 제외 |
+| Pickup Phase Troubleshooter | Deferred | Implemented | 결합 위치의 얇은 소리/볼륨 저하와 높이·출력 차이 분리 |
+| Pickup Wiring Configuration Selector | Deferred | Implemented | conductor·pot·switch 제약과 희망 기능을 함께 검사 |
+| Potentiometer Value Selector | Deferred | Implemented | passive 부하 경향과 active 제조사 사양 경계 분리 |
+| Tone Capacitor Comparison Tool | Deferred | Implemented | 단순 RC 참조값과 실제 pickup 회로 한계를 함께 표시 |
+| Series / Parallel / Coil-Split Selector | Merged | Implemented separately | 네 conductor와 switch 조건이 명확해 독립 선택기로 복원 |
+| String Tension Matcher | Deferred | Implemented | D’Addario 공식·제한 unit-weight 자료·fixture·미지원 반환 확보 |
+
+String Tension 데이터 범위와 1차 출처는 `research/string-tension-sources.md`에 별도로 기록했다. Luthier 제작 cluster는 정확한 기하 fixture와 실제 크기 인쇄 교정이 선행되어야 하므로 계속 Deferred다.
