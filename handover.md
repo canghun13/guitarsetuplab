@@ -159,7 +159,7 @@ Supporting content로 문서화·험 진단·수리 접수·pot/cap 선택·게�
 - Cloudflare DNS, GitHub repository Pages environment 설정, GSC verification/sitemap 제출은 사용자의 외부 계정 관리 영역이다.
 - `ba4d7d5` push 성공 및 당시 `HEAD == origin/main`. 이 handover 커밋 push 후 최종 작업 보고에서 다시 확인한다.
 
-Last updated: 2026-07-31  
+Last updated: 2026-07-31
 Project status: Initial build deployed / expansion backlog remains
 Primary language: English  
 Target market: Global
@@ -1083,3 +1083,93 @@ Guitar Setup Lab may be marked “initial build complete” only when all of the
 - Production deployment is verified
 
 Until those conditions are met, do not describe the project as fully completed.
+# 2026-07-31 — Third expansion: luthier geometry, calibrated templates, and PDF QA
+
+## Repository and release scope
+
+- Repository: `https://github.com/canghun13/guitarsetuplab`
+- Branch: `main`
+- Start commit: `9f355198f3f5bf725885740eb715f3b2a2a62d78`
+- Production: `https://guitarsetuplab.com/`
+- Public HTML: 71
+- Functional tools: 41
+- Hubs: 6
+- Guides: 10
+- References: 6
+- Comparisons: 3
+- Basic pages: 5
+- Sitemap URLs: 70 (404 excluded)
+
+## Implemented tools
+
+1. Fret Position Template Generator
+2. Fret Slot Print Template
+3. Nut String Spacing Generator
+4. Bridge String Spacing Generator
+5. Fretboard Radius Matcher
+6. Saddle Radius Planner
+7. Multiscale Fretboard Planner
+8. Neck Angle Planner
+9. Headstock String Break-Angle Tool
+10. Tremolo Spring Balance Planner
+11. Shim Thickness Planner
+
+The home page and shared navigation now expose a Luthier Geometry & Build hub. Two guides, two references, and one comparison support actual-size printing, string-spacing measurement, fret formulas, geometry datums, and equal-center/equal-edge-gap decisions. Targeted internal links connect scale → fret → slot; nut → bridge/gauge; radius → saddle; multiscale → fret reference; neck angle → shim; headstock angle → tuning stability; and tremolo balance → string tension.
+
+## Shared geometry engine
+
+Pure modules live in `scripts/assets/geometry/` and are mirrored to deployed `assets/geometry/`: core unit/validation/calibration/tiling, fret coordinates, string spacing, radius/saddle geometry, multiscale coordinates, and angle/shim projections. Internal distances use millimetres; unit conversion occurs at the boundaries; output rounding is display-only. Formula definitions, primary sources, limitations, and deliberately deferred areas are documented in `research/luthier-geometry-sources.md`.
+
+## Calculation and static validation
+
+- `scripts/geometry-test.mjs`: 65 assertions passed.
+- Fret fixtures: 25.5 in, 24.75 in, 34 in, 628 mm, 650 mm; 12th = half scale; 24th = three-quarter scale; monotonic cumulative positions; decreasing adjacent spacing; invalid counts/scales rejected.
+- Spacing fixtures: equal-center/equal-gap equivalence for equal gauges, divergence for mixed gauges, 4/5/6 strings, margins/spreads preserved, invalid geometry rejected.
+- Radius fixtures: known chord/sagitta inverses, sensitivity, invalid sagitta, compound interpolation, saddle offsets.
+- Multiscale fixtures: ordinary equal-scale collapse, 6/7/8 strings, exact perpendicular fret, ordered coordinates, invalid scale/string/fret relationships.
+- Angle fixtures: known triangles, zero angle, neck projection, shim thickness, extreme/invalid input handling.
+- Print fixtures: 50 mm and 2 in lengths, tolerance/correction factor, tiled page count/order/overlap/registration data.
+- Static build/test: 71 HTML, 41 tool pages, metadata, Open Graph, canonical, H1, JSON-LD, GA4, email, sitemap, robots, llms, ES-module syntax/imports, assets, and production-root/site mirror passed with 0 failures.
+- Broken links: 0; orphan pages: 0; JavaScript syntax errors: 0.
+- Content audit: Sufficient 71, Needs reinforcement 0, Thin 0, HIGH 0, MEDIUM 0.
+
+## Browser QA
+
+The Codex in-app browser tested 15 priority pages at 1440, 1280, 1024, 768, and 390 px: 75 combinations, document overflow 0, missing H1 0. All 11 new forms produced input-dependent results. Invalid string-count/gauge and multiscale-fret states produced visible validation; a 49 mm reading of the 50 mm bar produced `OUTSIDE TOLERANCE — DO NOT USE TEMPLATE`. Copy/reset/print presence, native labelled controls, mobile menu state, wide-table containment, warning/calibration text, and existing Repair Quote/String Tension/Setup Wizard regressions passed. Console errors/warnings: 0. Detailed record: `research/browser-qa.md`.
+
+## PDF and print QA
+
+The common print stylesheet removes navigation, forms, actions, footer, and workflow cards; keeps result borders/type legible in black and white; repeats table headings; preserves money columns; and avoids isolated workflow/last-template pages.
+
+Real Chromium generated 16 final PDFs for A4 and US Letter: Guitar Repair Intake (3/3 pages), Repair Quote (3/3), Parts and Labor Job Sheet (4/4), Maintenance Schedule (2/2), Fret Position (3/3), Fret Slot (4/4), Nut Spacing (2/2), and Bridge Spacing (2/2). All page boxes and page content streams passed. Poppler rendered 46 pages; visual inspection found no blank page, clipping, table overflow, or unreadable amount column. Browser calibration geometry was 188.96875 px for 50 mm and 192 px for 2 in. Detailed record: `research/pdf-qa.md`.
+
+Physical printer limitation: a correct browser/PDF cannot guarantee that a viewer, driver, or printer avoids scaling. Users must select Actual size / 100%, disable Fit to page, and measure both printed bars. Outside-tolerance templates must not be used for cutting.
+
+## Operations snapshot before this release
+
+- Apex DNS: GitHub Pages A records `185.199.108.153` through `185.199.111.153`.
+- Apex HTTPS: 200 OK, GitHub Pages.
+- `www` DNS: CNAME `canghun13.github.io`.
+- `www` HTTPS: still fails ordinary validation with `SEC_E_WRONG_PRINCIPAL`. Returned certificate subject is `CN=*.github.io`; SANs cover GitHub domains, not `www.guitarsetuplab.com`.
+- Cloudflare account/zone/proxy settings: Not verified; DNS responses only.
+- Google Search Console domain property, sitemap submission, and indexing: Not verified; no authenticated account state was available.
+
+## Existing pages changed
+
+All generated pages receive the Build navigation link plus shared geometry/print styles. Existing document outputs receive the corrected print rules. Repair Quote money tables receive a dedicated print column layout. No existing tool was removed, no domain/email/GA4 identifier changed, and root deployment files remain generated mirrors of `site/`.
+
+## Deferred work
+
+- Reissue/attach a certificate that covers `www.guitarsetuplab.com`, then recheck the ordinary HTTPS redirect.
+- Verify the Cloudflare zone/proxy state and GSC domain property/sitemap from authenticated user accounts.
+- Measure at least one physical inkjet/laser print of both calibration bars; browser automation cannot close this hardware boundary.
+- Body/Neck Blank Planner and Guitar Build Cost Planner were intentionally deferred until their kerf/nesting/inventory and currency/costing models can be implemented and tested without filler behavior.
+
+## Next priorities
+
+1. Resolve `www` TLS and document the final apex redirect/canonical behavior.
+2. Verify GSC domain ownership and submit `https://guitarsetuplab.com/sitemap.xml`.
+3. Run a physical A4 and Letter ruler check on one fret template and record printer/viewer settings.
+4. If extending the Build cluster, implement the blank planner or build-cost planner only with dedicated fixtures and printable records.
+
+---

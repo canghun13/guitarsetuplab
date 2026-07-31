@@ -1,0 +1,22 @@
+@page{margin:12mm}
+@media print{
+  html,body{background:#fff!important;color:#111!important}
+  header,footer,.tool-form,.explain,.nav-toggle,.actions,section:has(>.card-grid){display:none!important}
+  main{padding:0!important;max-width:none!important}
+  .workspace{display:block!important}
+  .tool-hero{padding:0 0 8mm!important;break-after:avoid-page}
+  .tool-hero .lede,.meter{display:none!important}
+  .result{box-shadow:none!important;border:1px solid #555!important;position:static!important;overflow:visible!important;padding:6mm!important}
+  .result table{display:table!important;width:100%!important;overflow:visible!important;table-layout:auto!important}
+  .result thead{display:table-header-group!important}
+  .result tfoot{display:table-footer-group!important}
+  .result .money-table{table-layout:fixed!important}
+  .result .money-table th:first-child{width:55%!important}
+  .result .money-table th:nth-child(2){width:10%!important}
+  .result .money-table th:nth-child(3),.result .money-table th:nth-child(4){width:17.5%!important}
+  .result .money-table th:not(:first-child),.result .money-table td:not(:first-child){text-align:right!important;overflow-wrap:normal!important}
+  .result tr,.result th,.result td{break-inside:avoid-page;page-break-inside:avoid;white-space:normal!important;color:#111!important}
+  .result h2,.result h3{break-after:avoid-page;page-break-after:avoid}
+  .result p,.result li{orphans:3;widows:3}
+  h1{font-size:26pt!important}
+}

@@ -80,3 +80,12 @@
 | String Tension Matcher | Deferred | Implemented | D’Addario 공식·제한 unit-weight 자료·fixture·미지원 반환 확보 |
 
 String Tension 데이터 범위와 1차 출처는 `research/string-tension-sources.md`에 별도로 기록했다. Luthier 제작 cluster는 정확한 기하 fixture와 실제 크기 인쇄 교정이 선행되어야 하므로 계속 Deferred다.
+# Third expansion — geometry/build validation (2026-07-31)
+
+Eleven functional tools were accepted and implemented: Fret Position, Fret Slot Print Template, Nut String Spacing, Bridge String Spacing, Fretboard Radius Matcher, Saddle Radius Planner, Multiscale Fretboard Planner, Neck Angle Planner, Headstock Break Angle, Tremolo Spring Balance, and Shim Thickness Planner.
+
+Acceptance required a distinct input model, a pure shared calculation, representative and invalid fixtures, visible assumptions/units, a safe interpretation, and a real next-workflow link. `scripts/geometry-test.mjs` passes 65 assertions. In-app browser interaction passed all 11 tools, invalid gauge-count and perpendicular-fret cases, calibration pass/fail states, reset, mobile navigation, and three existing-tool regressions. PDF geometry checks are recorded in `research/pdf-qa.md`; formulas and source boundaries are in `research/luthier-geometry-sources.md`.
+
+Body/Neck Blank Planner and Guitar Build Cost Planner were deferred rather than created as superficial forms. Blank planning needs kerf, planing allowance, grain/orientation, nesting, and multiple-build stock logic. Build cost needs currency-safe money arithmetic, inventory/tool ownership policies, contingency semantics, and distinct printable records.
+
+---

@@ -1,7 +1,8 @@
 # Guitar Setup Lab
 
-Interactive guitar setup diagnostics, measurement helpers, and printable records.
+Interactive guitar setup diagnostics, measurement helpers, luthier geometry planners, calibrated print templates, and shop records.
 
 - Tools use safety-first, measurement-led workflows.
+- Geometry templates require physical print calibration before use.
 - No result is a physical inspection or guaranteed repair diagnosis.
 - Contact: canghun13@naver.com

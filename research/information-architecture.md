@@ -1,35 +1,41 @@
-# Information architecture
+# Information architecture — third expansion
 
-Updated: 2026-07-31
+Date: 2026-07-31
 
-## Current inventory
+## Public clusters
 
-- Public HTML: 54
-- Interactive tools: 30
-- Category hubs: 5
-- Guides: 8
-- References: 4
-- Comparisons: 2
-- Basic pages: 5 (home, about, contact, privacy, 404)
+The site now has six connected category hubs: Diagnostics & Setup, Measurement & Adjustment, Inspection, Shop Documents, Electronics & Wiring, and Luthier Geometry & Build. The home page exposes the Build bench and the shared navigation includes `Build` on every generated page.
 
-## Tool clusters
+## New Build workflow
 
-| Cluster | Hub | Tool count | Workflow |
-|---|---|---:|---|
-| Diagnostics and setup | `/categories/diagnostics.html` | 8 | symptom → safe isolation → measurement → record |
-| Measurement and adjustment | `/categories/measurement.html` | 7 | scale/gauge/clearance → calculation or plan → setup recheck |
-| Shop documents | `/categories/documents.html` | 8 | intake → quote/approval → job sheet → completion record |
-| Inspection | `/categories/inspection.html` | 1 | pre-purchase inspection → condition report → quote |
-| Electronics and wiring | `/categories/electronics.html` | 6 | isolate noise/phase → confirm hardware → select wiring/load |
+- Scale Length Identifier → Fret Position Template → Fret Slot Print Template
+- Nut String Spacing → Bridge String Spacing
+- Nut String Spacing → String Gauge Change Planner
+- Fretboard Radius Matcher → Saddle Radius Planner
+- Multiscale Planner → Fret Position Formula Reference
+- Neck Angle Planner → Shim Thickness Planner
+- Headstock Break Angle → Tuning Stability Troubleshooter
+- Tremolo Spring Balance → String Tension Matcher
+- Print-at-Actual-Size Guide → printed template tools and calibration definitions
 
-The home page links all category hubs and every guide, reference, and comparison through the Bench Library. Static tests build an inbound-link graph and fail on any public orphan page. Each category hub links every tool in its cluster; tool result pages continue into relevant measurement or record tools.
+## Supporting content
 
-## Second expansion
+Guides:
 
-The repair-shop document cluster added intake, quote, parts/labor job sheet, customer approval checklist, and maintenance schedule tools. The electronics cluster added ground/hum diagnosis, pickup phase troubleshooting, wiring configuration, potentiometer selection, tone capacitor comparison, and series/parallel/coil-split selection. The measurement cluster added the published-unit-weight String Tension Matcher.
+- How to Print Guitar Templates at Actual Size
+- How to Measure Nut and Bridge String Spacing
 
-Supporting content adds five workflow guides, two references, and two comparisons. The String Tension Matcher is linked to gauge-change planning and a formula/data-boundary reference. Electronics tools are supported by a safe hum guide, wiring terminology, component selection guide, and switching comparisons.
+References:
 
-## Deferred expansion
+- Fret Position Formula Reference
+- Luthier Geometry Measurement Definitions
 
-The next high-value cluster remains maker/luthier geometry: fret positions and calibrated print templates, string spacing, multiscale planning, neck angle/shim geometry, and build cost. These remain deferred until exact geometry fixtures and print-scale calibration can be verified; page count alone is not a reason to publish them.
+Comparison:
+
+- Equal-Center vs Equal-Edge-Gap String Spacing
+
+These pages were selected because they explain calibration and measurement definitions that cannot be compressed safely into a result ticket. Body/neck blank planning and build-cost planning were deferred: they require dedicated material-nesting, kerf, inventory, currency, and costing models and are not aliases for the geometry tools.
+
+## Reconciled counts
+
+71 public HTML pages = 41 tools + 6 hubs + 10 guides + 6 references + 3 comparisons + 5 basic pages. The sitemap has 70 URLs because the custom 404 page is intentionally excluded.

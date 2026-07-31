@@ -1,40 +1,49 @@
-# Browser QA
+# Browser QA — third expansion
 
-Checked: 2026-07-31 against `http://127.0.0.1:4173/` in the Codex in-app browser.
+Date: 2026-07-31
+Surface: Codex in-app browser against `http://127.0.0.1:4173/`
 
-## Responsive sweep
+## Responsive matrix
 
-Seven representative routes were checked at every requested width: home, Electronics hub, Repair Quote, Parts and Labor Job Sheet, Ground Hum Diagnostic, String Tension Matcher, and the existing Fret Buzz Diagnostic.
+The following 15 pages were checked at 1440, 1280, 1024, 768, and 390 CSS pixels: Home, Luthier/Build hub, Fret Position, Fret Slot, Nut Spacing, Bridge Spacing, Radius Matcher, Saddle Radius, Multiscale, Neck Angle, Break Angle, Tremolo Spring, Repair Quote, String Tension Matcher, and Setup Wizard.
 
-| Requested width | Layout viewport | Routes | Horizontal overflow | Navigation |
-|---:|---:|---:|---:|---|
-| 1440 | 1425 | 7 | 0 | desktop links |
-| 1280 | 1265 | 7 | 0 | desktop links |
-| 1024 | 1009 | 7 | 0 | desktop links |
-| 768 | 753 | 7 | 0 | mobile toggle |
-| 390 | 375 | 7 | 0 | mobile toggle |
+- Combinations: 75
+- Document-level horizontal overflow: 0
+- Missing H1: 0
+- Mobile menu: `aria-expanded=false` to `true`, `nav.open=true`, visible flex navigation
+- Console errors/warnings after navigation and interaction: 0
 
-The 15px difference is the browser scrollbar. At 768px and 390px the menu button was visible; clicking it set `aria-expanded="true"`, opened the nav, and displayed it as a flex column.
+The 360 px width was also checked as an extra narrow case and had no document overflow, but it is not counted in the required 75-combination matrix.
 
-## Interactive scenarios
+## Functional interaction
 
-- Repair Quote: 2.5 × $60 labor plus 2 × $12.50 parts, $5 discount, 10% tax, and $50 deposit produced $187 total and $137 balance. Copy contained the balance; Reset cleared inputs and restored the initial result.
-- Ground Hum: cable/room/amplifier substitution results produced three external-source priorities. A second scenario with those sources still present plus touch increase, recent wiring, and a loose jack prioritized guitar-side jack and continuity checks. Outputs differed and retained the “never open an amplifier” boundary.
-- String Tension: supported guitar and bass sets produced different per-string/total tables. An unsupported `81w` gauge returned “Unit-weight data unavailable” and explicitly refused a diameter-only estimate.
-- Maintenance Schedule: occasional/home and daily/touring/seasonal-swing/active/floating-tremolo inputs produced different schedules. The latter added shorter string intervals, battery testing, hardware/tremolo inspection, and weekly humidity checks.
-- Series/Parallel/Coil Split: two-conductor input blocked parallel and split. Four-conductor plus shield with a push-pull DPDT exposed all three mode descriptions.
-- Repair Intake: long customer wording and an unbroken serial identifier wrapped inside the result at 390px; empty Contact was suppressed.
+All 11 new tools were run through their visible forms with representative measurements. Results were input-dependent and produced no generic tool-error state:
 
-## Visual and print checks
+- Fret Position: 25.5 in, 24 frets; fret 12 returned 12.7500 in; reset restored the ready state.
+- Fret Slot: 25.5 in tiled full-scale output with page/overlap data.
+- Nut Spacing: six mixed gauges; equal-center layout returned individual centers and edge gaps.
+- Bridge Spacing: six strings, measured spread, individual saddle width.
+- Radius Matcher: 2 in chord and 0.0418 in sagitta returned 11.9826 in.
+- Saddle Radius: six per-string action and gauge values returned relative targets.
+- Multiscale: 25–27 in, seven strings, 24 frets, perpendicular fret 8 returned 2D coordinates.
+- Neck Angle: the representative projection returned 0.850°.
+- Break Angle: tuner-post and string-tree triangles returned separate angles.
+- Tremolo Spring: supported six-string set returned published-model total tension and an adjustment direction without screw-turn claims.
+- Shim Thickness: 1° across 2.36 in and 3 in returned two taper comparisons.
 
-Desktop Electronics hub and mobile generated maintenance record were visually inspected. One mobile defect was found: table headings used emergency character wrapping, splitting short words. CSS was changed so headings wrap only at normal word boundaries while long values retain `overflow-wrap:anywhere`; the generated record then measured `scrollWidth === clientWidth`.
+Invalid-state checks passed for a five-gauge/six-string mismatch and a perpendicular fret beyond the entered fret count. A 49 mm measurement of the 50 mm calibration bar displayed `OUTSIDE TOLERANCE — DO NOT USE TEMPLATE`.
 
-Print QA covered the representative document result structure, Print controls, black-on-white `@media print` rules, hidden navigation/form/action controls, non-sticky result panels, visible labels/units, fixed-layout result tables, and long-value wrapping. The in-app browser surface does not expose a print-to-PDF or print-media emulation API, so physical/PDF pagination and printer scale were not visually automated in this session.
+Regression interactions passed for Repair Quote, String Tension Matcher, and Setup Wizard after the shared application script changed.
 
-Final captured console errors/warnings: 0.
+## Accessibility and layout observations
 
-## Severity
+- Inputs expose associated labels and native number/select/text controls.
+- Submit and reset controls are keyboard-focusable native buttons.
+- Result regions retain `aria-live=polite`.
+- Wide geometry and coordinate tables stay inside intentional horizontal-scroll containers on narrow screens rather than widening the document.
+- Warning and calibration states use text in addition to color.
+- Print controls appear only for outputs where a paper result is useful.
 
-- HIGH: 0
-- MEDIUM: 0
-- Accepted limitation: print-to-PDF page breaks and physical scaling require a manual printer/PDF check.
+## Remaining browser boundary
+
+Browser print-preview UI is not used as a measurement oracle. PDF size and calibration geometry are verified separately by the PDF QA pipeline, and physical printer output still requires a ruler.
