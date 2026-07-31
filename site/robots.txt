@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://guitarsetuplab.com/sitemap.xml

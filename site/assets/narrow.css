@@ -1,0 +1,8 @@
+/* Long shop-record values must wrap inside the printable ticket. */
+.workspace>*{min-width:0}
+.result{min-width:0;overflow:hidden}
+.result table{display:table;table-layout:fixed}
+.result th{width:30%}
+.result th,.result td{white-space:normal;overflow-wrap:anywhere;vertical-align:top}
+label,input,select,textarea{min-width:0}
+@media print{.result{overflow:visible}}
