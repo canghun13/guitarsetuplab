@@ -1,4 +1,4 @@
-import {mkdir,writeFile,rm} from 'node:fs/promises';
+import {mkdir,writeFile,rm,cp} from 'node:fs/promises';
 import path from 'node:path';
 
 const root=process.cwd(), out=path.join(root,'site');
@@ -76,5 +76,9 @@ await writeFile(path.join(out,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-
 await writeFile(path.join(out,'robots.txt'),'User-agent: *\nAllow: /\nSitemap: https://guitarsetuplab.com/sitemap.xml\n');
 await writeFile(path.join(out,'llms.txt'),'# Guitar Setup Lab\n\nInteractive guitar setup diagnostics, measurement helpers, and printable records.\n\n- Tools use safety-first, measurement-led workflows.\n- No result is a physical inspection or guaranteed repair diagnosis.\n- Contact: canghun13@naver.com\n');
 await writeFile(path.join(out,'CNAME'),'guitarsetuplab.com\n');
+await writeFile(path.join(out,'.nojekyll'),'');
 await writeFile(path.join(out,'favicon.svg'),`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#17201d"/><path d="M13 38h38M16 26h32M22 18v28M42 18v28" stroke="#e1a955" stroke-width="4"/><circle cx="32" cy="32" r="6" fill="#e9eee8"/></svg>`);
+// The repository is configured for GitHub Pages branch/root publishing. Mirror the
+// reviewed deployment artifact into root so Pages and the local `site/` build agree.
+for(const entry of ['assets','tools','guides','reference','categories',...Object.keys(basics),'index.html','sitemap.xml','robots.txt','llms.txt','CNAME','favicon.svg','.nojekyll']) await cp(path.join(out,entry),path.join(root,entry),{recursive:true,force:true});
 console.log(`Built ${publicFiles.length} public HTML pages and ${tools.length} tools.`);
