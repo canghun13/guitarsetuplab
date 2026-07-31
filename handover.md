@@ -1,5 +1,91 @@
 # Guitar Setup Lab — Project Handover
 
+## 2026-07-31 통합 구현 현황 (최신)
+
+- 저장소 URL: `https://github.com/canghun13/guitarsetuplab`
+- 현재 branch: `main`
+- 세션 시작 원격 commit: `d99d727dae66df01bed9c5915e44ec5e08af35b3`
+- 최신 구현·검증 commit: `aaafa90f7254f18212d5c17ed88bb2f5779ea46d` (이 handover 갱신 커밋은 그 다음 커밋이며, 최종 hash는 `git rev-parse HEAD`로 확인)
+- 배포 URL: `https://guitarsetuplab.com/`
+- GitHub Pages: 배포 workflow 구현, push 후 실행 상태 확인 필요
+- GA4: `G-TGT88WMVDG`를 공개 HTML 32개 전체에 1회 초기화로 적용, 정적 검사 Pass
+- GSC: Not verified
+- Cloudflare: Not verified. 사용자 관리 영역의 DNS baseline은 기존 문서 14절 참조
+- HTTPS: Not verified
+- 실제 공개 HTML: 32 (홈/기본 5, 허브 4, 도구 18, 가이드 3, 참조 2)
+- 실제 작동 도구: 18
+- 카테고리별 도구: 진단·셋업 8, 측정·조정 6, 검사 1, 문서 3
+
+### 완료한 작업
+
+- 기존 원격 `handover.md`, 루트 `CNAME`, commit history를 보존하고 신규 구현 history와 병합.
+- 44개 후보 전체를 Accepted/Revised/Merged/Deferred 기준으로 검증하고 출처·판정·연결 흐름 기록.
+- 작업대·정밀 측정표·수리 티켓 인상의 독립 반응형 디자인 시스템 구현.
+- 공통 header/footer/mobile nav, 결과·경고·Reset·Copy·Print 패턴 구현.
+- About, Contact, Privacy, 404, robots.txt, sitemap.xml, llms.txt, favicon, canonical, Open Graph, JSON-LD, GA4 구현.
+- 18개 도구의 고유 입력과 전용 계산·진단·문서 생성 로직 구현.
+- GitHub Pages Actions 배포 workflow 및 `site/CNAME` 구현.
+- 정적 테스트와 실제 브라우저 QA 수행; 모바일 표 overflow와 Copy 비동기 오류를 발견·수정 후 회귀 확인.
+
+### 구현된 도구
+
+1. Guitar Setup Wizard
+2. Fret Buzz Diagnostic Tool
+3. High Action Diagnostic Tool
+4. Tuning Stability Troubleshooter
+5. Intonation Problem Diagnostic
+6. String Gauge Change Planner
+7. Alternate Tuning String Selector
+8. Electric Guitar Setup Checklist
+9. Acoustic Guitar Setup Checklist
+10. Bass Setup Checklist
+11. Used Guitar Inspection Generator
+12. Neck Relief Measurement Helper
+13. String Action Converter
+14. Scale Length Identifier
+15. Pickup Height Setup Planner
+16. Setup Measurement Sheet
+17. Before-and-After Setup Card
+18. Guitar Condition Report
+
+### 검증 결과
+
+- 반복 실행: `npm run build && npm test`
+- Static checks: 공개 HTML 32개, 도구 18개, 메타데이터, 내부 링크·asset, GA4, 이메일, JSON-LD, sitemap, robots, llms, JavaScript syntax 검사 Pass, failures 0.
+- Broken links: 0
+- JavaScript syntax errors: 0
+- 계산 시나리오: Action Converter의 mm/in/반올림/음수 오류 처리 브라우저 확인; Gauge/Relief/Scale 등은 전용 로직과 유효 범위 처리 구현.
+- 진단 시나리오: Fret Buzz의 위치·fret 상태별 결과 차이와 loose-fret 중단 분기 확인.
+- 문서 생성기: optional row 숨김, 날짜, 긴 text wrapping, Copy, Reset, Print 진입 확인.
+- Browser QA: 1440/1280/1024/768/390px Pass; 최종 새 탭 console error/warning 0.
+- Content audit: Sufficient 32, Needs reinforcement 0, Thin 0.
+- HIGH: 0
+- MEDIUM: 0
+- 상세 기록: `research/tool-validation.md`, `research/information-architecture.md`, `research/browser-qa.md`, `research/content-audit.md`.
+
+### 남은 작업
+
+- push 후 GitHub Actions Pages workflow 성공 여부와 production artifact 확인.
+- `https://guitarsetuplab.com/`, apex/www/HTTPS 및 canonical host 실제 응답 확인.
+- Cloudflare DNS/zone와 GSC domain property 및 sitemap 제출 상태는 계정 권한이 필요한 사용자 관리 영역이므로 검증 필요.
+- 초기 목표 45–50개 도구/65–75개 페이지 중 현재 18개/32개. 페이지 수를 위한 filler 없이 검증된 후속 도구를 구현할 것.
+- 모든 계산 도구의 독립 수치 회귀 fixture와 print-to-PDF 시각 회귀 자동화를 후속 강화.
+
+### 다음 작업 우선순위
+
+1. 배포 workflow, custom domain, HTTPS, apex/www를 확인하고 실패 시 Pages 설정을 수정.
+2. Ground Hum Diagnostic(고전압·앰프 내부 작업 제외), Repair Intake Form, Repair Quote Generator, Parts & Labor Job Sheet 구현.
+3. 제조사 unit-weight 출처를 확정한 뒤 String Tension Matcher 구현.
+4. Pickup Wiring Selector→Phase→Hum 및 Pot/Cap 비교 cluster 구현.
+5. 실제 인쇄 교정자를 포함한 Fret Position/Spacing 제작 cluster 구현.
+
+### 알려진 위험과 사용자 관리 영역
+
+- 배포·DNS·GSC·HTTPS는 아직 실제 검증 전이며 완료로 간주하지 않는다.
+- 진단 결과는 물리 검사나 수리 보장이 아니며 비가역 작업을 확정하지 않는다.
+- Cloudflare DNS, GitHub repository Pages environment 설정, GSC verification/sitemap 제출은 사용자의 외부 계정 관리 영역이다.
+- 마지막 push 상태와 `HEAD == origin/main`은 아래 최종 push 후 이 문서의 상단 및 최종 작업 보고에서 확인한다.
+
 Last updated: 2026-07-31  
 Project status: Planning / repository not yet created  
 Primary language: English  
