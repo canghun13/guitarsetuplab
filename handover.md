@@ -1,6 +1,77 @@
 # Guitar Setup Lab — Project Handover
 
-## 2026-07-31 통합 구현 현황 (최신)
+## 2026-07-31 두 번째 확장 현황 (최신)
+
+- 저장소: `https://github.com/canghun13/guitarsetuplab`
+- branch: `main`
+- 세션 시작 commit: `78565560c4fb92a823cb1e33e103b8d410dcbea9`
+- 확장 구현 commit: `15fbce160dee17f1e4a77d08d0fa472d65f63a33`
+- 공개 산출물: HTML 54, 실제 작동 도구 30, 카테고리 허브 5, 가이드 8, 참조 4, 비교 2, 기본 페이지 5
+- production: `https://guitarsetuplab.com/`
+- GA4: `G-TGT88WMVDG`가 공개 HTML 54개에 각각 1회 초기화됨
+
+### 이번 확장 구현
+
+Repair-shop documents:
+
+1. Guitar Repair Intake Form
+2. Repair Quote Generator
+3. Parts and Labor Job Sheet
+4. Customer Approval Checklist
+5. Guitar Maintenance Schedule Generator
+
+Electronics and wiring:
+
+1. Ground Hum Diagnostic Wizard
+2. Pickup Phase Troubleshooter
+3. Pickup Wiring Configuration Selector
+4. Potentiometer Value Selector
+5. Tone Capacitor Comparison Tool
+6. Series / Parallel / Coil-Split Selector
+
+Strings and tuning:
+
+1. String Tension Matcher
+
+Supporting content로 문서화·험 진단·수리 접수·pot/cap 선택·게이지 변경 가이드 5개, 장력 공식·배선 용어 참조 2개, pot 값·humbucker switching 비교 2개를 추가했다. 홈 Bench Library와 category hub를 통해 모두 실제 작업 흐름으로 연결하며, 자동 inbound-link graph가 고아 페이지를 검사한다.
+
+### 계산·데이터
+
+- Repair Quote는 품목별 `Description | quantity | unit cost`를 해석하고 labor/parts/discount/tax/deposit/balance를 cent 단위 정수 산술로 계산한다.
+- String Tension은 D’Addario의 `T = UW × (2 × L × F)² ÷ 386.4` 공식을 사용한다.
+- unit-weight는 D’Addario XL plain steel / nickel-plated round-wound의 명시적으로 수록한 gauge만 지원하며, 다른 brand/construction 또는 미지원 gauge를 직경만으로 추정하지 않는다.
+- 데이터 출처·포함 범위·fixture·한계: `research/string-tension-sources.md`.
+
+### 검증 결과
+
+- 반복 실행: bundled Node로 `scripts/build.mjs`와 `scripts/test.mjs` 실행, PASS 0 failures.
+- Static: HTML 54, tools 30, title/description/canonical/H1, GA4, email, JSON-LD, favicon/assets, broken links, orphan pages, sitemap, robots, llms, root/site mirror 검사 Pass.
+- 계산 fixture: quote 합계/세금/할인/보증금/잔액, 잘못된 row, 기타·베이스 장력, scale 방향, Drop D, 미지원 gauge, RC 참조값 Pass.
+- 실제 브라우저: 견적 계산·Copy·Reset, 험 진단 2개 분기, 기타/베이스/미지원 장력, 유지관리 일정 분기, conductor/switch 제약, 긴 repair intake와 optional row 숨김 확인.
+- Responsive: home, Electronics hub, Quote, Job Sheet, Hum, Tension, 기존 Fret Buzz를 1440/1280/1024/768/390px에서 검사; 35/35 horizontal overflow 0.
+- 모바일 메뉴 `aria-expanded`/open 상태 Pass. console error/warning 0.
+- 모바일 결과표 heading의 부자연스러운 character break를 발견해 normal word wrapping으로 수정하고 재검증했다.
+- Print: print CSS, 숨김 대상, 흑백 문서 구조, 긴 값 wrapping, Print 진입점 확인. in-app browser가 print-media/PDF API를 제공하지 않아 실제 PDF pagination/물리 scale 자동 시각검사는 미수행.
+- Content audit: Sufficient 54, Needs reinforcement 0, Thin 0, HIGH 0, MEDIUM 0.
+- 상세 기록: `research/browser-qa.md`, `research/content-audit.md`, `research/information-architecture.md`, `research/tool-validation.md`.
+
+### 배포·외부 상태 (2026-07-31 20:55 KST 재확인)
+
+- Apex DNS: GitHub Pages A 4개 (`185.199.108.153`–`185.199.111.153`).
+- Apex HTTPS: 일반 인증서 검증으로 `200 OK`, GitHub.com server.
+- www DNS: `www.guitarsetuplab.com CNAME canghun13.github.io`.
+- www HTTPS: 일반 검증 실패 `SEC_E_WRONG_PRINCIPAL`; 현재 인증서 subject `CN=*.github.io` (Let's Encrypt, 2026-06-05–2026-09-03). 검증을 무시하면 apex로 `301`을 반환한다. 따라서 redirect 설정은 존재하지만 www TLS는 완료가 아니다.
+- Cloudflare: DNS 응답만 확인; zone/proxy/account 설정은 Not verified.
+- GSC: Search Console property URL 접근 시 로그인 전 소개 페이지로 이동. 현재 브라우저에 로그인 session이 없어 domain property verification, sitemap submission, indexing 상태는 Not verified.
+
+### 미완료와 다음 우선순위
+
+1. GitHub Pages custom-domain에서 `www.guitarsetuplab.com`이 포함된 인증서가 발급되도록 domain/DNS 상태를 재처리한 뒤 일반 TLS 검증을 다시 수행한다.
+2. 사용자 Google 계정으로 GSC domain property를 확인하고 `https://guitarsetuplab.com/sitemap.xml` 제출 상태를 기록한다.
+3. Print-to-PDF 또는 실제 printer로 Quote, Job Sheet, Intake, Maintenance의 pagination/scale을 수동 검수한다.
+4. 다음 코드 확장은 실제 크기 교정자와 geometry fixture를 먼저 만든 뒤 Fret Position/Slot Template, Nut/Bridge Spacing, Multiscale cluster를 진행한다.
+
+## 2026-07-31 통합 구현 현황 (이전 18도구 기준 기록)
 
 - 저장소 URL: `https://github.com/canghun13/guitarsetuplab`
 - 현재 branch: `main`
