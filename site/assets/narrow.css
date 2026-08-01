@@ -1,10 +1,14 @@
-/* Long shop-record values must wrap inside the printable ticket. */
-.workspace>*{min-width:0}
-.result{min-width:0;overflow:hidden}
-.result table{display:table;table-layout:fixed}
-.result th{width:30%}
-.result th,.result td{white-space:normal;vertical-align:top}
-.result th{overflow-wrap:normal;word-break:normal}
-.result td{overflow-wrap:anywhere}
-label,input,select,textarea{min-width:0}
-@media print{.result{overflow:visible}}
+/* Screen containment for long shop records and calculation output. */
+.workspace>* { min-width:0; }
+.panel,.result { min-width:0;max-width:100%; }
+.result { overflow:visible; }
+.result table { width:100%;max-width:100%;display:block;overflow-x:auto;table-layout:auto; }
+.result th,.result td { white-space:normal;vertical-align:top;overflow-wrap:anywhere;word-break:normal; }
+.result table:has(tr > :nth-child(4)) th,
+.result table:has(tr > :nth-child(4)) td { min-width:8rem; }
+label,input,select,textarea { min-width:0;max-width:100%; }
+
+@media (max-width:600px) {
+  .result table { margin-inline:0;scrollbar-width:thin; }
+  .result th,.result td { padding:10px; }
+}

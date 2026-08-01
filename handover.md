@@ -1268,3 +1268,10 @@ Resolve the `www.guitarsetuplab.com` certificate mismatch and verify its normal 
 The final handover-only commit follows the implementation commit. After its push, verify a clean working tree and exact equality of local `HEAD` and `origin/main`.
 
 ---
+
+# 2026-08-01 — Visual layout QA reopened
+
+- Start commit: `c7fdc274c7577fb830c1134a1695b948efb96d13`.
+- Initial-build completion status is **ON HOLD** because production layout defects were reported in Gauge Change Planner and Fretboard Radius Matcher.
+- Do not add tools or editorial content during this pass.
+- Completion may return to Yes only after common layout causes are fixed, all 71 public pages pass the eight-viewport geometry audit, representative screenshots and functional regressions pass, production is verified, and local `HEAD` again equals `origin/main`.

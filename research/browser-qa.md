@@ -60,4 +60,10 @@ Local build: 71 public HTML pages / 41 interactive tools.
 
 Production verification is recorded in `handover.md` after the release workflow completes.
 
+## Full visual layout re-audit — 2026-08-01
+
+The common screen/print layout was re-audited after reported production defects in String Gauge Change Planner and Fretboard Radius Matcher. All 71 public pages were checked at 1440, 1280, 1024, 900, 768, 600, 480, and 390 px: 568 browser combinations. Bounding boxes and computed styles confirmed zero H1/header overlaps, clipped panels, partial off-screen panels, abnormal horizontal overflow, wrong grid transitions, restricted tool-depth columns, result-title overflow, unsafe table clipping, screen sticky results, or print-break leakage. Console errors: 0.
+
+Run, Reset, Copy, Print, editable quote-row addition/removal, unit change, result generation, two diagnostic branches, navigation, and the mobile menu passed. Chromium PDF QA also passed 12 A4/Letter outputs with correct page boxes and calibrated 50 mm / 2 in bars. Detailed findings, causes, corrections, and screenshot inventory are in `research/layout-qa.md`.
+
 ---
