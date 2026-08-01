@@ -1269,9 +1269,48 @@ The final handover-only commit follows the implementation commit. After its push
 
 ---
 
-# 2026-08-01 — Visual layout QA reopened
+# 2026-08-01 — Visual layout QA reopened and resolved
 
 - Start commit: `c7fdc274c7577fb830c1134a1695b948efb96d13`.
-- Initial-build completion status is **ON HOLD** because production layout defects were reported in Gauge Change Planner and Fretboard Radius Matcher.
+- Initial-build completion was placed **ON HOLD** because production layout defects were reported in Gauge Change Planner and Fretboard Radius Matcher.
 - Do not add tools or editorial content during this pass.
-- Completion may return to Yes only after common layout causes are fixed, all 71 public pages pass the eight-viewport geometry audit, representative screenshots and functional regressions pass, production is verified, and local `HEAD` again equals `origin/main`.
+- The hold is now resolved. Initial-build completion status is **Yes** after the common causes, full visual matrix, functional regressions, print QA, workflows, and production verification passed.
+
+## Common layout correction
+
+- Implementation commit: `0e6d5f70a0d068fabc0b7f4f40cf80ab77b5d3b8`.
+- Workspace columns now use shrink-safe `minmax(0, 1fr)` tracks and grid children use `min-width: 0`.
+- The two-column workspace switches to input → result → explanation at 1100 px instead of remaining compressed until 800 px.
+- Tool explanation content now uses the full workspace width instead of inheriting the generic 840 px prose limit.
+- Screen results no longer use sticky positioning, eliminating header collisions and partially exposed prior columns.
+- Document scroll padding and heading scroll margins match the fixed/sticky header.
+- Result titles, panels, lists, warnings, and tables use responsive spacing and safe mobile wrapping/scroll containment.
+- All fixed paper widths, page breaks, print-only visibility, template pagination, and print money-table rules are isolated in `print.css` under `@media print`.
+
+## Visual and functional verification
+
+- Full browser matrix: 71 public pages × 8 widths = 568 combinations.
+- Required widths: 1440, 1280, 1024, 900, 768, 600, 480, and 390 px.
+- Screenshots: 34 total in the external visual QA artifact directory; 8 before, 26 after/production confirmation.
+- H1/header overlap 0; clipped panels 0; partial off-screen elements 0; abnormal horizontal overflow 0; excessive blank columns/gaps 0; console errors 0.
+- Run, Reset, Copy, Print, editable quote item addition/removal, unit change, result generation, two diagnostic branches, desktop/mobile navigation, and mobile menu passed.
+- Build: 71 public HTML pages and 41 tools.
+- Static/SEO/link/module checks: PASS, 0 failures.
+- Geometry fixtures: PASS, 65 assertions.
+- Content audit: PASS, Sufficient 71, all failure gates zero.
+- Chromium print QA: 12 A4/Letter PDFs passed page-box/content checks. Calibration bars measured 188.96875 px for 50 mm and 192 px for 2 in, within tolerance.
+- Detailed record: `research/layout-qa.md` and `research/browser-qa.md`.
+
+## Workflow and production verification
+
+- GitHub Actions `Quality checks` run `30685279575` for `0e6d5f7`: completed successfully.
+- GitHub Actions `pages build and deployment` run `30685279363` for `0e6d5f7`: completed successfully.
+- Production home, all six category hubs, Gauge Change Planner, Radius Matcher, `style.css`, `print.css`, and `sitemap.xml` returned HTTP 200.
+- Production `style.css` contains the 1100 px/minmax layout contract; `print.css` contains the isolated `@media print` contract.
+- Production Gauge passed bounding-box/computed-style checks at 900 and 390 px; production Radius passed at 1024 and 390 px. Production console errors: 0.
+
+## Exact next task
+
+Resolve the `www.guitarsetuplab.com` TLS certificate mismatch without changing site features. Verify that the served certificate SAN covers `www.guitarsetuplab.com`, confirm the normal HTTPS redirect status and destination to `https://guitarsetuplab.com/`, record Cloudflare proxy state if authenticated access is available, and update this handover with the observed certificate and redirect evidence.
+
+This final handover-only commit follows the implementation commit. After pushing it, verify a clean working tree and exact equality of local `HEAD` and `origin/main`.

@@ -9,7 +9,7 @@ The browser audit exercised 1440, 1280, 1024, 900, 768, 600, 480, and 390 CSS-pi
 - Public pages: 71, including the generated 404 page
 - Viewports: 8
 - Browser combinations: 568
-- Screenshots: 32 (8 production-before Gauge captures, 8 after Gauge result captures, 8 after Radius result captures, and 8 after type-representative captures)
+- Screenshots: 34 (8 production-before Gauge captures, 8 after Gauge result captures, 8 after Radius result captures, 8 after type-representative captures, and 2 production confirmation captures)
 - Screenshot directory: `C:/Users/cangh/.codex/visualizations/2026/07/31/019fb78b-bc09-7462-bf4e-1508f32b5a79/guitar-layout-qa/`
 
 ## Reproduction, cause, and correction
@@ -57,4 +57,4 @@ Type-representative screenshots cover Home, Radius Matcher, Setup Wizard, Fret B
 - Geometry fixtures: PASS, 65 assertions.
 - Content audit: PASS, 71 Sufficient and all failure gates zero.
 
-Production verification is recorded in `handover.md` after the GitHub Pages workflow completes.
+Production verification is recorded in `handover.md`. After deployment, Gauge Change Planner passed the same bounding-box and computed-style checks at 900 and 390 px, Radius Matcher passed at 1024 and 390 px, and the production browser console reported zero errors.
