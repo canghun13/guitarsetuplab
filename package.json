@@ -1,1 +1,1 @@
-{"name":"guitar-setup-lab","private":true,"type":"module","scripts":{"build":"node scripts/build.mjs","test":"node scripts/test.mjs && node scripts/geometry-test.mjs","serve":"node scripts/server.mjs"}}
+{"name":"guitar-setup-lab","private":true,"type":"module","scripts":{"build":"node scripts/build.mjs","audit":"node scripts/content-audit.mjs","test":"node scripts/test.mjs && node scripts/geometry-test.mjs && node scripts/content-audit.mjs --check","serve":"node scripts/server.mjs"}}

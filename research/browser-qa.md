@@ -47,3 +47,17 @@ Regression interactions passed for Repair Quote, String Tension Matcher, and Set
 ## Remaining browser boundary
 
 Browser print-preview UI is not used as a measurement oracle. PDF size and calibration geometry are verified separately by the PDF QA pipeline, and physical printer output still requires a ruler.
+# Content-depth reinforcement QA — 2026-08-01
+
+Local build: 71 public HTML pages / 41 interactive tools.
+
+- Responsive matrix: 15 representative pages × 1440, 1280, 1024, 768, and 390 px = 75 combinations.
+- Coverage: home, all six category hubs, Fret Buzz Diagnostic, String Action Converter, Guitar Repair Intake, Ground Hum Diagnostic, Fret Slot Print Template, Setup Order guide, String Tension Formula reference, and Pot Values comparison.
+- Results: horizontal document overflow 0, missing H1 0, empty main 0, missing supporting heading 0. At 390 px the menu control was visible and main width remained within the 390 px viewport.
+- Fret Buzz Diagnostic: default input run produced an input-dependent “Prioritized buzz investigation”; Copy changed to “Copied”; Reset restored “Ready for measurements”; result overflow 0.
+- Fret Position Template: 25.5 in / 24 frets / measured 50.00 mm / tolerance 0.25 mm produced 24 table rows, fret 12 at 12.7500 in, calibration output, Print action, and overflow 0.
+- Static content order inspected in the DOM: purpose, workbench UI, result, preparation, input guide, interpretation, method, worked example, assumptions/limits, safety/stop, and related workflow. The obsolete duplicate quick-summary and duplicate related-card block were removed.
+
+Production verification is recorded in `handover.md` after the release workflow completes.
+
+---
