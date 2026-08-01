@@ -1193,3 +1193,78 @@ All generated pages receive the Build navigation link plus shared geometry/print
 4. If extending the Build cluster, implement the blank planner or build-cost planner only with dedicated fixtures and printable records.
 
 ---
+
+# 2026-08-01 — Full content-depth audit and reinforcement
+
+## Repository and deployed inventory
+
+- Repository: `https://github.com/canghun13/guitarsetuplab`
+- Branch: `main`
+- Starting commit: `98df55e84e775566e0b7d5caaf8b6472ddfe18df`
+- Content implementation commit: `8406b844779ebfc3b9199f0b99920cafae9f0179`
+- Production: `https://guitarsetuplab.com/`
+- Public HTML: 71
+- Functional tools: 41
+- Category hubs: 6
+- Guides: 10
+- References: 6
+- Comparisons: 3
+- Basic pages: 5
+- Sitemap URLs: 70; `404.html` remains excluded
+
+## Audit method and measured change
+
+`scripts/content-audit.mjs` now audits every generated page. It isolates `<main>` and excludes navigation, footer, scripts, styles, interactive workbench UI, input labels, placeholders, select options, buttons, and the initial result panel from explanatory word counts. It records headings and hierarchy, required content components, examples, limitations, method, related workflow, inbound/outbound links, exact normalized sentence repetition within and across pages, common site protocol, and interactive tool scaffolding. `npm test` runs the audit in read-only `--check` mode; `npm run audit` regenerates `research/content-depth-audit.md`.
+
+At the starting commit, the same word extraction measured: tools 156/170/184 min/average/max, hubs 28/124/200, guides 94/108/132, references 49/95/129, comparisons 85/96/109, and basic pages 30/104/268. Under the final scope floors and required-component rules this was Sufficient 4, Needs reinforcement 1, Thin 66.
+
+Final substantive word metrics are: tools 564/676/892 min/average/max, hubs 185/288/365, guides 336/357/384, references 287/338/379, comparisons 327/339/362, basic pages 30/154/519, and all pages 30/519/892. Word bands are guidance rather than the sole classifier; Contact, Privacy, About, and 404 remain intentionally concise. Common safety and measurement protocol is reported separately and does not masquerade as unique editorial content.
+
+Final classification: Strong 0, Sufficient 71, Needs reinforcement 0, Thin 0, Duplicate-risk 0, Functionally incomplete 0, HIGH 0, MEDIUM 0.
+
+## Content reinforcement completed
+
+- All 41 tools now include static HTML for purpose, preparation, field-specific input meaning, result interpretation, method/logic, a concrete worked example, assumptions/limitations, stop conditions, and 2–3 targeted next-workflow links.
+- Diagnostic/setup, measurement/adjustment, strings/tuning, electronics/wiring, repair-document, and luthier/geometry groups received tool-specific evidence and examples rather than a single duplicated generic block.
+- All six hubs now explain page selection, evidence standards, order of work, and stop boundaries.
+- All ten guides, six references, and three comparisons now include scope, a task-specific example, recording method, verification checklist, limitations, and relevant outbound workflow links.
+- Home now explains the five-bench dependency model, evidence standard, and operational limits.
+- Duplicate legacy quick summaries and duplicate related-card sections were removed from tool pages.
+- About, Contact, Privacy, and 404 were reviewed and intentionally not padded; their bounded purpose was already clear.
+- Internal-link audit: broken links 0, orphan pages 0, every tool has inbound and targeted outbound workflow links.
+
+## New tools and scope decision
+
+No new tool or page was added. The 41-tool content and all 30 supporting/basic pages were reinforced and re-audited first, as required. Nut Slot Target Height, Body/Neck Blank Planner, Guitar Build Cost Planner, and Fretwire Size/Crown Height Selector remain Phase 2 candidates and were not started because each needs its own source/model review and regression fixtures; bundling them into this content closeout would reduce verification quality. Tool-count target complete: **No — 41/45**. Public-page cap remains 71/75.
+
+## Automated and browser QA
+
+- Build: PASS, 71 public HTML and 41 tools.
+- Static/SEO: PASS, 0 failures for metadata, unique title, description, canonical, one H1, Open Graph, JSON-LD, GA4 `G-TGT88WMVDG`, fixed email `canghun13@naver.com`, sitemap, robots, llms, assets, ES-module syntax/imports, root/site mirror, broken links, and orphans.
+- Geometry fixtures: PASS, 65 assertions.
+- Content audit: PASS, 71 Sufficient, all completion gates zero.
+- Browser responsive matrix: PASS, 15 pages × 5 widths (1440/1280/1024/768/390) = 75 combinations; horizontal overflow 0, missing H1 0, missing supporting heading 0, mobile menu visible at 390.
+- Fret Buzz Diagnostic: input-dependent result, Copy state, Reset state, and overflow passed.
+- Fret Position Template: 25.5 in / 24 frets returned 24 rows, fret 12 = 12.7500 in, calibration output, Print action, and overflow passed.
+- Console errors/warnings on the production representative tool: 0.
+
+## Workflow and production verification
+
+- GitHub Actions `Quality checks` run `30683225666` for `8406b84`: completed successfully.
+- GitHub Pages `pages-build-deployment` run `30683225267`: completed successfully immediately after the implementation push.
+- Production `/`, Build hub, Fret Buzz, Fret Position, Setup Order guide, String Tension Formula reference, Pot Values comparison, and `sitemap.xml`: HTTP 200.
+- Production DOM contains the new depth sections, omits the obsolete legacy summary, has one H1, has no horizontal overflow on checked pages, and serves the final content from the custom domain.
+
+## Completion and external boundaries
+
+- Current 41-tool initial scope: **Initial build complete — Yes**. All content, functional, static, responsive, deployment, and repository gates for the current scope are zero/passing.
+- 45-tool expansion target: **No — 41/45**, explicitly Phase 2.
+- `www.guitarsetuplab.com` certificate correction, authenticated Cloudflare/GSC verification, sitemap submission/index coverage, and a physical A4/Letter printer calibration remain external operational tasks; this session did not claim them complete.
+
+## Exact next task
+
+Resolve the `www.guitarsetuplab.com` certificate mismatch and verify its normal HTTPS redirect to the apex. Record certificate SAN, redirect status, Cloudflare proxy state if authenticated access is available, and update this handover without changing site features. After that operational closeout, begin Phase 2 only with a sourced specification and fixtures for the Nut Slot Target Height Tool.
+
+The final handover-only commit follows the implementation commit. After its push, verify a clean working tree and exact equality of local `HEAD` and `origin/main`.
+
+---
