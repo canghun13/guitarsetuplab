@@ -1314,3 +1314,8 @@ The final handover-only commit follows the implementation commit. After its push
 Resolve the `www.guitarsetuplab.com` TLS certificate mismatch without changing site features. Verify that the served certificate SAN covers `www.guitarsetuplab.com`, confirm the normal HTTPS redirect status and destination to `https://guitarsetuplab.com/`, record Cloudflare proxy state if authenticated access is available, and update this handover with the observed certificate and redirect evidence.
 
 This final handover-only commit follows the implementation commit. After pushing it, verify a clean working tree and exact equality of local `HEAD` and `origin/main`.
+
+
+## 2026-08-06
+
+- 메인 페이지 푸터 아래의 디렉토리 뱃지 영역은 사용자가 직접 관리하는 영역이므로 수정·삭제·리팩터링하지 않는다.- https://boostdomainrating.com/ 에 등록 (내가 직접함)
