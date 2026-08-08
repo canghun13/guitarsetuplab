@@ -1315,6 +1315,82 @@ Resolve the `www.guitarsetuplab.com` TLS certificate mismatch without changing s
 
 This final handover-only commit follows the implementation commit. After pushing it, verify a clean working tree and exact equality of local `HEAD` and `origin/main`.
 
+---
+
+# 2026-08-08 — Cluster expansion research and Pickup Fit & Spacing release
+
+## Repository and decision
+
+- Start commit after safe fast-forward: `acaafe738b044649d308020abcb1c6231e46eaef`.
+- Implementation commit: `f4f38d80aaa96df4521e0882753ab74288ba2f1f` (`Add pickup fit and spacing cluster`).
+- Final handover commit: this handover-only closeout commit; resolve its exact hash with `git rev-parse HEAD` after push.
+- Research record: `research/cluster-expansion-2026-08-08.md`.
+- Candidates: Pickup Fit & Spacing **GO 87/100**; Fretwire & Refret Planning **HOLD 79/100**; Nut Setup & Slot Diagnosis **REJECT 74/100**; Acoustic Saddle Compensation **REJECT 61/100**; Guitar Humidity Monitoring **REJECT 57/100**.
+- Final decision: **GO — Pickup Fit & Spacing**. It passed all ten gates only under a user-entered measurement model with no catalog and no routing/drilling authorization.
+
+## Implemented cluster
+
+- New hub: `/categories/fit.html`.
+- New tools: String Spread at Pickup Projector, Pickup Pole Spacing Matcher, Pickup Route Clearance Checker, and Pickup Ring & Mount Fit Checker.
+- New guide: `/guides/measure-pickup-fit.html`.
+- New reference: `/reference/pickup-dimensions.html`.
+- New pure calculation asset: `/assets/pickup-fit.js` with a dedicated 15-assertion fixture suite.
+- Home now exposes six benches; primary navigation includes Fit. Existing Pickup Height, Pickup Wiring, and Pickup Phase workflows link into the new cluster, while the new pages link back to existing height and wiring workflows.
+- Print was intentionally omitted: these pages compare compatibility measurements and are not cutting templates or required shop records.
+- Safety boundary: outputs never approve routing, drilling, forced fit, or tone/output claims. Close or negative clearance, inaccessible measurements, or unmodeled protrusions require physical verification and a qualified technician.
+
+## Sources and maintenance boundary
+
+- Primary manufacturer evidence: DiMarzio F-spacing FAQ, Seymour Duncan Trembucker spacing documentation, Warmoth pickup-route diagrams, and Fishman cutout/dimension drawings.
+- The implementation stores no product catalog or universal pickup dimension. Users enter the real guitar measurements and the current exact-model manufacturer drawing, keeping maintenance bounded.
+- Detailed demand, competition, overlap, scoring, source URLs, and rejection reasons are in the research record.
+
+## Current site inventory
+
+- Public HTML: 78.
+- Interactive tools: 45.
+- Hubs: 7.
+- Guides: 11.
+- References: 7.
+- Comparisons: 3.
+- Basic pages: 5.
+- Sitemap URLs: 77; 404 remains excluded.
+
+## Automated QA
+
+- Build: PASS — 78 public HTML pages and 45 tools.
+- Static/SEO/link/module checks: PASS, 0 failures; broken links 0, orphan pages 0, required assets present, canonical/H1/JSON-LD/GA4/email/sitemap checks passed.
+- Existing geometry fixtures: PASS, 65 assertions.
+- Pickup-fit fixtures: PASS, 15 assertions including endpoint/interpolation, tolerance boundary, positive/negative clearance, empty, negative, out-of-range, NaN, and Infinity rejection.
+- Content audit: PASS — Sufficient 78; Needs 0, Thin 0, duplicate-risk 0, functionally incomplete 0.
+- Root deployment contract: generated `site/index.html` intentionally omits the user-managed directory badge; the root build preserves its exact existing block. Static checks allow only that named difference and assert the badge remains present.
+
+## Browser QA
+
+- New pages: 7 pages × 8 widths (1440/1280/1024/900/768/600/480/390) = 56 combinations.
+- Existing representatives: String Gauge Change Planner and Pickup Height Setup Planner × 8 widths = 16 combinations.
+- Total measured responsive combinations: 72. H1/header overlap 0, horizontal overflow 0, clipped/off-screen panels 0, abnormal columns 0.
+- Workspace: two columns at 1440; one column at 1024 and below. Mobile menu appears at 768 and below.
+- Dynamic runs: all four new tools produced distinct valid results. Pole-spacing input changed the result from wider to narrower; Copy reached `Copied`; Reset returned `Ready for measurements`.
+- Tool-error results 0; no browser console error was observed during the direct runs.
+- Screenshots: 76 under `research/screenshots/cluster-2026-08-08/` (72 responsive/regression, 3 local functional, 1 production functional).
+
+## Workflow and production verification
+
+- Implementation push: `acaafe7..f4f38d8 main -> main` succeeded.
+- GitHub Actions Quality checks run `31250717974`: completed successfully.
+- GitHub Pages build and deployment run `31250717684`: completed successfully.
+- Production HTTP 200: new hub, all four tools, new guide, new reference, `/assets/pickup-fit.js`, `/sitemap.xml`, and home.
+- Production home contains Six connected benches, the Fit hub link, fixed GA4 `G-TGT88WMVDG`, fixed email `canghun13@naver.com`, and the unchanged user-managed boostdomainrating badge.
+- Production Pickup Route Clearance Checker generated `Candidate clears the entered rectangular envelope` with no abnormal document overflow.
+
+## Remaining external issue and exact next task
+
+- The previously recorded `www.guitarsetuplab.com` TLS certificate mismatch remains outside this feature release and was not claimed fixed.
+- Exact next task: resolve the `www.guitarsetuplab.com` certificate SAN/proxy mismatch without changing site features, verify its HTTPS redirect destination and status to `https://guitarsetuplab.com/`, then record authenticated Cloudflare state if available. After that, verify search-console discovery/index coverage for the seven new Pickup Fit & Spacing URLs before considering another cluster.
+
+The final closeout must push this handover commit, fetch/verify `origin/main`, confirm a clean working tree, and confirm exact equality of local `HEAD` and `origin/main`.
+
 
 ## 2026-08-06
 
