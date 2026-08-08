@@ -116,4 +116,4 @@ ${counts('needs')===0?'PASS':'FAIL'} — Needs reinforcement ${classes['Needs re
 `;
 if(!checkOnly)await writeFile(reportPath,report);
 console.log(`Audited ${pages.length} pages: Strong ${classes.Strong}, Sufficient ${classes.Sufficient}, Needs ${classes['Needs reinforcement']}, Thin ${classes.Thin}, duplicate-risk ${counts('duplicateRisk')}, incomplete ${counts('functionallyIncomplete')}.`);
-if(pages.length!==71||counts('needs'))process.exitCode=1;
+if(pages.length!==78||counts('needs'))process.exitCode=1;
