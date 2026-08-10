@@ -1479,7 +1479,10 @@ The final closeout must push this handover commit, fetch/verify `origin/main`, c
 - Scope: 45 generated Tool result contracts checked. 16 dynamic table renderers found; 13 table-follow-up Tools receive the selector, 3 table-only renderers remain unchanged, and 29 non-table Tools remain unchanged. The requested String Gauge Change Planner, Guitar Setup Wizard, and Fret Buzz Diagnostic are in the unchanged result-shape group.
 - Local browser QA: Fretboard Radius actual result changed from production `0px` to local `24px` at 1440 px and retained 24px at 1024/768/480/390. No overflow, panel clipping, or header/H1 overlap. Requested representative 8 Tool pages had result, Run, and Reset controls at 390 px with zero console errors; Fretboard Run/Reset passed and Copy reached its normal permission fallback.
 - Static QA: build PASS (78 pages, 45 Tools); link/orphan/metadata/root-site/module checks PASS (0 failures); geometry 65 PASS; pickup-fit 15 PASS; content audit 78 Sufficient with 0 Needs/Thin/duplicate-risk/incomplete. `research/result-spacing-qa-2026-08-10.md` contains details and screenshot references.
-- Pending closeout: commit, push, Actions/Pages verification, production Fretboard result spacing measurement, then fetch and confirm clean `HEAD == origin/main`.
+- Implementation commit: `8635c1137fe5714a611b43304c008f9100a2ac86` (`Fix result table follow-up spacing`) pushed successfully as `1f69a72..8635c11 main -> main`; fetched `origin/main` matched local HEAD.
+- GitHub Actions: Quality checks run `31353124641` and Pages build and deployment run `31353124281` both completed successfully.
+- Production post-deploy: cache-busted Fretboard Radius Matcher with the same real input measured `24px` table-bottom-to-`Measurement sensitivity` gap at 1440 px, with no document/result overflow, table contact, or console errors.
+- Final handover closeout still needs a documentation-only commit, push, fetch, and clean local/remote equality check.
 
 ## Exact next task / observation trigger
 
