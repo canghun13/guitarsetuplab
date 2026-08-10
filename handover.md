@@ -1487,3 +1487,40 @@ The final closeout must push this handover commit, fetch/verify `origin/main`, c
 ## Exact next task / observation trigger
 
 Do not add another cluster by default. First resolve the `www.guitarsetuplab.com` certificate SAN/proxy mismatch when authenticated GitHub Pages/DNS/Cloudflare access is available. Otherwise observe until authenticated GSC provides enough impressions, a position 5–30 query, CTR or coverage trouble, or discovery/index evidence for the seven Pickup Fit URLs; authenticated GA4 shows a repeatable workflow drop-off; or a reproducible calculation, print, or responsive defect appears.
+
+---
+
+# 2026-08-10 — Fretwire & Refret Planning revalidation
+
+## Repository and scope
+
+- Local `main` was clean at `41446ee4300657ded6ab1471c4ca744ff57c9b3a`; fetch found remote `main` at `9761f45bf8389c49f31c6fa65bb8f4ffb9b50b9e`.
+- Because the tree was clean, `git pull --ff-only origin main` safely synchronized the repository before research.
+- Revalidation start commit: `9761f45bf8389c49f31c6fa65bb8f4ffb9b50b9e`.
+- Scope was limited to the previously held Fretwire & Refret Planning candidate. No other cluster, whole-site audit, generic maintenance, CSS, TLS, or content expansion was started.
+
+## Decision
+
+- Previous decision: **HOLD 79/100** on 2026-08-08.
+- Current decision: **HOLD 79/100** — Monetization 34/40, Traffic 27/35, Gap 18/25.
+- Current demand, four meaningful long-tail families, and a sampled static-content-versus-interactive-tool gap were confirmed.
+- Only two candidates are presently both independent and safely implementable: a user-entered Fretwire Crown/Profile Comparator and a Fretwire Quantity & Cut Planner.
+- Tang/Slot Fit cannot safely infer compatibility from nominal width/depth because barbs, compression, wood, slot damage, binding, debris, radius, batch variation, and physical test fit remain decisive.
+- Remaining Crown/Leveling Budget cannot safely decide level/crown versus refret because the required removal is not known from a simple browser input and no authoritative universal remaining-height threshold was found.
+- Replacement matching collapses into the comparator or requires a maintained changing catalog. Cost, condition, records, and radius/pre-bend ideas overlap the current 45-tool site.
+- The candidate therefore fails the four-independent-tools, non-overlap, catalog independence, full technical support, bounded safety, coherent hub, and value-over-maintenance gates. GO requires all ten gates.
+
+## Changes and production
+
+- Research record: `research/fretwire-refret-revalidation-2026-08-10.md`.
+- Production changes: **None**.
+- New tools/pages/assets/navigation/sitemap entries: **None**.
+- Current automated checks: PASS — 78 HTML/45 tools with 0 static failures, geometry 65 assertions, pickup-fit 15 assertions, and content audit 78 Sufficient with all failure groups at 0. The package's four test commands were run directly with the bundled Node executable because `npm` was not present on this shell PATH.
+- The user-managed `boostdomainrating.com` home badge was not touched.
+- Final research/handover commit: resolve the exact hash with `git rev-parse HEAD` after the documentation-only closeout is pushed.
+
+## Exact revisit condition and next task
+
+Do not build this cluster until four independent query/workflow groups have authenticated demand evidence; tang/slot screening has a sourced non-prescriptive protocol plus physical fixtures; remaining-crown planning has measured removal evidence and technician/PLEK validation without a universal threshold; and the fourth tool remains distinct after excluding product catalogs, Repair Quote/condition/document workflows, and current radius/geometry tools.
+
+Until every condition above is met, the exact next task for this candidate is **none — remain on HOLD**. Repository-wide operational priorities recorded earlier, including authenticated `www` certificate correction and GSC/GA4 observation triggers, remain unchanged and were intentionally not started in this scoped revalidation.
