@@ -1395,3 +1395,73 @@ The final closeout must push this handover commit, fetch/verify `origin/main`, c
 ## 2026-08-06
 
 - 메인 페이지 푸터 아래의 디렉토리 뱃지 영역은 사용자가 직접 관리하는 영역이므로 수정·삭제·리팩터링하지 않는다.- https://boostdomainrating.com/ 에 등록 (내가 직접함)
+
+---
+
+# 2026-08-10 — Whole-site next-work audit and semantic workflow correction
+
+## Repository and decision
+
+- Start commit: `41446ee4300657ded6ab1471c4ca744ff57c9b3a`.
+- Final decision: **GO — UX/internal-link improvement**.
+- Selected work: replace order-dependent related-link fallbacks with explicit, task-specific next steps for every interactive tool and enforce that contract at build time.
+- Evidence: only 19 of 45 tools had explicit workflow definitions. The other 26 inherited the first three matching array entries, so production Ground Hum linked to neck/action setup pages and Repair Quote linked to neck/action/measurement pages rather than their actual electronics and shop workflows.
+- Detailed audit, production evidence, candidate scores, and rejection reasons: `research/whole-site-next-work-2026-08-10.md`.
+
+## Data availability
+
+- GSC: Not available in this session. The domain-property URL redirected to the public Search Console introduction page.
+- GA4: Not available in this session. GA4 redirected to Google sign-in.
+- No clicks, impressions, CTR, position, landing-page, or engagement data was inferred.
+- Public exact-title searches did not surface the two-day-old Pickup Fit pages in the sampled engine. That weak observation was not treated as an indexing defect or a reason to rewrite the new cluster.
+
+## Implementation
+
+- All 45 tools now define exactly three semantic next-step targets.
+- Twenty-nine generated tool pages changed: 26 previously fallback-driven pages plus three explicit workflows refined to preserve clearer measurement, electronics, fit, and record boundaries.
+- Ground Hum now continues to Pickup Phase, Pickup Wiring, and the safe hum-diagnosis guide.
+- Repair Quote now continues to Repair Intake, Customer Approval, and Parts/Labor Job Sheet.
+- Fret Buzz now continues to Neck Relief, String Action, and the Before/After record.
+- Build validation fails on a missing workflow, a count other than three, duplicate targets, self-links, or unknown targets. The order-dependent fallback was removed.
+- Tool calculations, diagnostic models, metadata, CSS, GA4/email/domain values, sitemap membership, and page inventory were unchanged.
+- The root-only user-managed `boostdomainrating.com` badge was preserved by the existing build contract and was not edited.
+
+## Current inventory
+
+- Public HTML: 78.
+- Interactive tools: 45.
+- Hubs: 7.
+- Guides: 11.
+- References: 7.
+- Comparisons: 3.
+- Basic pages: 5.
+- Sitemap URLs: 77; `404.html` remains excluded.
+
+## QA before deployment
+
+- Build: PASS — 78 public HTML pages and 45 tools.
+- Static/SEO/link/module/root-site checks: PASS, 0 failures; broken links 0 and orphan pages 0.
+- Geometry fixtures: PASS, 65 assertions.
+- Pickup-fit fixtures: PASS, 15 assertions.
+- Content audit: PASS — Sufficient 78; Needs 0; Thin 0; duplicate-risk 0; incomplete 0.
+- Production pre-change sample: home at all eight required widths plus 16 representative pages; H1/header overlap 0, horizontal overflow 0, and off-screen elements 0.
+- Changed-page browser matrix: Fret Buzz, Ground Hum, Repair Quote, and Tone Capacitor × 1440/1280/1024/900/768/600/480/390 = 32 combinations; overlap 0, horizontal overflow 0, off-screen elements 0.
+- Functional browser PASS: Ground Hum branch, cent-safe Repair Quote fixture, Fret Buzz branch, and Pickup Route Clearance fixture.
+- Browser console errors/warnings: 0.
+- Screenshots: two key local QA images retained in the session artifact directory; no bulk screenshot data was added to the repository.
+
+## Production state before this release
+
+- Apex HTTPS and all sampled critical URLs returned 200; canonical, robots, sitemap, CSS/JS assets, Quality run `31250909365`, and Pages run `31250908870` were healthy at the start commit.
+- `www.guitarsetuplab.com` still fails ordinary TLS validation. The served `CN=*.github.io` certificate does not include the custom `www` host; ignoring validation only for diagnosis shows the intended 301 to the apex.
+- Certificate/DNS/proxy correction remains an authenticated external administration task. No production-code workaround was made.
+
+## Deployment closeout
+
+- Implementation/QA commit: pending final commit creation.
+- Final handover commit: this section will be closed after the implementation push and production verification.
+- Push, workflow, Pages, production, working-tree cleanliness, and exact local/remote equality: pending final closeout.
+
+## Exact next task / observation trigger
+
+Do not add another cluster by default. First resolve the `www.guitarsetuplab.com` certificate SAN/proxy mismatch when authenticated GitHub Pages/DNS/Cloudflare access is available. Otherwise observe until authenticated GSC provides enough impressions, a position 5–30 query, CTR or coverage trouble, or discovery/index evidence for the seven Pickup Fit URLs; authenticated GA4 shows a repeatable workflow drop-off; or a reproducible calculation, print, or responsive defect appears.

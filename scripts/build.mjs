@@ -105,14 +105,40 @@ const footer=`<footer><div><strong>Guitar Setup Lab</strong><p>Measure first. Ch
 function page({title,description,body,slug='',type='WebPage'}){const url=`https://guitarsetuplab.com/${slug}`;return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title} | Guitar Setup Lab</title><meta name="description" content="${description}"><link rel="canonical" href="${url}"><meta property="og:title" content="${title} | Guitar Setup Lab"><meta property="og:description" content="${description}"><meta property="og:url" content="${url}"><meta property="og:type" content="website"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/style.css"><link rel="stylesheet" href="/assets/narrow.css"><link rel="stylesheet" href="/assets/geometry.css"><link rel="stylesheet" href="/assets/print.css">${GA}<script type="application/ld+json">${JSON.stringify({'@context':'https://schema.org','@type':type,name:title,description,url,provider:{'@type':'Organization',name:'Guitar Setup Lab',email:'canghun13@naver.com'}})}</script><script type="module" src="/assets/app.js"></script></head><body><header>${nav}</header><main>${body}</main>${footer}</body></html>`}
 function field(k){const [label,type,third,step]=defs[k]; if(type==='select') return `<label>${label}<select name="${k}">${third.map(x=>`<option>${x}</option>`).join('')}</select></label>`; if(type==='textarea') return `<label>${label}<textarea name="${k}" placeholder="${third}"></textarea></label>`; return `<label>${label}<input name="${k}" type="${type}" ${third?`placeholder="${third}"`:''} ${step?`step="${step}"`:''}></label>`}
 const workflowLinks={
+ 'guitar-setup-wizard':['neck-relief-measurement','setup-measurement-sheet','before-after-setup-card'],
+ 'fret-buzz-diagnostic':['neck-relief-measurement','string-action-converter','before-after-setup-card'],
+ 'high-action-diagnostic':['neck-relief-measurement','string-action-converter','guitar-condition-report'],
+ 'tuning-stability-troubleshooter':['string-gauge-change-planner','tremolo-spring-balance','headstock-break-angle'],
+ 'intonation-problem-diagnostic':['string-gauge-change-planner','neck-relief-measurement','before-after-setup-card'],
+ 'string-gauge-change-planner':['string-tension-matcher','tremolo-spring-balance','intonation-problem-diagnostic'],
+ 'alternate-tuning-string-selector':['string-tension-matcher','string-gauge-change-planner','intonation-problem-diagnostic'],
+ 'electric-guitar-setup-checklist':['guitar-setup-wizard','setup-measurement-sheet','before-after-setup-card'],
+ 'acoustic-guitar-setup-checklist':['high-action-diagnostic','guitar-condition-report','maintenance-schedule'],
+ 'bass-setup-checklist':['neck-relief-measurement','pickup-height-planner','setup-measurement-sheet'],
+ 'used-guitar-inspection':['guitar-condition-report','guitar-repair-intake','repair-quote-generator'],
+ 'neck-relief-measurement':['fret-buzz-diagnostic','high-action-diagnostic','setup-measurement-sheet'],
+ 'string-action-converter':['high-action-diagnostic','saddle-radius-planner','setup-measurement-sheet'],
  'pickup-height-planner':['string-spread-at-pickup','pickup-pole-spacing-matcher','measure-pickup-fit'],
- 'pickup-phase-troubleshooter':['pickup-wiring-selector','pickup-pole-spacing-matcher','pickup-dimensions'],
- 'pickup-wiring-selector':['pickup-ring-mount-fit','pickup-route-clearance-checker','pickup-wiring-terms'],
+ 'setup-measurement-sheet':['before-after-setup-card','guitar-condition-report','guitar-setup-wizard'],
+ 'before-after-setup-card':['setup-measurement-sheet','maintenance-schedule','guitar-condition-report'],
+ 'guitar-condition-report':['used-guitar-inspection','guitar-repair-intake','repair-quote-generator'],
+ 'guitar-repair-intake':['guitar-condition-report','repair-quote-generator','customer-approval-checklist'],
+ 'repair-quote-generator':['guitar-repair-intake','customer-approval-checklist','parts-labor-job-sheet'],
+ 'parts-labor-job-sheet':['repair-quote-generator','customer-approval-checklist','before-after-setup-card'],
+ 'customer-approval-checklist':['repair-quote-generator','parts-labor-job-sheet','guitar-repair-intake'],
+ 'maintenance-schedule':['before-after-setup-card','setup-measurement-sheet','acoustic-guitar-setup-checklist'],
+ 'ground-hum-diagnostic':['pickup-phase-troubleshooter','pickup-wiring-selector','diagnose-guitar-hum-safely'],
+ 'pickup-phase-troubleshooter':['ground-hum-diagnostic','pickup-wiring-selector','pickup-wiring-terms'],
+ 'pickup-wiring-selector':['series-parallel-coil-split-selector','pickup-phase-troubleshooter','pickup-wiring-terms'],
+ 'potentiometer-value-selector':['tone-capacitor-comparison','pot-values','pickup-wiring-selector'],
+ 'tone-capacitor-comparison':['potentiometer-value-selector','choosing-pot-capacitor-values','pot-values'],
+ 'series-parallel-coil-split-selector':['pickup-wiring-selector','pickup-phase-troubleshooter','series-parallel-coil-split'],
+ 'string-tension-matcher':['string-gauge-change-planner','alternate-tuning-string-selector','tremolo-spring-balance'],
  'string-spread-at-pickup':['pickup-pole-spacing-matcher','measure-pickup-fit','pickup-dimensions'],
  'pickup-pole-spacing-matcher':['string-spread-at-pickup','pickup-ring-mount-fit','pickup-height-planner'],
  'pickup-route-clearance-checker':['pickup-ring-mount-fit','measure-pickup-fit','pickup-dimensions'],
  'pickup-ring-mount-fit':['pickup-route-clearance-checker','pickup-wiring-selector','pickup-dimensions'],
- 'scale-length-identifier':['fret-position-template','fret-slot-print-template'],
+ 'scale-length-identifier':['fret-position-template','fret-slot-print-template','geometry-measurement'],
  'fret-position-template':['fret-slot-print-template','scale-length-identifier','geometry-measurement'],
  'fret-slot-print-template':['fret-position-template','print-actual-size','geometry-measurement'],
  'nut-string-spacing':['bridge-string-spacing','string-gauge-change-planner','measure-string-spacing'],
@@ -133,11 +159,22 @@ const libraryLink=(slug)=>{const routes={
  'measure-string-spacing':['guides','How to Measure String Spacing','Distinguish centers from edge gaps.'],
  'string-gauge-setup-effects':['guides','String Gauge Changes and Setup Effects','Recheck the complete setup system.'],
  'measure-pickup-fit':['guides','How to Measure Pickup Fit','Measure the string path, part, cavity, ring, and screw centers.'],
+ 'diagnose-guitar-hum-safely':['guides','How to Diagnose Guitar Hum Safely','Use substitution tests without opening mains-powered equipment.'],
+ 'choosing-pot-capacitor-values':['guides','Choosing Guitar Pot and Capacitor Values','Compare the complete passive control load before changing parts.'],
  'pickup-dimensions':['reference','Pickup Fit Measurement Reference','Keep external size, opening, route, and mounting spans distinct.'],
  'pickup-wiring-terms':['reference','Pickup Wiring Terms','Separate physical fit from electrical compatibility.'],
- 'equal-center-vs-equal-gap':['comparisons','Equal-Center vs Equal-Edge-Gap','Compare two spacing definitions before marking.']
+ 'equal-center-vs-equal-gap':['comparisons','Equal-Center vs Equal-Edge-Gap','Compare two spacing definitions before marking.'],
+ 'pot-values':['comparisons','250k vs 500k vs 1M Guitar Pots','Compare nominal resistance as part of the complete pickup and cable load.'],
+ 'series-parallel-coil-split':['comparisons','Series vs Parallel vs Coil Split','Compare switching behavior before choosing a wiring path.']
  };const x=routes[slug];return x&&{slug:`/${x[0]}/${slug}.html`,title:x[1],description:x[2],category:'reference'};};
-function related(t){return (workflowLinks[t.slug]||tools.filter(x=>x.slug!==t.slug&&(x.category===t.category||['neck-relief-measurement','string-action-converter','before-after-setup-card'].includes(x.slug))).slice(0,3).map(x=>x.slug)).map(slug=>tools.find(x=>x.slug===slug)||libraryLink(slug)).filter(Boolean).slice(0,3)}
+function related(t){
+ const slugs=workflowLinks[t.slug];
+ if(!slugs||slugs.length!==3) throw new Error(`Workflow links must define exactly three next steps for ${t.slug}`);
+ if(new Set(slugs).size!==slugs.length||slugs.includes(t.slug)) throw new Error(`Workflow links contain a duplicate or self-link for ${t.slug}`);
+ const links=slugs.map(slug=>tools.find(x=>x.slug===slug)||libraryLink(slug));
+ if(links.some(link=>!link)) throw new Error(`Workflow links contain an unknown target for ${t.slug}`);
+ return links;
+}
 for(const t of tools){const geometry=t.category==='luthier',body=`<section class="tool-hero"><p class="eyebrow">${categories[t.category]} / field tool</p><h1>${t.title}</h1><p class="lede">${t.description}</p><div class="meter"><span>Observe</span><span>Measure</span><span>Plan</span><span>Record</span></div></section><section class="workspace" data-tool="${t.slug}"><form class="panel tool-form"><h2>Workbench inputs</h2><p class="hint">Use measured facts where available. Blank or unknown values reduce certainty.</p><div class="fields">${t.fields.map(field).join('')}</div><div class="actions"><button type="submit">Run tool</button><button type="reset" class="secondary">Reset</button></div></form><article class="panel result" aria-live="polite"><p class="eyebrow">Result ticket</p><h2>Ready for measurements</h2><p>Complete the inputs, then run the tool. Results remain on this device and are not uploaded.</p></article></section><section class="explain"><div><h2>How to use this tool</h2><ol><li>${geometry?'Define the physical datum, units, and measurement method.':'Bring the instrument to playing condition and tune it.'}</li><li>Enter observations without guessing at measurements.</li><li>${geometry?'Compare the result with a known fixture before marking material.':'Follow the low-risk checks in order and record changes.'}</li></ol></div><div><h2>Method, assumptions & limits</h2><p>${geometry?'This tool applies an explicit geometry model to the measurements shown in its result. Rounding is for display; calculations retain full precision. Calibration bars verify browser/PDF scale, but only a physical measurement verifies a printer.':'This tool organizes setup evidence; it cannot inspect wood, frets, hardware, or electrical safety. Reference values are comparison points, not universal targets. Playing style, instrument design, string choice, and climate matter.'}</p><div class="warning"><strong>Stop if…</strong> you feel abnormal resistance, hear cracking, see wood movement or structural deformation, find an unknown truss-rod condition, or cannot make the required measurement. Do not remove material until the cause is confirmed.</div></div></section><section><h2>Continue the workflow</h2><div class="card-grid">${related(t).map(r=>`<a class="card" href="${r.slug.startsWith('/')?r.slug:'/tools/'+r.slug+'.html'}"><small>${categories[r.category]||'Bench library'}</small><strong>${r.title}</strong><span>${r.description}</span></a>`).join('')}</div></section>`;await writeFile(path.join(out,'tools',`${t.slug}.html`),page({title:t.title,description:t.description,slug:`tools/${t.slug}.html`,body,type:'WebApplication'}));}
 
 for(const t of tools){const file=path.join(out,'tools',`${t.slug}.html`),html=await readFile(file,'utf8');await writeFile(file,html.replace(/<section class="explain">[\s\S]*?<\/section><section><h2>Continue the workflow<\/h2>[\s\S]*?<\/section>/,toolDepthHtml(t,defs,related)));}
