@@ -82,6 +82,7 @@ input:focus,select:focus,textarea:focus,button:focus,a:focus { outline:3px solid
 .result li { margin:9px 0; }
 .result .warning { margin-top:20px; }
 .result table { font-size:.88rem; }
+.result :is(table,.geometry-scroll) + :is(h2,h3,p,ol,ul,.warning,.geometry-diagram,.calibration,.template-page,.result-section,.section) { margin-top:24px; }
 .warning { min-width:0;padding:18px 20px;border-left:5px solid var(--warn);background:#f7e7dc;color:#542719;overflow-wrap:anywhere; }
 
 .prose { width:100%;max-width:840px;padding:clamp(24px,5vw,64px); }

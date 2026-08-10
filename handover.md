@@ -1471,6 +1471,16 @@ The final closeout must push this handover commit, fetch/verify `origin/main`, c
 - Final handover commit: this handover-only closeout commit; resolve its exact hash with `git rev-parse HEAD` after push.
 - Final closeout must fetch `origin/main`, confirm a clean working tree, and confirm exact local/remote equality.
 
+## Result table follow-up spacing audit — 2026-08-10
+
+- Start commit: `1f69a72813b64232557d21c40be36a247ef8003c` (`Close whole-site workflow audit`); fetch and `pull --ff-only` reported current main with a clean tree.
+- Cause: dynamic `.result` fragments could place a table immediately before an H2/H3, paragraph, warning, or other next result section; global headings have no top margin. Production Fretboard Radius Matcher measured `0px` from its table bottom to `Measurement sensitivity`.
+- Fix: `scripts/assets/style.css` adds one result-only adjacent-sibling selector for `table` or `.geometry-scroll` followed by semantic result content, using the existing 24px layout rhythm. No global table margin was added; warning margin is overridden rather than doubled. The built root and `site/` CSS mirrors were regenerated.
+- Scope: 45 generated Tool result contracts checked. 16 dynamic table renderers found; 13 table-follow-up Tools receive the selector, 3 table-only renderers remain unchanged, and 29 non-table Tools remain unchanged. The requested String Gauge Change Planner, Guitar Setup Wizard, and Fret Buzz Diagnostic are in the unchanged result-shape group.
+- Local browser QA: Fretboard Radius actual result changed from production `0px` to local `24px` at 1440 px and retained 24px at 1024/768/480/390. No overflow, panel clipping, or header/H1 overlap. Requested representative 8 Tool pages had result, Run, and Reset controls at 390 px with zero console errors; Fretboard Run/Reset passed and Copy reached its normal permission fallback.
+- Static QA: build PASS (78 pages, 45 Tools); link/orphan/metadata/root-site/module checks PASS (0 failures); geometry 65 PASS; pickup-fit 15 PASS; content audit 78 Sufficient with 0 Needs/Thin/duplicate-risk/incomplete. `research/result-spacing-qa-2026-08-10.md` contains details and screenshot references.
+- Pending closeout: commit, push, Actions/Pages verification, production Fretboard result spacing measurement, then fetch and confirm clean `HEAD == origin/main`.
+
 ## Exact next task / observation trigger
 
 Do not add another cluster by default. First resolve the `www.guitarsetuplab.com` certificate SAN/proxy mismatch when authenticated GitHub Pages/DNS/Cloudflare access is available. Otherwise observe until authenticated GSC provides enough impressions, a position 5–30 query, CTR or coverage trouble, or discovery/index evidence for the seven Pickup Fit URLs; authenticated GA4 shows a repeatable workflow drop-off; or a reproducible calculation, print, or responsive defect appears.
