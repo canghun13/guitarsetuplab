@@ -1572,3 +1572,30 @@ Until every condition above is met, the exact next task for this candidate is **
 ## Exact next task / observation trigger
 
 Do not add another cluster by default. After this cluster is deployed and verified, observe Controls impressions, indexing, and real user paths when authenticated GSC/GA4 data becomes available. Revisit a held candidate only when its failed gates receive new evidence. The existing authenticated `www.guitarsetuplab.com` certificate/DNS administration issue remains separate and must not be addressed as a code workaround.
+
+---
+
+# 2026-08-11 — Tool form alignment and Pot result wrapping
+
+## Scope and implementation
+
+- Start commit: `13b307f86ee5304f47e11e91a34f7770b2923335`; clean `main` was fetched and confirmed equal to `origin/main` and remote `main` before work.
+- Audited all 50 generated Tool forms at every relevant two-column boundary. Seven Tools had one mismatched paired-control row; the other 43 were already aligned. Production's maximum control-top difference was `21.21875px`.
+- Common cause: `.fields > label` used a column flex layout, so a two-line label displaced only its own control. The shared screen CSS now reserves a two-line label row only from 801 px upward, using the existing `1.58` line height (`3.16em`) and an expanding `minmax` row. At 800 px and below the existing single-column flex labels remain unchanged.
+- Potentiometer Mounting Fit now gives only its three atomic result measurements a `.measurement-value` wrapper. This keeps number and unit together without applying `nowrap` to general tables or result cells.
+- No page-specific CSS, content, navigation, footer, GA4, email, or user-managed badge changes were made. Full evidence and affected-page detail: `research/form-alignment-result-wrap-qa-2026-08-11.md`.
+
+## Local QA
+
+- Full form browser audit: 50 Tools × 1440/1280/1101/801 = 200 measurements; post-fix misalignment, overlap/clipping, and horizontal-overflow failures 0.
+- Responsive browser audit: 11 required/representative Tools × 1024/900/768/600/480/390 = 66 measurements; overflow, clipping, and off-screen failures 0.
+- Five Controls Tools × 1440/390: Run, Copy, and Reset passed in all 10 runs; console errors/warnings 0.
+- Pot exact fixture: `0.1000 in`, `0.1200 in`, `0.2200 in` stayed one line at 1440 and 390; overflow 0 and table-to-warning gap 24 px.
+- Build/static/link/orphan/module checks PASS: 87 pages, 50 Tools, 0 failures, broken links 0, orphan pages 0, missing assets 0.
+- Fixtures: geometry 65 PASS, pickup-fit 15 PASS, control-fit 33 PASS.
+- Content audit: 87 Sufficient; all failure groups 0.
+- Print form output remains unaffected because the existing print stylesheet hides `.tool-form`.
+
+## Deployment closeout
+
+- Pending implementation commit, push, Actions/Pages completion, production browser recheck, and final documentation commit.
