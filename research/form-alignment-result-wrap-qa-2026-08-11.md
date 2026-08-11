@@ -54,4 +54,10 @@ The exact fixture produced `0.1000 in`, `0.1200 in`, and `0.2200 in`. At both 14
 
 ## Deployment closeout
 
-- Implementation commit, GitHub Actions runs, production verification, final commit, and exact local/remote hashes are recorded in `handover.md` after deployment.
+- Implementation commit: `f1a93a3e091ae48ab60d351893a26010742d0cf0` (`Align paired tool controls and pot values`).
+- Quality checks run `31456216999`: completed successfully.
+- GitHub's dynamic Pages run `31456216576`: build, report-build-status, and deploy jobs all completed successfully. Its API `head_sha` remained the immediately preceding commit, but a cache-busted production fetch matched the implementation commit's CSS byte-for-byte and did not match the preceding CSS.
+- Production form audit: all 50 Tools at 1440 plus the seven formerly affected Tools at 1280/1101/801 = 71 measurements; misalignment 0, maximum paired-control top difference 0px, horizontal overflow 0.
+- Production Pot fixture at 1440 and 390: exact values `0.1000 in`, `0.1200 in`, and `0.2200 in`; one text rect each, computed `nowrap`, document/result overflow 0, table-to-warning gap 24px, console errors/warnings 0.
+- Production Knob & Shaft row: both controls at the same `549.375px` top position at 1440, difference 0px, overflow 0.
+- Final documentation commit and exact local/remote hashes are recorded in `handover.md` and the final task report.

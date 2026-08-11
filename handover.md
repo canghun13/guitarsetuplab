@@ -1598,4 +1598,9 @@ Do not add another cluster by default. After this cluster is deployed and verifi
 
 ## Deployment closeout
 
-- Pending implementation commit, push, Actions/Pages completion, production browser recheck, and final documentation commit.
+- Implementation commit: `f1a93a3e091ae48ab60d351893a26010742d0cf0` (`Align paired tool controls and pot values`), pushed to `origin/main`; fetched remote matched the implementation commit.
+- Quality checks run [`31456216999`](https://github.com/canghun13/guitarsetuplab/actions/runs/31456216999): completed successfully.
+- Dynamic Pages run [`31456216576`](https://github.com/canghun13/guitarsetuplab/actions/runs/31456216576): build, status-report, and deploy jobs completed successfully. Although the dynamic workflow API retained the preceding SHA in its metadata, production's cache-busted CSS was byte-identical to the implementation SHA and differed from the preceding commit.
+- Production browser: all 50 Tools at 1440 plus the seven formerly affected Tools at 1280/1101/801 = 71 measurements; maximum paired-control top difference 0px, overflow 0. Pot exact values remained one line at 1440/390 with result overflow 0 and 24px warning spacing; console errors/warnings 0. Knob & Shaft's reported row difference was 0px at 1440.
+- Production screenshots were added under `research/screenshots/form-alignment-2026-08-11/`.
+- Final handover/evidence commit: this closeout commit; report its exact hash after push, then fetch and verify a clean tree with exact local/remote equality.
