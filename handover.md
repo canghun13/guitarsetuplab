@@ -1604,3 +1604,7 @@ Do not add another cluster by default. After this cluster is deployed and verifi
 - Production browser: all 50 Tools at 1440 plus the seven formerly affected Tools at 1280/1101/801 = 71 measurements; maximum paired-control top difference 0px, overflow 0. Pot exact values remained one line at 1440/390 with result overflow 0 and 24px warning spacing; console errors/warnings 0. Knob & Shaft's reported row difference was 0px at 1440.
 - Production screenshots were added under `research/screenshots/form-alignment-2026-08-11/`.
 - Final handover/evidence commit: this closeout commit; report its exact hash after push, then fetch and verify a clean tree with exact local/remote equality.
+
+# 2026-08-11
+
+- 메인 페이지 푸터 아래의 디렉토리 뱃지 영역은 사용자가 직접 관리하는 영역이므로 수정·삭제·리팩터링하지 않는다.- https://sellwithboost.com/ 에 등록 (내가 직접함)
