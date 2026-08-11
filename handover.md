@@ -1553,16 +1553,21 @@ Until every condition above is met, the exact next task for this candidate is **
 - Content audit: PASS — 87 Sufficient; Needs 0, Thin 0, duplicate-risk 0, functionally incomplete 0.
 - Browser matrix: 9 new pages × 1440/1280/1024/900/768/600/480/390 = 72 measured viewport combinations. Horizontal overflow, header/H1 overlap, off-screen panels, and abnormal columns: 0.
 - Dynamic browser QA: all five Tools passed at 1440 and 390; Copy and Reset passed in all ten runs; table-follow-up spacing measured 24 px; mobile table containment failures 0; console errors/warnings 0.
-- Evidence: 82 screenshots and two bounding/functional metrics JSON files under `research/screenshots/cluster-2026-08-11/`.
+- Evidence before deployment: 82 screenshots and two bounding/functional metrics JSON files under `research/screenshots/cluster-2026-08-11/`.
 - The package scripts were executed directly with the bundled Node executable because `npm` is not present on this shell PATH.
 
 ## Deployment closeout
 
-- Implementation commit: pending.
-- Quality checks run: pending.
-- Pages build and deployment run: pending.
-- Production verification: pending.
-- Final handover commit and clean local/remote equality: pending.
+- Implementation commit: `3d1a1b31ab6598efc7a2f772e10ca3121a9f3a9d` (`Launch control hardware fit cluster`).
+- Implementation push: `a96aa15..3d1a1b3 main -> main`; fetched `origin/main` exactly equaled the implementation commit.
+- Quality checks run [`31454725037`](https://github.com/canghun13/guitarsetuplab/actions/runs/31454725037): completed successfully.
+- Pages build and deployment run [`31454724432`](https://github.com/canghun13/guitarsetuplab/actions/runs/31454724432): completed successfully.
+- Production HTTP 200: home, Controls hub, all five Tools, guide, reference, comparison, control-fit asset, and sitemap. All expected release markers were present.
+- Production browser: five Tool results passed at 1440 and Harness passed again at 390; Copy passed in all six runs; overflow 0, mobile table-containment failure 0, 24 px follow-up spacing, console errors/warnings 0.
+- Production home retained the Controls route, `boostdomainrating.com` badge, GA4 `G-TGT88WMVDG`, and `canghun13@naver.com`.
+- Final evidence: 88 screenshots and three metrics JSON files under `research/screenshots/cluster-2026-08-11/`.
+- Final handover commit: this documentation/evidence closeout commit; report its exact hash after push.
+- Final closeout must push, fetch `origin/main`, confirm a clean tree, and confirm exact local/remote equality.
 
 ## Exact next task / observation trigger
 

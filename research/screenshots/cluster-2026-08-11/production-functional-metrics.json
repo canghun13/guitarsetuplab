@@ -1,0 +1,65 @@
+{
+  "runs": [
+    {
+      "tool": "tools/potentiometer-mounting-fit",
+      "width": 1440,
+      "documentOverflow": false,
+      "followGap": 24,
+      "resultOverflow": false,
+      "status": "entered interfaces clear",
+      "title": "Pot clears all entered dimensions",
+      "copy": "Copied"
+    },
+    {
+      "tool": "tools/knob-shaft-compatibility",
+      "width": 1440,
+      "documentOverflow": false,
+      "followGap": 24,
+      "resultOverflow": false,
+      "status": "entered interface clears",
+      "title": "Knob interface matches the entered shaft",
+      "copy": "Copied"
+    },
+    {
+      "tool": "tools/control-switch-clearance",
+      "width": 1440,
+      "documentOverflow": false,
+      "followGap": 24,
+      "resultOverflow": false,
+      "status": "entered interfaces clear",
+      "title": "Switch clears all entered envelopes",
+      "copy": "Copied"
+    },
+    {
+      "tool": "tools/output-jack-mounting-fit",
+      "width": 1440,
+      "documentOverflow": false,
+      "followGap": 24,
+      "resultOverflow": false,
+      "status": "entered interfaces clear",
+      "title": "Jack and inserted-plug envelope clear",
+      "copy": "Copied"
+    },
+    {
+      "tool": "tools/prewired-harness-layout-matcher",
+      "width": 1440,
+      "documentOverflow": false,
+      "followGap": 24,
+      "resultOverflow": false,
+      "status": "entered layout and envelope clear",
+      "title": "Hole pattern: within tolerance · cavity envelope: clears",
+      "copy": "Copied"
+    },
+    {
+      "tool": "tools/prewired-harness-layout-matcher",
+      "width": 390,
+      "documentOverflow": false,
+      "resultOverflow": false,
+      "status": "entered layout and envelope clear",
+      "tableContainment": true,
+      "title": "Hole pattern: within tolerance · cavity envelope: clears",
+      "copy": "Copied"
+    }
+  ],
+  "console": []
+}

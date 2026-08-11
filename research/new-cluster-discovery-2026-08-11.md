@@ -180,4 +180,12 @@ Planned cluster: one hub, five interactive Tools, one measurement guide, one dim
 
 ## Deployment closeout
 
-Implementation commit, GitHub Actions, GitHub Pages, production HTTP/functional checks, final handover commit, remote hash, and clean-tree equality are recorded after deployment below and in `handover.md`.
+- Implementation commit: `3d1a1b31ab6598efc7a2f772e10ca3121a9f3a9d` (`Launch control hardware fit cluster`).
+- Push: `a96aa15..3d1a1b3 main -> main`; fetched `origin/main` exactly matched the implementation commit.
+- GitHub Actions Quality checks run [`31454725037`](https://github.com/canghun13/guitarsetuplab/actions/runs/31454725037): completed successfully.
+- GitHub Pages build and deployment run [`31454724432`](https://github.com/canghun13/guitarsetuplab/actions/runs/31454724432): completed successfully.
+- Production HTTP: home, new hub, all five Tools, guide, reference, comparison, `/assets/control-fit.js`, and sitemap returned 200 with the expected release markers.
+- Production browser: all five Tools generated the expected distinct valid result at 1440 and reached `Copied`; the harness repeated successfully at 390. Document/result overflow 0, mobile table-containment failures 0, table-follow-up gap 24 px, console errors/warnings 0.
+- Production home retained Seven connected benches, the Controls route, GA4, email, and the unchanged user-managed `boostdomainrating.com` badge.
+- Six production screenshots and `production-functional-metrics.json` bring the retained evidence to 88 screenshots and three metrics files.
+- Final documentation commit, push, remote hash, clean tree, and local/remote equality are reported in the final handoff.
