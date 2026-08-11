@@ -53,8 +53,8 @@ const rows=pages.map(p=>`| \`/${p.r==='index.html'?'':p.r}\` | ${p.type} | ${p.c
 const common=[...sentencePages].filter(([,set])=>set.size>=10).sort((a,b)=>b[1].size-a[1].size).slice(0,12).map(([s,set])=>`- ${set.size} pages: “${s}”`).join('\n')||'- None.';
 const report=`# Content-depth audit
 
-Generated: ${new Date().toISOString()}  
-Scope: all generated public HTML in \`site/\` (71 pages expected)
+Generated: ${new Date().toISOString()}
+Scope: all generated public HTML in \`site/\` (87 pages expected)
 
 ## Initial baseline at \`98df55e\`
 
@@ -116,4 +116,4 @@ ${counts('needs')===0?'PASS':'FAIL'} — Needs reinforcement ${classes['Needs re
 `;
 if(!checkOnly)await writeFile(reportPath,report);
 console.log(`Audited ${pages.length} pages: Strong ${classes.Strong}, Sufficient ${classes.Sufficient}, Needs ${classes['Needs reinforcement']}, Thin ${classes.Thin}, duplicate-risk ${counts('duplicateRisk')}, incomplete ${counts('functionallyIncomplete')}.`);
-if(pages.length!==78||counts('needs'))process.exitCode=1;
+if(pages.length!==87||counts('needs'))process.exitCode=1;

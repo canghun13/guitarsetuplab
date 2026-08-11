@@ -1524,3 +1524,46 @@ Do not add another cluster by default. First resolve the `www.guitarsetuplab.com
 Do not build this cluster until four independent query/workflow groups have authenticated demand evidence; tang/slot screening has a sourced non-prescriptive protocol plus physical fixtures; remaining-crown planning has measured removal evidence and technician/PLEK validation without a universal threshold; and the fourth tool remains distinct after excluding product catalogs, Repair Quote/condition/document workflows, and current radius/geometry tools.
 
 Until every condition above is met, the exact next task for this candidate is **none — remain on HOLD**. Repository-wide operational priorities recorded earlier, including authenticated `www` certificate correction and GSC/GA4 observation triggers, remain unchanged and were intentionally not started in this scoped revalidation.
+
+---
+
+# 2026-08-11 — New-cluster discovery and Control Hardware Fit & Layout release
+
+## Repository and decision
+
+- Safe synchronization start commit: `a96aa15010193adc8368a9538dfb8ea7bab65210`; the tree was clean and local `main`, `origin/main`, and remote `main` matched before work.
+- The discovery pass reviewed 13 new search areas and compressed six candidates for deep comparison. Recent Pickup Fit, held Fretwire/Refret, and rejected Nut/Acoustic Saddle/Humidity subjects were excluded.
+- Final decision: **GO 90/100** for Control Hardware Fit & Layout — Monetization 37/40, Traffic 30/35, Competition gap 23/25. Hard Gates A–J all passed.
+- Research and exact source trail: `research/new-cluster-discovery-2026-08-11.md`.
+
+## Implementation
+
+- Added one Controls hub; five Tools for pot mounting, knob/shaft compatibility, control-switch clearance, output-jack mounting, and prewired-harness layout; one measurement guide; one dimension reference; and one metric-vs-imperial comparison.
+- Added shared pure logic in `scripts/assets/control-fit.js`, UI rendering in `scripts/assets/app.js`, and 33 control-fit assertions in `scripts/control-fit-test.mjs`.
+- The harness matcher applies centroid translation only, reports per-hole/max/RMS residuals, and deliberately does not rotate, mirror, or scale candidate geometry.
+- Added explicit three-target workflows for all five Tools and connected the existing Potentiometer Value Selector to physical pot/knob fit checks.
+- Final generated inventory: 87 public HTML pages, 50 interactive Tools, 8 hubs, 12 guides, 8 references, 4 comparisons, 5 basic pages, and 86 sitemap URLs (404 excluded).
+- The root-only user-managed `boostdomainrating.com` badge remains exactly present; the generated `site/` mirror omits it by the established deployment contract.
+
+## QA before deployment
+
+- Build: PASS — 87 pages and 50 Tools.
+- Static/SEO/link/module: PASS — 0 failures, broken links 0, orphan pages 0, missing assets 0.
+- Fixtures: geometry 65 PASS, pickup-fit 15 PASS, control-fit 33 PASS.
+- Content audit: PASS — 87 Sufficient; Needs 0, Thin 0, duplicate-risk 0, functionally incomplete 0.
+- Browser matrix: 9 new pages × 1440/1280/1024/900/768/600/480/390 = 72 measured viewport combinations. Horizontal overflow, header/H1 overlap, off-screen panels, and abnormal columns: 0.
+- Dynamic browser QA: all five Tools passed at 1440 and 390; Copy and Reset passed in all ten runs; table-follow-up spacing measured 24 px; mobile table containment failures 0; console errors/warnings 0.
+- Evidence: 82 screenshots and two bounding/functional metrics JSON files under `research/screenshots/cluster-2026-08-11/`.
+- The package scripts were executed directly with the bundled Node executable because `npm` is not present on this shell PATH.
+
+## Deployment closeout
+
+- Implementation commit: pending.
+- Quality checks run: pending.
+- Pages build and deployment run: pending.
+- Production verification: pending.
+- Final handover commit and clean local/remote equality: pending.
+
+## Exact next task / observation trigger
+
+Do not add another cluster by default. After this cluster is deployed and verified, observe Controls impressions, indexing, and real user paths when authenticated GSC/GA4 data becomes available. Revisit a held candidate only when its failed gates receive new evidence. The existing authenticated `www.guitarsetuplab.com` certificate/DNS administration issue remains separate and must not be addressed as a code workaround.

@@ -1,0 +1,3362 @@
+[
+  {
+    "path": "categories/controls",
+    "width": 1440,
+    "columns": null,
+    "form": null,
+    "h1": {
+      "bottom": 325.6875,
+      "height": 155.5,
+      "right": 1116.5,
+      "width": 980,
+      "x": 136.5,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 1425,
+      "width": 1425,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 2195,
+      "height": 2123,
+      "right": 1312.5,
+      "width": 1200,
+      "x": 112.5,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": null,
+    "scrollWidth": 1425,
+    "viewport": 1425,
+    "workspace": null
+  },
+  {
+    "path": "tools/potentiometer-mounting-fit",
+    "width": 1440,
+    "columns": "558px 558px",
+    "form": {
+      "bottom": 1227.515625,
+      "height": 693.609375,
+      "right": 694.5,
+      "width": 558,
+      "x": 136.5,
+      "y": 533.90625
+    },
+    "h1": {
+      "bottom": 325.6875,
+      "height": 155.5,
+      "right": 1116.5,
+      "width": 980,
+      "x": 136.5,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 1425,
+      "width": 1425,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 4110.34375,
+      "height": 4038.34375,
+      "right": 1312.5,
+      "width": 1200,
+      "x": 112.5,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": {
+      "bottom": 763.09375,
+      "height": 229.1875,
+      "right": 1288.5,
+      "width": 558,
+      "x": 730.5,
+      "y": 533.90625
+    },
+    "scrollWidth": 1425,
+    "viewport": 1425,
+    "workspace": {
+      "bottom": 1227.515625,
+      "height": 693.609375,
+      "right": 1288.5,
+      "width": 1152,
+      "x": 136.5,
+      "y": 533.90625
+    }
+  },
+  {
+    "path": "tools/knob-shaft-compatibility",
+    "width": 1440,
+    "columns": "558px 558px",
+    "form": {
+      "bottom": 1333.515625,
+      "height": 799.609375,
+      "right": 694.5,
+      "width": 558,
+      "x": 136.5,
+      "y": 533.90625
+    },
+    "h1": {
+      "bottom": 325.6875,
+      "height": 155.5,
+      "right": 1116.5,
+      "width": 980,
+      "x": 136.5,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 1425,
+      "width": 1425,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 4460.5625,
+      "height": 4388.5625,
+      "right": 1312.5,
+      "width": 1200,
+      "x": 112.5,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": {
+      "bottom": 763.09375,
+      "height": 229.1875,
+      "right": 1288.5,
+      "width": 558,
+      "x": 730.5,
+      "y": 533.90625
+    },
+    "scrollWidth": 1425,
+    "viewport": 1425,
+    "workspace": {
+      "bottom": 1333.515625,
+      "height": 799.609375,
+      "right": 1288.5,
+      "width": 1152,
+      "x": 136.5,
+      "y": 533.90625
+    }
+  },
+  {
+    "path": "tools/control-switch-clearance",
+    "width": 1440,
+    "columns": "558px 558px",
+    "form": {
+      "bottom": 1315.953125,
+      "height": 782.046875,
+      "right": 694.5,
+      "width": 558,
+      "x": 136.5,
+      "y": 533.90625
+    },
+    "h1": {
+      "bottom": 325.6875,
+      "height": 155.5,
+      "right": 1116.5,
+      "width": 980,
+      "x": 136.5,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 1425,
+      "width": 1425,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 4390.4375,
+      "height": 4318.4375,
+      "right": 1312.5,
+      "width": 1200,
+      "x": 112.5,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": {
+      "bottom": 763.09375,
+      "height": 229.1875,
+      "right": 1288.5,
+      "width": 558,
+      "x": 730.5,
+      "y": 533.90625
+    },
+    "scrollWidth": 1425,
+    "viewport": 1425,
+    "workspace": {
+      "bottom": 1315.953125,
+      "height": 782.046875,
+      "right": 1288.5,
+      "width": 1152,
+      "x": 136.5,
+      "y": 533.90625
+    }
+  },
+  {
+    "path": "tools/output-jack-mounting-fit",
+    "width": 1440,
+    "columns": "558px 558px",
+    "form": {
+      "bottom": 1424.390625,
+      "height": 890.484375,
+      "right": 694.5,
+      "width": 558,
+      "x": 136.5,
+      "y": 533.90625
+    },
+    "h1": {
+      "bottom": 325.6875,
+      "height": 155.5,
+      "right": 1116.5,
+      "width": 980,
+      "x": 136.5,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 1425,
+      "width": 1425,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 4664.25,
+      "height": 4592.25,
+      "right": 1312.5,
+      "width": 1200,
+      "x": 112.5,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": {
+      "bottom": 763.09375,
+      "height": 229.1875,
+      "right": 1288.5,
+      "width": 558,
+      "x": 730.5,
+      "y": 533.90625
+    },
+    "scrollWidth": 1425,
+    "viewport": 1425,
+    "workspace": {
+      "bottom": 1424.390625,
+      "height": 890.484375,
+      "right": 1288.5,
+      "width": 1152,
+      "x": 136.5,
+      "y": 533.90625
+    }
+  },
+  {
+    "path": "tools/prewired-harness-layout-matcher",
+    "width": 1440,
+    "columns": "558px 558px",
+    "form": {
+      "bottom": 1435.515625,
+      "height": 901.609375,
+      "right": 694.5,
+      "width": 558,
+      "x": 136.5,
+      "y": 533.90625
+    },
+    "h1": {
+      "bottom": 325.6875,
+      "height": 155.5,
+      "right": 1116.5,
+      "width": 980,
+      "x": 136.5,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 1425,
+      "width": 1425,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 4562.5625,
+      "height": 4490.5625,
+      "right": 1312.5,
+      "width": 1200,
+      "x": 112.5,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": {
+      "bottom": 763.09375,
+      "height": 229.1875,
+      "right": 1288.5,
+      "width": 558,
+      "x": 730.5,
+      "y": 533.90625
+    },
+    "scrollWidth": 1425,
+    "viewport": 1425,
+    "workspace": {
+      "bottom": 1435.515625,
+      "height": 901.609375,
+      "right": 1288.5,
+      "width": 1152,
+      "x": 136.5,
+      "y": 533.90625
+    }
+  },
+  {
+    "path": "guides/control-hardware-measurement",
+    "width": 1440,
+    "columns": null,
+    "form": null,
+    "h1": {
+      "bottom": 325.6875,
+      "height": 155.5,
+      "right": 1116.5,
+      "width": 980,
+      "x": 136.5,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 1425,
+      "width": 1425,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 2771.21875,
+      "height": 2699.21875,
+      "right": 1312.5,
+      "width": 1200,
+      "x": 112.5,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": null,
+    "scrollWidth": 1425,
+    "viewport": 1425,
+    "workspace": null
+  },
+  {
+    "path": "reference/control-hardware-dimensions",
+    "width": 1440,
+    "columns": null,
+    "form": null,
+    "h1": {
+      "bottom": 325.6875,
+      "height": 155.5,
+      "right": 1116.5,
+      "width": 980,
+      "x": 136.5,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 1425,
+      "width": 1425,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 2731.953125,
+      "height": 2659.953125,
+      "right": 1312.5,
+      "width": 1200,
+      "x": 112.5,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": null,
+    "scrollWidth": 1425,
+    "viewport": 1425,
+    "workspace": null
+  },
+  {
+    "path": "comparisons/metric-vs-imperial-control-hardware",
+    "width": 1440,
+    "columns": null,
+    "form": null,
+    "h1": {
+      "bottom": 325.6875,
+      "height": 155.5,
+      "right": 1116.5,
+      "width": 980,
+      "x": 136.5,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 1425,
+      "width": 1425,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 2569.265625,
+      "height": 2497.265625,
+      "right": 1312.5,
+      "width": 1200,
+      "x": 112.5,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": null,
+    "scrollWidth": 1425,
+    "viewport": 1425,
+    "workspace": null
+  },
+  {
+    "path": "categories/controls",
+    "width": 1280,
+    "columns": null,
+    "form": null,
+    "h1": {
+      "bottom": 239.296875,
+      "height": 69.109375,
+      "right": 1036.5,
+      "width": 980,
+      "x": 56.5,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 1265,
+      "width": 1265,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 2041.203125,
+      "height": 1969.203125,
+      "right": 1232.5,
+      "width": 1200,
+      "x": 32.5,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": null,
+    "scrollWidth": 1265,
+    "viewport": 1265,
+    "workspace": null
+  },
+  {
+    "path": "tools/potentiometer-mounting-fit",
+    "width": 1280,
+    "columns": "558px 558px",
+    "form": {
+      "bottom": 1205.046875,
+      "height": 688.421875,
+      "right": 614.5,
+      "width": 558,
+      "x": 56.5,
+      "y": 516.625
+    },
+    "h1": {
+      "bottom": 308.40625,
+      "height": 138.21875,
+      "right": 1036.5,
+      "width": 980,
+      "x": 56.5,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 1265,
+      "width": 1265,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 4047.921875,
+      "height": 3975.921875,
+      "right": 1232.5,
+      "width": 1200,
+      "x": 32.5,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": {
+      "bottom": 745.8125,
+      "height": 229.1875,
+      "right": 1208.5,
+      "width": 558,
+      "x": 650.5,
+      "y": 516.625
+    },
+    "scrollWidth": 1265,
+    "viewport": 1265,
+    "workspace": {
+      "bottom": 1205.046875,
+      "height": 688.421875,
+      "right": 1208.5,
+      "width": 1152,
+      "x": 56.5,
+      "y": 516.625
+    }
+  },
+  {
+    "path": "tools/knob-shaft-compatibility",
+    "width": 1280,
+    "columns": "558px 558px",
+    "form": {
+      "bottom": 1311.046875,
+      "height": 794.421875,
+      "right": 614.5,
+      "width": 558,
+      "x": 56.5,
+      "y": 516.625
+    },
+    "h1": {
+      "bottom": 308.40625,
+      "height": 138.21875,
+      "right": 1036.5,
+      "width": 980,
+      "x": 56.5,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 1265,
+      "width": 1265,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 4398.140625,
+      "height": 4326.140625,
+      "right": 1232.5,
+      "width": 1200,
+      "x": 32.5,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": {
+      "bottom": 745.8125,
+      "height": 229.1875,
+      "right": 1208.5,
+      "width": 558,
+      "x": 650.5,
+      "y": 516.625
+    },
+    "scrollWidth": 1265,
+    "viewport": 1265,
+    "workspace": {
+      "bottom": 1311.046875,
+      "height": 794.421875,
+      "right": 1208.5,
+      "width": 1152,
+      "x": 56.5,
+      "y": 516.625
+    }
+  },
+  {
+    "path": "tools/control-switch-clearance",
+    "width": 1280,
+    "columns": "558px 558px",
+    "form": {
+      "bottom": 1293.484375,
+      "height": 776.859375,
+      "right": 614.5,
+      "width": 558,
+      "x": 56.5,
+      "y": 516.625
+    },
+    "h1": {
+      "bottom": 308.40625,
+      "height": 138.21875,
+      "right": 1036.5,
+      "width": 980,
+      "x": 56.5,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 1265,
+      "width": 1265,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 4328.015625,
+      "height": 4256.015625,
+      "right": 1232.5,
+      "width": 1200,
+      "x": 32.5,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": {
+      "bottom": 745.8125,
+      "height": 229.1875,
+      "right": 1208.5,
+      "width": 558,
+      "x": 650.5,
+      "y": 516.625
+    },
+    "scrollWidth": 1265,
+    "viewport": 1265,
+    "workspace": {
+      "bottom": 1293.484375,
+      "height": 776.859375,
+      "right": 1208.5,
+      "width": 1152,
+      "x": 56.5,
+      "y": 516.625
+    }
+  },
+  {
+    "path": "tools/output-jack-mounting-fit",
+    "width": 1280,
+    "columns": "558px 558px",
+    "form": {
+      "bottom": 1401.921875,
+      "height": 885.296875,
+      "right": 614.5,
+      "width": 558,
+      "x": 56.5,
+      "y": 516.625
+    },
+    "h1": {
+      "bottom": 308.40625,
+      "height": 138.21875,
+      "right": 1036.5,
+      "width": 980,
+      "x": 56.5,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 1265,
+      "width": 1265,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 4601.828125,
+      "height": 4529.828125,
+      "right": 1232.5,
+      "width": 1200,
+      "x": 32.5,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": {
+      "bottom": 745.8125,
+      "height": 229.1875,
+      "right": 1208.5,
+      "width": 558,
+      "x": 650.5,
+      "y": 516.625
+    },
+    "scrollWidth": 1265,
+    "viewport": 1265,
+    "workspace": {
+      "bottom": 1401.921875,
+      "height": 885.296875,
+      "right": 1208.5,
+      "width": 1152,
+      "x": 56.5,
+      "y": 516.625
+    }
+  },
+  {
+    "path": "tools/prewired-harness-layout-matcher",
+    "width": 1280,
+    "columns": "558px 558px",
+    "form": {
+      "bottom": 1413.046875,
+      "height": 896.421875,
+      "right": 614.5,
+      "width": 558,
+      "x": 56.5,
+      "y": 516.625
+    },
+    "h1": {
+      "bottom": 308.40625,
+      "height": 138.21875,
+      "right": 1036.5,
+      "width": 980,
+      "x": 56.5,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 1265,
+      "width": 1265,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 4500.140625,
+      "height": 4428.140625,
+      "right": 1232.5,
+      "width": 1200,
+      "x": 32.5,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": {
+      "bottom": 745.8125,
+      "height": 229.1875,
+      "right": 1208.5,
+      "width": 558,
+      "x": 650.5,
+      "y": 516.625
+    },
+    "scrollWidth": 1265,
+    "viewport": 1265,
+    "workspace": {
+      "bottom": 1413.046875,
+      "height": 896.421875,
+      "right": 1208.5,
+      "width": 1152,
+      "x": 56.5,
+      "y": 516.625
+    }
+  },
+  {
+    "path": "guides/control-hardware-measurement",
+    "width": 1280,
+    "columns": null,
+    "form": null,
+    "h1": {
+      "bottom": 308.40625,
+      "height": 138.21875,
+      "right": 1036.5,
+      "width": 980,
+      "x": 56.5,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 1265,
+      "width": 1265,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 2712.4375,
+      "height": 2640.4375,
+      "right": 1232.5,
+      "width": 1200,
+      "x": 32.5,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": null,
+    "scrollWidth": 1265,
+    "viewport": 1265,
+    "workspace": null
+  },
+  {
+    "path": "reference/control-hardware-dimensions",
+    "width": 1280,
+    "columns": null,
+    "form": null,
+    "h1": {
+      "bottom": 308.40625,
+      "height": 138.21875,
+      "right": 1036.5,
+      "width": 980,
+      "x": 56.5,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 1265,
+      "width": 1265,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 2683.546875,
+      "height": 2611.546875,
+      "right": 1232.5,
+      "width": 1200,
+      "x": 32.5,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": null,
+    "scrollWidth": 1265,
+    "viewport": 1265,
+    "workspace": null
+  },
+  {
+    "path": "comparisons/metric-vs-imperial-control-hardware",
+    "width": 1280,
+    "columns": null,
+    "form": null,
+    "h1": {
+      "bottom": 308.40625,
+      "height": 138.21875,
+      "right": 1036.5,
+      "width": 980,
+      "x": 56.5,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 1265,
+      "width": 1265,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 2515.671875,
+      "height": 2443.671875,
+      "right": 1232.5,
+      "width": 1200,
+      "x": 32.5,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": null,
+    "scrollWidth": 1265,
+    "viewport": 1265,
+    "workspace": null
+  },
+  {
+    "path": "categories/controls",
+    "width": 1024,
+    "columns": null,
+    "form": null,
+    "h1": {
+      "bottom": 225.484375,
+      "height": 55.296875,
+      "right": 985,
+      "width": 961,
+      "x": 24,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 1009,
+      "width": 1009,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 2042.34375,
+      "height": 1970.34375,
+      "right": 1009,
+      "width": 1009,
+      "x": 0,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": null,
+    "scrollWidth": 1009,
+    "viewport": 1009,
+    "workspace": null
+  },
+  {
+    "path": "tools/potentiometer-mounting-fit",
+    "width": 1024,
+    "columns": "961px",
+    "form": {
+      "bottom": 1087.578125,
+      "height": 657.375,
+      "right": 985,
+      "width": 961,
+      "x": 24,
+      "y": 430.203125
+    },
+    "h1": {
+      "bottom": 225.484375,
+      "height": 55.296875,
+      "right": 985,
+      "width": 961,
+      "x": 24,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 1009,
+      "width": 1009,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 4319.34375,
+      "height": 4247.34375,
+      "right": 1009,
+      "width": 1009,
+      "x": 0,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": {
+      "bottom": 1311.203125,
+      "height": 195.625,
+      "right": 985,
+      "width": 961,
+      "x": 24,
+      "y": 1115.578125
+    },
+    "scrollWidth": 1009,
+    "viewport": 1009,
+    "workspace": {
+      "bottom": 1311.203125,
+      "height": 881,
+      "right": 985,
+      "width": 961,
+      "x": 24,
+      "y": 430.203125
+    }
+  },
+  {
+    "path": "tools/knob-shaft-compatibility",
+    "width": 1024,
+    "columns": "961px",
+    "form": {
+      "bottom": 1227.65625,
+      "height": 742.15625,
+      "right": 985,
+      "width": 961,
+      "x": 24,
+      "y": 485.5
+    },
+    "h1": {
+      "bottom": 280.78125,
+      "height": 110.59375,
+      "right": 985,
+      "width": 961,
+      "x": 24,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 1009,
+      "width": 1009,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 4624.796875,
+      "height": 4552.796875,
+      "right": 1009,
+      "width": 1009,
+      "x": 0,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": {
+      "bottom": 1451.28125,
+      "height": 195.625,
+      "right": 985,
+      "width": 961,
+      "x": 24,
+      "y": 1255.65625
+    },
+    "scrollWidth": 1009,
+    "viewport": 1009,
+    "workspace": {
+      "bottom": 1451.28125,
+      "height": 965.78125,
+      "right": 985,
+      "width": 961,
+      "x": 24,
+      "y": 485.5
+    }
+  },
+  {
+    "path": "tools/control-switch-clearance",
+    "width": 1024,
+    "columns": "961px",
+    "form": {
+      "bottom": 1231.3125,
+      "height": 745.8125,
+      "right": 985,
+      "width": 961,
+      "x": 24,
+      "y": 485.5
+    },
+    "h1": {
+      "bottom": 280.78125,
+      "height": 110.59375,
+      "right": 985,
+      "width": 961,
+      "x": 24,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 1009,
+      "width": 1009,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 4602.171875,
+      "height": 4530.171875,
+      "right": 1009,
+      "width": 1009,
+      "x": 0,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": {
+      "bottom": 1454.9375,
+      "height": 195.625,
+      "right": 985,
+      "width": 961,
+      "x": 24,
+      "y": 1259.3125
+    },
+    "scrollWidth": 1009,
+    "viewport": 1009,
+    "workspace": {
+      "bottom": 1454.9375,
+      "height": 969.4375,
+      "right": 985,
+      "width": 961,
+      "x": 24,
+      "y": 485.5
+    }
+  },
+  {
+    "path": "tools/output-jack-mounting-fit",
+    "width": 1024,
+    "columns": "961px",
+    "form": {
+      "bottom": 1230.875,
+      "height": 833.03125,
+      "right": 985,
+      "width": 961,
+      "x": 24,
+      "y": 397.84375
+    },
+    "h1": {
+      "bottom": 225.484375,
+      "height": 55.296875,
+      "right": 985,
+      "width": 961,
+      "x": 24,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 1009,
+      "width": 1009,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 4714.546875,
+      "height": 4642.546875,
+      "right": 1009,
+      "width": 1009,
+      "x": 0,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": {
+      "bottom": 1454.5,
+      "height": 195.625,
+      "right": 985,
+      "width": 961,
+      "x": 24,
+      "y": 1258.875
+    },
+    "scrollWidth": 1009,
+    "viewport": 1009,
+    "workspace": {
+      "bottom": 1454.5,
+      "height": 1056.65625,
+      "right": 985,
+      "width": 961,
+      "x": 24,
+      "y": 397.84375
+    }
+  },
+  {
+    "path": "tools/prewired-harness-layout-matcher",
+    "width": 1024,
+    "columns": "961px",
+    "form": {
+      "bottom": 1295.578125,
+      "height": 865.375,
+      "right": 985,
+      "width": 961,
+      "x": 24,
+      "y": 430.203125
+    },
+    "h1": {
+      "bottom": 225.484375,
+      "height": 55.296875,
+      "right": 985,
+      "width": 961,
+      "x": 24,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 1009,
+      "width": 1009,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 4719,
+      "height": 4647,
+      "right": 1009,
+      "width": 1009,
+      "x": 0,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": {
+      "bottom": 1519.203125,
+      "height": 195.625,
+      "right": 985,
+      "width": 961,
+      "x": 24,
+      "y": 1323.578125
+    },
+    "scrollWidth": 1009,
+    "viewport": 1009,
+    "workspace": {
+      "bottom": 1519.203125,
+      "height": 1089,
+      "right": 985,
+      "width": 961,
+      "x": 24,
+      "y": 430.203125
+    }
+  },
+  {
+    "path": "guides/control-hardware-measurement",
+    "width": 1024,
+    "columns": null,
+    "form": null,
+    "h1": {
+      "bottom": 280.78125,
+      "height": 110.59375,
+      "right": 985,
+      "width": 961,
+      "x": 24,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 1009,
+      "width": 1009,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 2536.75,
+      "height": 2464.75,
+      "right": 1009,
+      "width": 1009,
+      "x": 0,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": null,
+    "scrollWidth": 1009,
+    "viewport": 1009,
+    "workspace": null
+  },
+  {
+    "path": "reference/control-hardware-dimensions",
+    "width": 1024,
+    "columns": null,
+    "form": null,
+    "h1": {
+      "bottom": 280.78125,
+      "height": 110.59375,
+      "right": 985,
+      "width": 961,
+      "x": 24,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 1009,
+      "width": 1009,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 2577.015625,
+      "height": 2505.015625,
+      "right": 1009,
+      "width": 1009,
+      "x": 0,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": null,
+    "scrollWidth": 1009,
+    "viewport": 1009,
+    "workspace": null
+  },
+  {
+    "path": "comparisons/metric-vs-imperial-control-hardware",
+    "width": 1024,
+    "columns": null,
+    "form": null,
+    "h1": {
+      "bottom": 280.78125,
+      "height": 110.59375,
+      "right": 985,
+      "width": 961,
+      "x": 24,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 1009,
+      "width": 1009,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 2374.5625,
+      "height": 2302.5625,
+      "right": 1009,
+      "width": 1009,
+      "x": 0,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": null,
+    "scrollWidth": 1009,
+    "viewport": 1009,
+    "workspace": null
+  },
+  {
+    "path": "categories/controls",
+    "width": 900,
+    "columns": null,
+    "form": null,
+    "h1": {
+      "bottom": 218.78125,
+      "height": 48.59375,
+      "right": 861,
+      "width": 837,
+      "x": 24,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 885,
+      "width": 885,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 2057.515625,
+      "height": 1985.515625,
+      "right": 885,
+      "width": 885,
+      "x": 0,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": null,
+    "scrollWidth": 885,
+    "viewport": 885,
+    "workspace": null
+  },
+  {
+    "path": "tools/potentiometer-mounting-fit",
+    "width": 900,
+    "columns": "837px",
+    "form": {
+      "bottom": 1064.953125,
+      "height": 649.296875,
+      "right": 861,
+      "width": 837,
+      "x": 24,
+      "y": 415.65625
+    },
+    "h1": {
+      "bottom": 218.78125,
+      "height": 48.59375,
+      "right": 861,
+      "width": 837,
+      "x": 24,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 885,
+      "width": 885,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 4518.84375,
+      "height": 4446.84375,
+      "right": 885,
+      "width": 885,
+      "x": 0,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": {
+      "bottom": 1278.5625,
+      "height": 185.609375,
+      "right": 861,
+      "width": 837,
+      "x": 24,
+      "y": 1092.953125
+    },
+    "scrollWidth": 885,
+    "viewport": 885,
+    "workspace": {
+      "bottom": 1278.5625,
+      "height": 862.90625,
+      "right": 861,
+      "width": 837,
+      "x": 24,
+      "y": 415.65625
+    }
+  },
+  {
+    "path": "tools/knob-shaft-compatibility",
+    "width": 900,
+    "columns": "837px",
+    "form": {
+      "bottom": 1169.890625,
+      "height": 734.078125,
+      "right": 861,
+      "width": 837,
+      "x": 24,
+      "y": 435.8125
+    },
+    "h1": {
+      "bottom": 267.375,
+      "height": 97.1875,
+      "right": 861,
+      "width": 837,
+      "x": 24,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 885,
+      "width": 885,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 4815.4375,
+      "height": 4743.4375,
+      "right": 885,
+      "width": 885,
+      "x": 0,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": {
+      "bottom": 1383.5,
+      "height": 185.609375,
+      "right": 861,
+      "width": 837,
+      "x": 24,
+      "y": 1197.890625
+    },
+    "scrollWidth": 885,
+    "viewport": 885,
+    "workspace": {
+      "bottom": 1383.5,
+      "height": 947.6875,
+      "right": 861,
+      "width": 837,
+      "x": 24,
+      "y": 435.8125
+    }
+  },
+  {
+    "path": "tools/control-switch-clearance",
+    "width": 900,
+    "columns": "837px",
+    "form": {
+      "bottom": 1173.546875,
+      "height": 737.734375,
+      "right": 861,
+      "width": 837,
+      "x": 24,
+      "y": 435.8125
+    },
+    "h1": {
+      "bottom": 267.375,
+      "height": 97.1875,
+      "right": 861,
+      "width": 837,
+      "x": 24,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 885,
+      "width": 885,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 4845.375,
+      "height": 4773.375,
+      "right": 885,
+      "width": 885,
+      "x": 0,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": {
+      "bottom": 1387.15625,
+      "height": 185.609375,
+      "right": 861,
+      "width": 837,
+      "x": 24,
+      "y": 1201.546875
+    },
+    "scrollWidth": 885,
+    "viewport": 885,
+    "workspace": {
+      "bottom": 1387.15625,
+      "height": 951.34375,
+      "right": 861,
+      "width": 837,
+      "x": 24,
+      "y": 435.8125
+    }
+  },
+  {
+    "path": "tools/output-jack-mounting-fit",
+    "width": 900,
+    "columns": "837px",
+    "form": {
+      "bottom": 1212.171875,
+      "height": 824.953125,
+      "right": 861,
+      "width": 837,
+      "x": 24,
+      "y": 387.21875
+    },
+    "h1": {
+      "bottom": 218.78125,
+      "height": 48.59375,
+      "right": 861,
+      "width": 837,
+      "x": 24,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 885,
+      "width": 885,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 4996.8125,
+      "height": 4924.8125,
+      "right": 885,
+      "width": 885,
+      "x": 0,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": {
+      "bottom": 1425.78125,
+      "height": 185.609375,
+      "right": 861,
+      "width": 837,
+      "x": 24,
+      "y": 1240.171875
+    },
+    "scrollWidth": 885,
+    "viewport": 885,
+    "workspace": {
+      "bottom": 1425.78125,
+      "height": 1038.5625,
+      "right": 861,
+      "width": 837,
+      "x": 24,
+      "y": 387.21875
+    }
+  },
+  {
+    "path": "tools/prewired-harness-layout-matcher",
+    "width": 900,
+    "columns": "837px",
+    "form": {
+      "bottom": 1272.953125,
+      "height": 857.296875,
+      "right": 861,
+      "width": 837,
+      "x": 24,
+      "y": 415.65625
+    },
+    "h1": {
+      "bottom": 218.78125,
+      "height": 48.59375,
+      "right": 861,
+      "width": 837,
+      "x": 24,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 885,
+      "width": 885,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 4839.65625,
+      "height": 4767.65625,
+      "right": 885,
+      "width": 885,
+      "x": 0,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": {
+      "bottom": 1486.5625,
+      "height": 185.609375,
+      "right": 861,
+      "width": 837,
+      "x": 24,
+      "y": 1300.953125
+    },
+    "scrollWidth": 885,
+    "viewport": 885,
+    "workspace": {
+      "bottom": 1486.5625,
+      "height": 1070.90625,
+      "right": 861,
+      "width": 837,
+      "x": 24,
+      "y": 415.65625
+    }
+  },
+  {
+    "path": "guides/control-hardware-measurement",
+    "width": 900,
+    "columns": null,
+    "form": null,
+    "h1": {
+      "bottom": 267.375,
+      "height": 97.1875,
+      "right": 861,
+      "width": 837,
+      "x": 24,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 885,
+      "width": 885,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 2460.21875,
+      "height": 2388.21875,
+      "right": 885,
+      "width": 885,
+      "x": 0,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": null,
+    "scrollWidth": 885,
+    "viewport": 885,
+    "workspace": null
+  },
+  {
+    "path": "reference/control-hardware-dimensions",
+    "width": 900,
+    "columns": null,
+    "form": null,
+    "h1": {
+      "bottom": 267.375,
+      "height": 97.1875,
+      "right": 861,
+      "width": 837,
+      "x": 24,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 885,
+      "width": 885,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 2504.640625,
+      "height": 2432.640625,
+      "right": 885,
+      "width": 885,
+      "x": 0,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": null,
+    "scrollWidth": 885,
+    "viewport": 885,
+    "workspace": null
+  },
+  {
+    "path": "comparisons/metric-vs-imperial-control-hardware",
+    "width": 900,
+    "columns": null,
+    "form": null,
+    "h1": {
+      "bottom": 267.375,
+      "height": 97.1875,
+      "right": 861,
+      "width": 837,
+      "x": 24,
+      "y": 170.1875
+    },
+    "header": {
+      "bottom": 72,
+      "height": 72,
+      "right": 885,
+      "width": 885,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 2326.390625,
+      "height": 2254.390625,
+      "right": 885,
+      "width": 885,
+      "x": 0,
+      "y": 72
+    },
+    "navToggle": "none",
+    "result": null,
+    "scrollWidth": 885,
+    "viewport": 885,
+    "workspace": null
+  },
+  {
+    "path": "categories/controls",
+    "width": 768,
+    "columns": null,
+    "form": null,
+    "h1": {
+      "bottom": 201.640625,
+      "height": 43.1875,
+      "right": 735,
+      "width": 717,
+      "x": 18,
+      "y": 158.453125
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 753,
+      "width": 753,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 2551.8125,
+      "height": 2481.546875,
+      "right": 753,
+      "width": 753,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": null,
+    "scrollWidth": 753,
+    "viewport": 753,
+    "workspace": null
+  },
+  {
+    "path": "tools/potentiometer-mounting-fit",
+    "width": 768,
+    "columns": "717px",
+    "form": {
+      "bottom": 1389.0625,
+      "height": 995.828125,
+      "right": 735,
+      "width": 717,
+      "x": 18,
+      "y": 393.234375
+    },
+    "h1": {
+      "bottom": 201.640625,
+      "height": 43.1875,
+      "right": 735,
+      "width": 717,
+      "x": 18,
+      "y": 158.453125
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 753,
+      "width": 753,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 4967.296875,
+      "height": 4897.03125,
+      "right": 753,
+      "width": 753,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": {
+      "bottom": 1619.546875,
+      "height": 202.484375,
+      "right": 735,
+      "width": 717,
+      "x": 18,
+      "y": 1417.0625
+    },
+    "scrollWidth": 753,
+    "viewport": 753,
+    "workspace": {
+      "bottom": 1619.546875,
+      "height": 1226.3125,
+      "right": 735,
+      "width": 717,
+      "x": 18,
+      "y": 393.234375
+    }
+  },
+  {
+    "path": "tools/knob-shaft-compatibility",
+    "width": 768,
+    "columns": "717px",
+    "form": {
+      "bottom": 1576.953125,
+      "height": 1167.828125,
+      "right": 735,
+      "width": 717,
+      "x": 18,
+      "y": 409.125
+    },
+    "h1": {
+      "bottom": 244.828125,
+      "height": 86.375,
+      "right": 735,
+      "width": 717,
+      "x": 18,
+      "y": 158.453125
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 753,
+      "width": 753,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 5373.125,
+      "height": 5302.859375,
+      "right": 753,
+      "width": 753,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": {
+      "bottom": 1807.4375,
+      "height": 202.484375,
+      "right": 735,
+      "width": 717,
+      "x": 18,
+      "y": 1604.953125
+    },
+    "scrollWidth": 753,
+    "viewport": 753,
+    "workspace": {
+      "bottom": 1807.4375,
+      "height": 1398.3125,
+      "right": 735,
+      "width": 717,
+      "x": 18,
+      "y": 409.125
+    }
+  },
+  {
+    "path": "tools/control-switch-clearance",
+    "width": 768,
+    "columns": "717px",
+    "form": {
+      "bottom": 1609.125,
+      "height": 1172.703125,
+      "right": 735,
+      "width": 717,
+      "x": 18,
+      "y": 436.421875
+    },
+    "h1": {
+      "bottom": 244.828125,
+      "height": 86.375,
+      "right": 735,
+      "width": 717,
+      "x": 18,
+      "y": 158.453125
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 753,
+      "width": 753,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 5405.296875,
+      "height": 5335.03125,
+      "right": 753,
+      "width": 753,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": {
+      "bottom": 1839.609375,
+      "height": 202.484375,
+      "right": 735,
+      "width": 717,
+      "x": 18,
+      "y": 1637.125
+    },
+    "scrollWidth": 753,
+    "viewport": 753,
+    "workspace": {
+      "bottom": 1839.609375,
+      "height": 1403.1875,
+      "right": 735,
+      "width": 717,
+      "x": 18,
+      "y": 436.421875
+    }
+  },
+  {
+    "path": "tools/output-jack-mounting-fit",
+    "width": 768,
+    "columns": "717px",
+    "form": {
+      "bottom": 1714.296875,
+      "height": 1348.359375,
+      "right": 735,
+      "width": 717,
+      "x": 18,
+      "y": 365.9375
+    },
+    "h1": {
+      "bottom": 201.640625,
+      "height": 43.1875,
+      "right": 735,
+      "width": 717,
+      "x": 18,
+      "y": 158.453125
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 753,
+      "width": 753,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 5675.84375,
+      "height": 5605.578125,
+      "right": 753,
+      "width": 753,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": {
+      "bottom": 1944.78125,
+      "height": 202.484375,
+      "right": 735,
+      "width": 717,
+      "x": 18,
+      "y": 1742.296875
+    },
+    "scrollWidth": 753,
+    "viewport": 753,
+    "workspace": {
+      "bottom": 1944.78125,
+      "height": 1578.84375,
+      "right": 735,
+      "width": 717,
+      "x": 18,
+      "y": 365.9375
+    }
+  },
+  {
+    "path": "tools/prewired-harness-layout-matcher",
+    "width": 768,
+    "columns": "717px",
+    "form": {
+      "bottom": 1685.5,
+      "height": 1292.265625,
+      "right": 735,
+      "width": 717,
+      "x": 18,
+      "y": 393.234375
+    },
+    "h1": {
+      "bottom": 201.640625,
+      "height": 43.1875,
+      "right": 735,
+      "width": 717,
+      "x": 18,
+      "y": 158.453125
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 753,
+      "width": 753,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 5455.390625,
+      "height": 5385.125,
+      "right": 753,
+      "width": 753,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": {
+      "bottom": 1915.984375,
+      "height": 202.484375,
+      "right": 735,
+      "width": 717,
+      "x": 18,
+      "y": 1713.5
+    },
+    "scrollWidth": 753,
+    "viewport": 753,
+    "workspace": {
+      "bottom": 1915.984375,
+      "height": 1522.75,
+      "right": 735,
+      "width": 717,
+      "x": 18,
+      "y": 393.234375
+    }
+  },
+  {
+    "path": "guides/control-hardware-measurement",
+    "width": 768,
+    "columns": null,
+    "form": null,
+    "h1": {
+      "bottom": 244.828125,
+      "height": 86.375,
+      "right": 735,
+      "width": 717,
+      "x": 18,
+      "y": 158.453125
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 753,
+      "width": 753,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 2527.578125,
+      "height": 2457.3125,
+      "right": 753,
+      "width": 753,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": null,
+    "scrollWidth": 753,
+    "viewport": 753,
+    "workspace": null
+  },
+  {
+    "path": "reference/control-hardware-dimensions",
+    "width": 768,
+    "columns": null,
+    "form": null,
+    "h1": {
+      "bottom": 244.828125,
+      "height": 86.375,
+      "right": 735,
+      "width": 717,
+      "x": 18,
+      "y": 158.453125
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 753,
+      "width": 753,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 2545.71875,
+      "height": 2475.453125,
+      "right": 753,
+      "width": 753,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": null,
+    "scrollWidth": 753,
+    "viewport": 753,
+    "workspace": null
+  },
+  {
+    "path": "comparisons/metric-vs-imperial-control-hardware",
+    "width": 768,
+    "columns": null,
+    "form": null,
+    "h1": {
+      "bottom": 244.828125,
+      "height": 86.375,
+      "right": 735,
+      "width": 717,
+      "x": 18,
+      "y": 158.453125
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 753,
+      "width": 753,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 2341.1875,
+      "height": 2270.921875,
+      "right": 753,
+      "width": 753,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": null,
+    "scrollWidth": 753,
+    "viewport": 753,
+    "workspace": null
+  },
+  {
+    "path": "categories/controls",
+    "width": 600,
+    "columns": null,
+    "form": null,
+    "h1": {
+      "bottom": 253.546875,
+      "height": 107.09375,
+      "right": 569,
+      "width": 553,
+      "x": 16,
+      "y": 146.453125
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 585,
+      "width": 585,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 2693.359375,
+      "height": 2623.09375,
+      "right": 585,
+      "width": 585,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": null,
+    "scrollWidth": 585,
+    "viewport": 585,
+    "workspace": null
+  },
+  {
+    "path": "tools/potentiometer-mounting-fit",
+    "width": 600,
+    "columns": "553px",
+    "form": {
+      "bottom": 1443.71875,
+      "height": 1018.578125,
+      "right": 569,
+      "width": 553,
+      "x": 16,
+      "y": 425.140625
+    },
+    "h1": {
+      "bottom": 253.546875,
+      "height": 107.09375,
+      "right": 569,
+      "width": 553,
+      "x": 16,
+      "y": 146.453125
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 585,
+      "width": 585,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 5496.578125,
+      "height": 5426.3125,
+      "right": 585,
+      "width": 585,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": {
+      "bottom": 1677.515625,
+      "height": 205.796875,
+      "right": 569,
+      "width": 553,
+      "x": 16,
+      "y": 1471.71875
+    },
+    "scrollWidth": 585,
+    "viewport": 585,
+    "workspace": {
+      "bottom": 1677.515625,
+      "height": 1252.375,
+      "right": 569,
+      "width": 553,
+      "x": 16,
+      "y": 425.140625
+    }
+  },
+  {
+    "path": "tools/knob-shaft-compatibility",
+    "width": 600,
+    "columns": "553px",
+    "form": {
+      "bottom": 1615.71875,
+      "height": 1190.578125,
+      "right": 569,
+      "width": 553,
+      "x": 16,
+      "y": 425.140625
+    },
+    "h1": {
+      "bottom": 253.546875,
+      "height": 107.09375,
+      "right": 569,
+      "width": 553,
+      "x": 16,
+      "y": 146.453125
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 585,
+      "width": 585,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 5860.234375,
+      "height": 5789.96875,
+      "right": 585,
+      "width": 585,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": {
+      "bottom": 1849.515625,
+      "height": 205.796875,
+      "right": 569,
+      "width": 553,
+      "x": 16,
+      "y": 1643.71875
+    },
+    "scrollWidth": 585,
+    "viewport": 585,
+    "workspace": {
+      "bottom": 1849.515625,
+      "height": 1424.375,
+      "right": 569,
+      "width": 553,
+      "x": 16,
+      "y": 425.140625
+    }
+  },
+  {
+    "path": "tools/control-switch-clearance",
+    "width": 600,
+    "columns": "553px",
+    "form": {
+      "bottom": 1620.59375,
+      "height": 1195.453125,
+      "right": 569,
+      "width": 553,
+      "x": 16,
+      "y": 425.140625
+    },
+    "h1": {
+      "bottom": 253.546875,
+      "height": 107.09375,
+      "right": 569,
+      "width": 553,
+      "x": 16,
+      "y": 146.453125
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 585,
+      "width": 585,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 5786.265625,
+      "height": 5716,
+      "right": 585,
+      "width": 585,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": {
+      "bottom": 1854.390625,
+      "height": 205.796875,
+      "right": 569,
+      "width": 553,
+      "x": 16,
+      "y": 1648.59375
+    },
+    "scrollWidth": 585,
+    "viewport": 585,
+    "workspace": {
+      "bottom": 1854.390625,
+      "height": 1429.25,
+      "right": 569,
+      "width": 553,
+      "x": 16,
+      "y": 425.140625
+    }
+  },
+  {
+    "path": "tools/output-jack-mounting-fit",
+    "width": 600,
+    "columns": "553px",
+    "form": {
+      "bottom": 1796.25,
+      "height": 1371.109375,
+      "right": 569,
+      "width": 553,
+      "x": 16,
+      "y": 425.140625
+    },
+    "h1": {
+      "bottom": 253.546875,
+      "height": 107.09375,
+      "right": 569,
+      "width": 553,
+      "x": 16,
+      "y": 146.453125
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 585,
+      "width": 585,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 6179.859375,
+      "height": 6109.59375,
+      "right": 585,
+      "width": 585,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": {
+      "bottom": 2030.046875,
+      "height": 205.796875,
+      "right": 569,
+      "width": 553,
+      "x": 16,
+      "y": 1824.25
+    },
+    "scrollWidth": 585,
+    "viewport": 585,
+    "workspace": {
+      "bottom": 2030.046875,
+      "height": 1604.90625,
+      "right": 569,
+      "width": 553,
+      "x": 16,
+      "y": 425.140625
+    }
+  },
+  {
+    "path": "tools/prewired-harness-layout-matcher",
+    "width": 600,
+    "columns": "553px",
+    "form": {
+      "bottom": 1740.15625,
+      "height": 1315.015625,
+      "right": 569,
+      "width": 553,
+      "x": 16,
+      "y": 425.140625
+    },
+    "h1": {
+      "bottom": 253.546875,
+      "height": 107.09375,
+      "right": 569,
+      "width": 553,
+      "x": 16,
+      "y": 146.453125
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 585,
+      "width": 585,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 6010.953125,
+      "height": 5940.6875,
+      "right": 585,
+      "width": 585,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": {
+      "bottom": 1973.953125,
+      "height": 205.796875,
+      "right": 569,
+      "width": 553,
+      "x": 16,
+      "y": 1768.15625
+    },
+    "scrollWidth": 585,
+    "viewport": 585,
+    "workspace": {
+      "bottom": 1973.953125,
+      "height": 1548.8125,
+      "right": 569,
+      "width": 553,
+      "x": 16,
+      "y": 425.140625
+    }
+  },
+  {
+    "path": "guides/control-hardware-measurement",
+    "width": 600,
+    "columns": null,
+    "form": null,
+    "h1": {
+      "bottom": 307.09375,
+      "height": 160.640625,
+      "right": 569,
+      "width": 553,
+      "x": 16,
+      "y": 146.453125
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 585,
+      "width": 585,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 2782.578125,
+      "height": 2712.3125,
+      "right": 585,
+      "width": 585,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": null,
+    "scrollWidth": 585,
+    "viewport": 585,
+    "workspace": null
+  },
+  {
+    "path": "reference/control-hardware-dimensions",
+    "width": 600,
+    "columns": null,
+    "form": null,
+    "h1": {
+      "bottom": 307.09375,
+      "height": 160.640625,
+      "right": 569,
+      "width": 553,
+      "x": 16,
+      "y": 146.453125
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 585,
+      "width": 585,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 2749.171875,
+      "height": 2678.90625,
+      "right": 585,
+      "width": 585,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": null,
+    "scrollWidth": 585,
+    "viewport": 585,
+    "workspace": null
+  },
+  {
+    "path": "comparisons/metric-vs-imperial-control-hardware",
+    "width": 600,
+    "columns": null,
+    "form": null,
+    "h1": {
+      "bottom": 307.09375,
+      "height": 160.640625,
+      "right": 569,
+      "width": 553,
+      "x": 16,
+      "y": 146.453125
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 585,
+      "width": 585,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 2518.359375,
+      "height": 2448.09375,
+      "right": 585,
+      "width": 585,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": null,
+    "scrollWidth": 585,
+    "viewport": 585,
+    "workspace": null
+  },
+  {
+    "path": "categories/controls",
+    "width": 480,
+    "columns": null,
+    "form": null,
+    "h1": {
+      "bottom": 250.109375,
+      "height": 103.65625,
+      "right": 449,
+      "width": 433,
+      "x": 16,
+      "y": 146.453125
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 465,
+      "width": 465,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 2828.796875,
+      "height": 2758.53125,
+      "right": 465,
+      "width": 465,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": null,
+    "scrollWidth": 465,
+    "viewport": 465,
+    "workspace": null
+  },
+  {
+    "path": "tools/potentiometer-mounting-fit",
+    "width": 480,
+    "columns": "433px",
+    "form": {
+      "bottom": 1492.109375,
+      "height": 1018.578125,
+      "right": 449,
+      "width": 433,
+      "x": 16,
+      "y": 473.53125
+    },
+    "h1": {
+      "bottom": 301.9375,
+      "height": 155.484375,
+      "right": 449,
+      "width": 433,
+      "x": 16,
+      "y": 146.453125
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 465,
+      "width": 465,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 6118.671875,
+      "height": 6048.40625,
+      "right": 465,
+      "width": 465,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": {
+      "bottom": 1721.421875,
+      "height": 201.3125,
+      "right": 449,
+      "width": 433,
+      "x": 16,
+      "y": 1520.109375
+    },
+    "scrollWidth": 465,
+    "viewport": 465,
+    "workspace": {
+      "bottom": 1721.421875,
+      "height": 1247.890625,
+      "right": 449,
+      "width": 433,
+      "x": 16,
+      "y": 473.53125
+    }
+  },
+  {
+    "path": "tools/knob-shaft-compatibility",
+    "width": 480,
+    "columns": "433px",
+    "form": {
+      "bottom": 1664.109375,
+      "height": 1190.578125,
+      "right": 449,
+      "width": 433,
+      "x": 16,
+      "y": 473.53125
+    },
+    "h1": {
+      "bottom": 301.9375,
+      "height": 155.484375,
+      "right": 449,
+      "width": 433,
+      "x": 16,
+      "y": 146.453125
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 465,
+      "width": 465,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 6587.453125,
+      "height": 6517.1875,
+      "right": 465,
+      "width": 465,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": {
+      "bottom": 1893.421875,
+      "height": 201.3125,
+      "right": 449,
+      "width": 433,
+      "x": 16,
+      "y": 1692.109375
+    },
+    "scrollWidth": 465,
+    "viewport": 465,
+    "workspace": {
+      "bottom": 1893.421875,
+      "height": 1419.890625,
+      "right": 449,
+      "width": 433,
+      "x": 16,
+      "y": 473.53125
+    }
+  },
+  {
+    "path": "tools/control-switch-clearance",
+    "width": 480,
+    "columns": "433px",
+    "form": {
+      "bottom": 1668.984375,
+      "height": 1195.453125,
+      "right": 449,
+      "width": 433,
+      "x": 16,
+      "y": 473.53125
+    },
+    "h1": {
+      "bottom": 301.9375,
+      "height": 155.484375,
+      "right": 449,
+      "width": 433,
+      "x": 16,
+      "y": 146.453125
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 465,
+      "width": 465,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 6592.328125,
+      "height": 6522.0625,
+      "right": 465,
+      "width": 465,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": {
+      "bottom": 1898.296875,
+      "height": 201.3125,
+      "right": 449,
+      "width": 433,
+      "x": 16,
+      "y": 1696.984375
+    },
+    "scrollWidth": 465,
+    "viewport": 465,
+    "workspace": {
+      "bottom": 1898.296875,
+      "height": 1424.765625,
+      "right": 449,
+      "width": 433,
+      "x": 16,
+      "y": 473.53125
+    }
+  },
+  {
+    "path": "tools/output-jack-mounting-fit",
+    "width": 480,
+    "columns": "433px",
+    "form": {
+      "bottom": 1844.640625,
+      "height": 1371.109375,
+      "right": 449,
+      "width": 433,
+      "x": 16,
+      "y": 473.53125
+    },
+    "h1": {
+      "bottom": 301.9375,
+      "height": 155.484375,
+      "right": 449,
+      "width": 433,
+      "x": 16,
+      "y": 146.453125
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 465,
+      "width": 465,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 6959.640625,
+      "height": 6889.375,
+      "right": 465,
+      "width": 465,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": {
+      "bottom": 2073.953125,
+      "height": 201.3125,
+      "right": 449,
+      "width": 433,
+      "x": 16,
+      "y": 1872.640625
+    },
+    "scrollWidth": 465,
+    "viewport": 465,
+    "workspace": {
+      "bottom": 2073.953125,
+      "height": 1600.421875,
+      "right": 449,
+      "width": 433,
+      "x": 16,
+      "y": 473.53125
+    }
+  },
+  {
+    "path": "tools/prewired-harness-layout-matcher",
+    "width": 480,
+    "columns": "433px",
+    "form": {
+      "bottom": 1736.71875,
+      "height": 1315.015625,
+      "right": 449,
+      "width": 433,
+      "x": 16,
+      "y": 421.703125
+    },
+    "h1": {
+      "bottom": 250.109375,
+      "height": 103.65625,
+      "right": 449,
+      "width": 433,
+      "x": 16,
+      "y": 146.453125
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 465,
+      "width": 465,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 6607.5,
+      "height": 6537.234375,
+      "right": 465,
+      "width": 465,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": {
+      "bottom": 1966.03125,
+      "height": 201.3125,
+      "right": 449,
+      "width": 433,
+      "x": 16,
+      "y": 1764.71875
+    },
+    "scrollWidth": 465,
+    "viewport": 465,
+    "workspace": {
+      "bottom": 1966.03125,
+      "height": 1544.328125,
+      "right": 449,
+      "width": 433,
+      "x": 16,
+      "y": 421.703125
+    }
+  },
+  {
+    "path": "guides/control-hardware-measurement",
+    "width": 480,
+    "columns": null,
+    "form": null,
+    "h1": {
+      "bottom": 301.9375,
+      "height": 155.484375,
+      "right": 449,
+      "width": 433,
+      "x": 16,
+      "y": 146.453125
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 465,
+      "width": 465,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 3250.484375,
+      "height": 3180.21875,
+      "right": 465,
+      "width": 465,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": null,
+    "scrollWidth": 465,
+    "viewport": 465,
+    "workspace": null
+  },
+  {
+    "path": "reference/control-hardware-dimensions",
+    "width": 480,
+    "columns": null,
+    "form": null,
+    "h1": {
+      "bottom": 353.765625,
+      "height": 207.3125,
+      "right": 449,
+      "width": 433,
+      "x": 16,
+      "y": 146.453125
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 465,
+      "width": 465,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 3295.1875,
+      "height": 3224.921875,
+      "right": 465,
+      "width": 465,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": null,
+    "scrollWidth": 465,
+    "viewport": 465,
+    "workspace": null
+  },
+  {
+    "path": "comparisons/metric-vs-imperial-control-hardware",
+    "width": 480,
+    "columns": null,
+    "form": null,
+    "h1": {
+      "bottom": 301.9375,
+      "height": 155.484375,
+      "right": 449,
+      "width": 433,
+      "x": 16,
+      "y": 146.453125
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 465,
+      "width": 465,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 2881.140625,
+      "height": 2810.875,
+      "right": 465,
+      "width": 465,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": null,
+    "scrollWidth": 465,
+    "viewport": 465,
+    "workspace": null
+  },
+  {
+    "path": "categories/controls",
+    "width": 390,
+    "columns": null,
+    "form": null,
+    "h1": {
+      "bottom": 230.671875,
+      "height": 84.21875,
+      "right": 359,
+      "width": 343,
+      "x": 16,
+      "y": 146.453125
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 375,
+      "width": 375,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 3204.328125,
+      "height": 3134.0625,
+      "right": 375,
+      "width": 375,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": null,
+    "scrollWidth": 375,
+    "viewport": 375,
+    "workspace": null
+  },
+  {
+    "path": "tools/potentiometer-mounting-fit",
+    "width": 390,
+    "columns": "343px",
+    "form": {
+      "bottom": 1508.4375,
+      "height": 1018.578125,
+      "right": 359,
+      "width": 343,
+      "x": 16,
+      "y": 489.859375
+    },
+    "h1": {
+      "bottom": 290.96875,
+      "height": 126.328125,
+      "right": 359,
+      "width": 343,
+      "x": 16,
+      "y": 164.640625
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 375,
+      "width": 375,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 7112.625,
+      "height": 7042.359375,
+      "right": 375,
+      "width": 375,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": {
+      "bottom": 1762.546875,
+      "height": 226.109375,
+      "right": 359,
+      "width": 343,
+      "x": 16,
+      "y": 1536.4375
+    },
+    "scrollWidth": 375,
+    "viewport": 375,
+    "workspace": {
+      "bottom": 1762.546875,
+      "height": 1272.6875,
+      "right": 359,
+      "width": 343,
+      "x": 16,
+      "y": 489.859375
+    }
+  },
+  {
+    "path": "tools/knob-shaft-compatibility",
+    "width": 390,
+    "columns": "343px",
+    "form": {
+      "bottom": 1680.4375,
+      "height": 1190.578125,
+      "right": 359,
+      "width": 343,
+      "x": 16,
+      "y": 489.859375
+    },
+    "h1": {
+      "bottom": 290.96875,
+      "height": 126.328125,
+      "right": 359,
+      "width": 343,
+      "x": 16,
+      "y": 164.640625
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 375,
+      "width": 375,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 7501.546875,
+      "height": 7431.28125,
+      "right": 375,
+      "width": 375,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": {
+      "bottom": 1934.546875,
+      "height": 226.109375,
+      "right": 359,
+      "width": 343,
+      "x": 16,
+      "y": 1708.4375
+    },
+    "scrollWidth": 375,
+    "viewport": 375,
+    "workspace": {
+      "bottom": 1934.546875,
+      "height": 1444.6875,
+      "right": 359,
+      "width": 343,
+      "x": 16,
+      "y": 489.859375
+    }
+  },
+  {
+    "path": "tools/control-switch-clearance",
+    "width": 390,
+    "columns": "343px",
+    "form": {
+      "bottom": 1685.3125,
+      "height": 1195.453125,
+      "right": 359,
+      "width": 343,
+      "x": 16,
+      "y": 489.859375
+    },
+    "h1": {
+      "bottom": 290.96875,
+      "height": 126.328125,
+      "right": 359,
+      "width": 343,
+      "x": 16,
+      "y": 164.640625
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 375,
+      "width": 375,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 7454.875,
+      "height": 7384.609375,
+      "right": 375,
+      "width": 375,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": {
+      "bottom": 1939.421875,
+      "height": 226.109375,
+      "right": 359,
+      "width": 343,
+      "x": 16,
+      "y": 1713.3125
+    },
+    "scrollWidth": 375,
+    "viewport": 375,
+    "workspace": {
+      "bottom": 1939.421875,
+      "height": 1449.5625,
+      "right": 359,
+      "width": 343,
+      "x": 16,
+      "y": 489.859375
+    }
+  },
+  {
+    "path": "tools/output-jack-mounting-fit",
+    "width": 390,
+    "columns": "343px",
+    "form": {
+      "bottom": 1833.671875,
+      "height": 1371.109375,
+      "right": 359,
+      "width": 343,
+      "x": 16,
+      "y": 462.5625
+    },
+    "h1": {
+      "bottom": 290.96875,
+      "height": 126.328125,
+      "right": 359,
+      "width": 343,
+      "x": 16,
+      "y": 164.640625
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 375,
+      "width": 375,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 7873.734375,
+      "height": 7803.46875,
+      "right": 375,
+      "width": 375,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": {
+      "bottom": 2087.78125,
+      "height": 226.109375,
+      "right": 359,
+      "width": 343,
+      "x": 16,
+      "y": 1861.671875
+    },
+    "scrollWidth": 375,
+    "viewport": 375,
+    "workspace": {
+      "bottom": 2087.78125,
+      "height": 1625.21875,
+      "right": 359,
+      "width": 343,
+      "x": 16,
+      "y": 462.5625
+    }
+  },
+  {
+    "path": "tools/prewired-harness-layout-matcher",
+    "width": 390,
+    "columns": "343px",
+    "form": {
+      "bottom": 1762.765625,
+      "height": 1315.015625,
+      "right": 359,
+      "width": 343,
+      "x": 16,
+      "y": 447.75
+    },
+    "h1": {
+      "bottom": 248.859375,
+      "height": 84.21875,
+      "right": 359,
+      "width": 343,
+      "x": 16,
+      "y": 164.640625
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 375,
+      "width": 375,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 7611.171875,
+      "height": 7540.90625,
+      "right": 375,
+      "width": 375,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": {
+      "bottom": 2016.875,
+      "height": 226.109375,
+      "right": 359,
+      "width": 343,
+      "x": 16,
+      "y": 1790.765625
+    },
+    "scrollWidth": 375,
+    "viewport": 375,
+    "workspace": {
+      "bottom": 2016.875,
+      "height": 1569.125,
+      "right": 359,
+      "width": 343,
+      "x": 16,
+      "y": 447.75
+    }
+  },
+  {
+    "path": "guides/control-hardware-measurement",
+    "width": 390,
+    "columns": null,
+    "form": null,
+    "h1": {
+      "bottom": 272.78125,
+      "height": 126.328125,
+      "right": 359,
+      "width": 343,
+      "x": 16,
+      "y": 146.453125
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 375,
+      "width": 375,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 3891.78125,
+      "height": 3821.515625,
+      "right": 375,
+      "width": 375,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": null,
+    "scrollWidth": 375,
+    "viewport": 375,
+    "workspace": null
+  },
+  {
+    "path": "reference/control-hardware-dimensions",
+    "width": 390,
+    "columns": null,
+    "form": null,
+    "h1": {
+      "bottom": 314.890625,
+      "height": 168.4375,
+      "right": 359,
+      "width": 343,
+      "x": 16,
+      "y": 146.453125
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 375,
+      "width": 375,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 3713.734375,
+      "height": 3643.46875,
+      "right": 375,
+      "width": 375,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": null,
+    "scrollWidth": 375,
+    "viewport": 375,
+    "workspace": null
+  },
+  {
+    "path": "comparisons/metric-vs-imperial-control-hardware",
+    "width": 390,
+    "columns": null,
+    "form": null,
+    "h1": {
+      "bottom": 314.890625,
+      "height": 168.4375,
+      "right": 359,
+      "width": 343,
+      "x": 16,
+      "y": 146.453125
+    },
+    "header": {
+      "bottom": 70.265625,
+      "height": 70.265625,
+      "right": 375,
+      "width": 375,
+      "x": 0,
+      "y": 0
+    },
+    "main": {
+      "bottom": 3356.328125,
+      "height": 3286.0625,
+      "right": 375,
+      "width": 375,
+      "x": 0,
+      "y": 70.265625
+    },
+    "navToggle": "block",
+    "result": null,
+    "scrollWidth": 375,
+    "viewport": 375,
+    "workspace": null
+  }
+]
