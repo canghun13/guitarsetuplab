@@ -1646,3 +1646,48 @@ Do not add another cluster by default. After this cluster is deployed and verifi
 - Production verification: home and sitemap HTTP 200; sitemap retained 86 URLs; the Sell With Boost badge, GA4 `G-TGT88WMVDG`, and `canghun13@naver.com` were present.
 - Final handover closeout commit: the commit containing this section; report its exact hash after push, then fetch and verify a clean tree with exact `HEAD == origin/main`.
 - Exact next state: do not implement a two-Tool tuner or bridge fragment and do not revisit the recent excluded candidates. Reopen a tuner/bridge family only when four independent non-overlapping workflows have external evidence; otherwise begin a future discovery from a different workflow family.
+
+---
+
+# 2026-08-20 — Existing-area search growth review
+
+## Repository and data
+
+- Start local HEAD and local `origin/main`: `a96aa15010193adc8368a9538dfb8ea7bab65210`.
+- Start actual remote main: `3c929f4c731bc00ea292822139892a1455b65df1` from `git ls-remote origin refs/heads/main`.
+- The tree was clean and 8 commits behind. Fetch updated `origin/main` to the advertised hash and `git pull --ff-only origin main` safely synchronized the checkout.
+- Review start commit after synchronization: `3c929f4c731bc00ea292822139892a1455b65df1`.
+- GSC: **Not available in this environment**; the domain-property URL redirected to the public Search Console introduction page.
+- GA4: **Not available in this environment**; Analytics redirected to Google sign-in.
+- No clicks, impressions, CTR, position, query/page mapping, index coverage, landing-page sessions, engagement, or transitions were inferred.
+- Detailed evidence and scores: `research/search-growth-upgrade-2026-08-20.md`.
+
+## Candidates and decision
+
+- Neck Relief Guide/Helper: 74/100 — strongest current external intent, but the page already has exact title/H1, ordered measurement method, example, interpretation, safety, and workflow; HOLD without site-specific GSC evidence.
+- String Tension Reference/Matcher: 68/100 — real demand but crowded interactive SERP; the existing sourced D'Addario subset and unit-weight boundary should not be broadened speculatively.
+- Setup Documentation/Measurement Sheet: 61/100 — current workflow is complete and sampled search evidence was weak.
+- Safe Setup Order/Wizard: 60/100 — broad competitive intent, with no current mismatch or UX defect.
+- Index/discovery correction: 57/100 — sampled search surfaced only home, but production HTTP, canonical, robots, 86-URL sitemap, URL membership, metadata, and static checks are healthy; GSC evidence is required.
+- Geometry Measurement Reference: 54/100 — niche and ambiguous intent; current definitions and Tool links are already complete.
+- Final decision: **NO ACTION — Observation maintenance**.
+- Production changes: **None**. No HTML, CSS, JavaScript, generator, metadata, title/H1, internal link, sitemap, analytics, footer, or user-managed badge was changed.
+
+## QA and production state
+
+- A direct pre-build static run exposed only the already known trailing two-byte CRLF after the approved root badge block. The GitHub workflow runs build before test, and build normalizes that EOF while preserving both user-managed badges. It is not a production/search defect and was not turned into a cosmetic-only commit.
+- Workflow-equivalent build and tests ran in a temporary archive of the clean start commit, leaving the working tree unchanged.
+- Build: PASS — 87 public HTML and 50 Tools.
+- Static/SEO/link/module/root-site: PASS, 0 failures; broken links 0; orphan pages 0.
+- Fixtures: geometry 65 PASS, pickup-fit 15 PASS, control-fit 33 PASS.
+- Content audit: 87 Sufficient; all failure groups 0.
+- Production HTTP 200 and apex canonical: home, Neck Relief Guide, String Tension Formula Reference, Setup Documentation Guide, and Geometry Measurement Reference.
+- Production `robots.txt` and `sitemap.xml`: HTTP 200; crawling allowed; sitemap declaration present; 86 URLs with every sampled candidate included.
+- Browser access checks found no authenticated GSC/GA4 data. Changed-page browser matrix and functional QA were not applicable because production files did not change.
+- Research/handover closeout commit: the documentation-only commit containing this section; report its exact hash after push.
+
+## Current inventory and exact revisit trigger
+
+- Inventory remains 87 public HTML, 50 Tools, 8 hubs, 12 guides, 8 references, 4 comparisons, 5 basic pages, and 86 sitemap URLs.
+- Revisit only when authenticated GSC shows a meaningful page/query signal (growing impressions, roughly position 5–20, or CTR mismatch), authenticated coverage/URL inspection identifies a real index problem, clean GA4 shows an organic workflow drop-off, or a reproducible Tool/content/technical defect appears.
+- Until then, preserve current intent, metadata, Tool logic, explicit workflows, layout, and user-managed badges. Do not add or rewrite content merely because external topic demand exists.
