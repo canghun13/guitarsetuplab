@@ -1608,3 +1608,37 @@ Do not add another cluster by default. After this cluster is deployed and verifi
 # 2026-08-11
 
 - 메인 페이지 푸터 아래의 디렉토리 뱃지 영역은 사용자가 직접 관리하는 영역이므로 수정·삭제·리팩터링하지 않는다.- https://sellwithboost.com/ 에 등록 (내가 직접함)
+
+---
+
+# 2026-08-20 — New workflow cluster discovery
+
+## Repository and starting inventory
+
+- Repository: `https://github.com/canghun13/guitarsetuplab`; branch `main`.
+- The clean local checkout was two commits behind. `git fetch origin main` and safe `git pull --ff-only origin main` preserved the user's later Sell With Boost badge and handover note.
+- Discovery start commit: `aba8d606d50bca5a9070437f88d62a22814eb7df`.
+- Starting inventory: 87 public HTML, 50 Tools, 8 hubs, 12 guides, 8 references, 4 comparisons, 5 basic pages, and 86 sitemap URLs.
+- Recent Pickup Fit and Control Hardware releases and the held/rejected Fretwire/Refret, Nut Setup, Acoustic Saddle Compensation, and Humidity candidates were excluded before searching.
+
+## Discovery and decision
+
+- Reviewed 16 new search families: tuning machines, fixed bridges/tailpieces, tremolo retrofit, neck/pocket fit, pickguard layout, guitar finish materials, binding/purfling, pickup winding, active-electronics battery/runtime, soundhole hardware, bridge pins, pedalboard power/layout, case fit, guitar shipping, fasteners/pilot holes, and blank/material yield.
+- Shortlisted seven: Tuning Machine Replacement Fit (86), Bridge & Tremolo Retrofit Geometry (86), Bolt-on Neck & Pocket Fit (78), Guitar Finish Material Planning (72), Guitar Transport/Case/Shipping (69), Binding & Purfling Planning (65), and Pickup Winding Workshop (63).
+- Deep validation covered narrow long-tail searches, official technical drawings, current community questions, purchase workflows, direct interactive competition, 50-Tool overlap, and concrete Tool decomposition for the top three.
+- Final decision: **NO-GO — no sufficiently strong new workflow cluster**.
+- Tuning-machine fit has real demand, official evidence, a competition gap, and repeat value, but only two independent new Tool problems remain after excluding the existing harness-coordinate matcher, string-gauge workflow, and Headstock Break-Angle Tool.
+- Bridge/tremolo retrofit likewise leaves only post-interface and narrowly measured saddle-travel questions after excluding existing bridge spacing, pickup/route clearance, radius, tremolo balance, coordinate matching, and intonation workflows.
+- Finish coverage/mix/WFT/DFT is already served by capable generic interactive calculators, while product schedules and chemical compatibility must remain controlled by current TDS/SDS instructions.
+- Full evidence, queries, sources, scores, candidate Tool sets, and Hard Gates: `research/new-workflow-cluster-discovery-2026-08-20.md`.
+
+## Changes, QA, and next state
+
+- Production changes: **None**. No HTML, CSS, JavaScript, generator, metadata, navigation, sitemap, analytics, email, footer, or badge content was changed.
+- Final inventory remains 87 public HTML, 50 Tools, 8 hubs, 12 guides, 8 references, 4 comparisons, 5 basic pages, and 86 sitemap URLs.
+- Build and static QA: PASS; 87 public HTML pages, 50 Tools, 0 static failures, broken links 0, and orphan pages 0.
+- Fixtures: geometry 65 PASS, pickup-fit 15 PASS, and control-fit 33 PASS.
+- Content audit: 87 Sufficient; every failure group 0.
+- Changed representative browser QA: not applicable because there is no production-file diff. The build's end-of-file-only normalization of root `index.html` was discarded, preserving the user's Sell With Boost badge exactly.
+- Closeout: commit and push only this research record and handover update, verify remote `main`, and finish with a clean tree and exact `HEAD == origin/main`.
+- Exact next state: do not implement a two-Tool tuner or bridge fragment and do not revisit the recent excluded candidates. Reopen a tuner/bridge family only when four independent non-overlapping workflows have external evidence; otherwise begin a future discovery from a different workflow family.
