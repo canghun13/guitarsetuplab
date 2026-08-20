@@ -1640,5 +1640,9 @@ Do not add another cluster by default. After this cluster is deployed and verifi
 - Fixtures: geometry 65 PASS, pickup-fit 15 PASS, and control-fit 33 PASS.
 - Content audit: 87 Sufficient; every failure group 0.
 - Changed representative browser QA: not applicable because there is no production-file diff. The build's end-of-file-only normalization of root `index.html` was discarded, preserving the user's Sell With Boost badge exactly.
-- Closeout: commit and push only this research record and handover update, verify remote `main`, and finish with a clean tree and exact `HEAD == origin/main`.
+- Research decision commit: `b57dd7e8668c7979ee844922d4b4997412505630` (`Document new workflow cluster no-go`), pushed to `origin/main`; fetched and advertised remote hashes matched.
+- Quality checks run [`32341019296`](https://github.com/canghun13/guitarsetuplab/actions/runs/32341019296): completed successfully.
+- Pages build and deployment run [`32341019070`](https://github.com/canghun13/guitarsetuplab/actions/runs/32341019070): completed successfully.
+- Production verification: home and sitemap HTTP 200; sitemap retained 86 URLs; the Sell With Boost badge, GA4 `G-TGT88WMVDG`, and `canghun13@naver.com` were present.
+- Final handover closeout commit: the commit containing this section; report its exact hash after push, then fetch and verify a clean tree with exact `HEAD == origin/main`.
 - Exact next state: do not implement a two-Tool tuner or bridge fragment and do not revisit the recent excluded candidates. Reopen a tuner/bridge family only when four independent non-overlapping workflows have external evidence; otherwise begin a future discovery from a different workflow family.
