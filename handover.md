@@ -1691,3 +1691,12 @@ Do not add another cluster by default. After this cluster is deployed and verifi
 - Inventory remains 87 public HTML, 50 Tools, 8 hubs, 12 guides, 8 references, 4 comparisons, 5 basic pages, and 86 sitemap URLs.
 - Revisit only when authenticated GSC shows a meaningful page/query signal (growing impressions, roughly position 5–20, or CTR mismatch), authenticated coverage/URL inspection identifies a real index problem, clean GA4 shows an organic workflow drop-off, or a reproducible Tool/content/technical defect appears.
 - Until then, preserve current intent, metadata, Tool logic, explicit workflows, layout, and user-managed badges. Do not add or rewrite content merely because external topic demand exists.
+
+## Deployment closeout
+
+- Research/decision commit: `b7da9a24fdca744ec0210676a1f191bb23610c15` (`Document existing-area growth observation`).
+- Push: `3c929f4..b7da9a2 main -> main` succeeded; fetched `origin/main` and advertised live main both equaled the research commit.
+- Quality checks run [`32369212135`](https://github.com/canghun13/guitarsetuplab/actions/runs/32369212135): completed successfully.
+- Pages build and deployment run [`32369211017`](https://github.com/canghun13/guitarsetuplab/actions/runs/32369211017): completed successfully.
+- Post-deploy production: home and sitemap returned HTTP 200; sitemap retained 86 URLs; Boost Domain Rating and Sell With Boost badges, GA4 `G-TGT88WMVDG`, and `canghun13@naver.com` remained present.
+- Final handover closeout commit: the commit containing this subsection; report its exact hash after push, then fetch and verify clean `HEAD == origin/main ==` advertised live main.
