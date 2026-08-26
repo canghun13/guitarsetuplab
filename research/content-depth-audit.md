@@ -1,7 +1,7 @@
 # Content-depth audit
 
-Generated: 2026-08-26T05:55:10.287Z
-Scope: all generated public HTML in `site/` (87 pages expected)
+Generated: 2026-08-26T06:08:33.221Z
+Scope: all generated public HTML in `site/` (95 pages expected)
 
 ## Initial baseline at `98df55e`
 
