@@ -1700,3 +1700,46 @@ Do not add another cluster by default. After this cluster is deployed and verifi
 - Pages build and deployment run [`32369211017`](https://github.com/canghun13/guitarsetuplab/actions/runs/32369211017): completed successfully.
 - Post-deploy production: home and sitemap returned HTTP 200; sitemap retained 86 URLs; Boost Domain Rating and Sell With Boost badges, GA4 `G-TGT88WMVDG`, and `canghun13@naver.com` remained present.
 - Final handover closeout commit: the commit containing this subsection; report its exact hash after push, then fetch and verify clean `HEAD == origin/main ==` advertised live main.
+# 2026-08-26 — Aggressive new workflow discovery and Recording & Reamping launch
+
+## Repository baseline
+
+- Repository/branch: `https://github.com/canghun13/guitarsetuplab.git`, `main`.
+- Start commit, fetched `origin/main`, and advertised remote `main`: `abbc1c27b75a9cf0e804a437fe9647d9a8aed53b`.
+- Start tree was clean and `git pull --ff-only origin main` fast-forwarded the existing checkout safely. No user changes were present or overwritten.
+- Starting inventory: 87 public HTML, 50 Tools, 8 hubs, 12 guides, 8 references, 4 comparisons, 5 basic pages, and 86 sitemap URLs.
+
+## Discovery
+
+- Excluded recent implemented Pickup Fit and Control Hardware; recent HOLD/revalidated Fretwire/Refret, Tuning Machine Replacement, and Bridge/Tremolo Retrofit; and recent REJECT Nut, Acoustic Saddle, Humidity, Bolt-on Neck/Pocket, Finish, Transport/Case/Shipping, Binding/Purfling, and Pickup Winding families.
+- Investigated 56 genuinely new workflow/search families across amplifier/speaker, recording/reamp, signal-chain, MIDI/pedal control, piezo, audio diagnostics, weight/balance, bass/headless strings, 12-string, truss-rod installation, acoustic modal/bridge-force, resonator, and modification/service-envelope problems.
+- Mid-list: Recording & Reamping; Pedal Control & MIDI; Amp/Cab Load; Weight & Balance; Piezo Signal; MIDI Guitar Tracking; Browser Audio Diagnostics; Bass Winding-Length Fit; Truss-Rod Installation; Acoustic Modal/Top Measurement.
+- Finalists and scores: Recording & Reamping 87/100; Pedal Control & MIDI 84; Amp/Cab Load 83; Weight & Balance 80; Piezo Signal 78.
+- Final decision: **GO — Guitar Recording & Reamping Measurement**. It passed the requested Hard Gates A–K with five independent models: parallel resistive loading, logarithmic level correction, multi-unit headroom screening, measured sample offset, and acoustic arrival/phase.
+- Complete queries, competitors, primary sources, scores, Tool specification, fixtures, and decision evidence: `research/aggressive-workflow-discovery-2026-08-26.md`.
+
+## Implementation
+
+- New hub: `categories/recording.html`.
+- New Tools: `tools/di-input-loading-checker.html`, `tools/reamp-level-match-planner.html`, `tools/pedal-insert-headroom-checker.html`, `tools/round-trip-alignment-calculator.html`, and `tools/dual-mic-phase-alignment-planner.html`.
+- New guide/reference: `guides/recording-chain-measurement.html` and `reference/recording-level-latency.html`. No comparison page was added because no additional decision intent justified it.
+- Pure calculation logic is in `scripts/assets/recording.js`; shared rendering and interactions are in `scripts/assets/app.js`; `scripts/recording-test.mjs` contains the new fixtures.
+- `scripts/build.mjs` now generates the ninth hub, eight new public pages, Recording navigation/home entry, sitemap membership, and explicit three-target workflows. The existing Potentiometer Value Selector provides a semantic inbound link to DI loading; every new Tool links to the cluster and a meaningful existing Tool or article.
+- Safety boundaries explicitly prohibit speaker outputs into ordinary DIs, pedals, reamp boxes, or interface inputs and exclude amplifier/power-supply/mains opening. Manufacturer maximum levels and exact-device documentation govern.
+- Common CSS was unchanged. Domain `guitarsetuplab.com`, email `canghun13@naver.com`, GA4 `G-TGT88WMVDG`, Boost Domain Rating badge, and Sell With Boost badge remain intact.
+
+## Fixtures and QA
+
+- Build/static: 95 HTML and 55 Tool pages; metadata, unique titles, descriptions, canonical, H1, Open Graph, JSON-LD, GA4, email/domain, assets/imports/JS, explicit workflows, broken links, orphans, sitemap, robots, and root/site mirror all PASS with 0 failures.
+- Fixtures: geometry 65 PASS; pickup-fit 15 PASS; control-fit 33 PASS; recording 44 PASS.
+- Content: 95 Sufficient, Thin 0, Needs 0, duplicate-risk 0, functionally incomplete 0.
+- New-page browser matrix: 8 pages × 8 widths (1440/1280/1024/900/768/600/480/390) = 64 states. Bounds, H1/header, alignment, clipping, page/table overflow, results, warnings, and console warnings/errors all PASS.
+- Functional: all five Tools generated results, changed Copy state, Reset to the initial ticket, and reran. Print is not exposed because these are transient calculations rather than calibrated templates or shop records.
+- Regression: home at 1440/390 including expanded mobile navigation; existing Potentiometer Value Selector at 1440/390; Fretboard Radius Matcher result at 390. Failures 0; radius result table-to-following-heading gap remains 24 px.
+- Screenshots/bounds: `research/aggressive-workflow-qa-2026-08-26/` contains `browser-matrix.json`, 64 new-page screenshots, and 5 representative regression screenshots.
+
+## Release state
+
+- Implementation commit: the first commit containing this entry; exact SHA is recorded in the deployment closeout appended after push.
+- Final generated inventory: 95 public HTML, 55 Tools, 9 hubs, 13 guides, 9 references, 4 comparisons, 5 basic pages, and 94 sitemap URLs (404 excluded).
+- Exact next state: deploy the implementation commit, wait for Quality and Pages, verify every new production URL/asset and sitemap marker, run a real production Tool result plus representative mobile bounds, then record remote hash equality and the final clean-tree closeout here. Do not add a second discovery cluster in this release.
