@@ -235,3 +235,14 @@ The GO authorizes five Tool pages, one Recording & Reamping hub, one measurement
 - Regression browser QA: home at 1440/390 including mobile menu expansion; existing Potentiometer Value Selector at 1440/390; Fretboard Radius Matcher result at 390. Overflow/console failures 0; the radius result table-to-heading gap remains 24 px.
 - Evidence: `research/aggressive-workflow-qa-2026-08-26/browser-matrix.json` and 64 new-page plus 5 regression screenshots in the same directory.
 - Final generated inventory: 95 public HTML, 55 Tools, 9 hubs, 13 guides, 9 references, 4 comparisons, 5 basic pages, and 94 sitemap URLs.
+
+## Deployment closeout
+
+- Implementation commit: `2ca809d79971659f679606e93d52a6e95e938c9c` (`Build guitar recording and reamping workflow`). It was pushed to `origin/main`; the advertised remote hash matched.
+- The first Quality checks run [`32936556467`](https://github.com/canghun13/guitarsetuplab/actions/runs/32936556467) correctly failed in `npm test`. The generated inventory had increased from 87 to 95 pages, but the final content-audit page-count gate and its report scope still expected 87. The audit classifications themselves were 95 Sufficient with every defect group at zero.
+- CI gate fix: `f7be3eceee8848acf2e8bdcc39aa74466f96f7df` (`Fix recording workflow content audit gate`) updates the expected inventory to 95 and regenerates the audit report. A full workflow-equivalent local run propagated each native exit code explicitly and passed build, static checks, geometry 65, pickup-fit 15, control-fit 33, recording 44, and content audit 95/95.
+- Quality checks run [`32936955912`](https://github.com/canghun13/guitarsetuplab/actions/runs/32936955912): completed successfully for `f7be3ec`.
+- Pages build and deployment run [`32936955317`](https://github.com/canghun13/guitarsetuplab/actions/runs/32936955317): completed successfully for `f7be3ec`.
+- Production HTTP: the new hub, five Tools, guide, reference, `/assets/recording.js`, sitemap, and home all returned 200. All eight new page URLs were present in the production sitemap. Home retained two GA4 `G-TGT88WMVDG` markers, the Boost Domain Rating badge, and `canghun13@naver.com`.
+- Production browser QA: DI Input Loading Checker at 390 px generated a 500.0 kΩ result from real inputs, copied the complete result, reset to empty inputs and the initial ticket, and reran. Its result table stayed within the panel and the table-to-Interpretation gap was 24 px. At 390 and 1440 px there was no horizontal overflow, header/H1 overlap at page top, or console error; the desktop workspace remained two-column.
+- Final documentation closeout: the commit containing this section. After push, fetch and verify a clean tree with local `HEAD`, local `origin/main`, and advertised remote `main` equal.

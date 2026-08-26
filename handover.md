@@ -1740,6 +1740,16 @@ Do not add another cluster by default. After this cluster is deployed and verifi
 
 ## Release state
 
-- Implementation commit: the first commit containing this entry; exact SHA is recorded in the deployment closeout appended after push.
+- Implementation commit: `2ca809d79971659f679606e93d52a6e95e938c9c` (`Build guitar recording and reamping workflow`).
 - Final generated inventory: 95 public HTML, 55 Tools, 9 hubs, 13 guides, 9 references, 4 comparisons, 5 basic pages, and 94 sitemap URLs (404 excluded).
-- Exact next state: deploy the implementation commit, wait for Quality and Pages, verify every new production URL/asset and sitemap marker, run a real production Tool result plus representative mobile bounds, then record remote hash equality and the final clean-tree closeout here. Do not add a second discovery cluster in this release.
+- Exact next state: this release is complete after the documentation closeout hash is verified. Preserve the five-Tool recording cluster and do not add a second discovery cluster as part of this release.
+
+## Deployment closeout
+
+- Initial Quality checks run [`32936556467`](https://github.com/canghun13/guitarsetuplab/actions/runs/32936556467) failed because the content audit's final inventory gate still expected 87 pages after the new cluster raised the generated total to 95. The 95 page classifications themselves were all Sufficient with no content defect flags.
+- Fix commit: `f7be3eceee8848acf2e8bdcc39aa74466f96f7df` (`Fix recording workflow content audit gate`) updates the gate/report scope to 95. Workflow-equivalent local build and every test were rerun with explicit native exit-code propagation and passed.
+- Quality checks run [`32936955912`](https://github.com/canghun13/guitarsetuplab/actions/runs/32936955912): completed successfully.
+- Pages build and deployment run [`32936955317`](https://github.com/canghun13/guitarsetuplab/actions/runs/32936955317): completed successfully.
+- Production: all eight new pages, `/assets/recording.js`, sitemap, and home returned HTTP 200; the sitemap contained all eight new URLs. Home retained GA4, the Boost Domain Rating badge, and the approved email.
+- Production DI Input Loading Checker QA passed at 390 px and 1440 px: Run, Copy, Reset, and re-run worked; table-to-next-heading spacing was 24 px; no horizontal overflow, panel/table clipping, page-top header/H1 overlap, or console error occurred; desktop stayed two-column.
+- Final closeout commit: the commit containing this subsection. After push, fetch and verify local `HEAD == origin/main ==` advertised remote `main`, with a clean working tree.
