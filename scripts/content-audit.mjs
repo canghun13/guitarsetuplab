@@ -54,7 +54,7 @@ const common=[...sentencePages].filter(([,set])=>set.size>=10).sort((a,b)=>b[1].
 const report=`# Content-depth audit
 
 Generated: ${new Date().toISOString()}
-Scope: all generated public HTML in \`site/\` (95 pages expected)
+Scope: all generated public HTML in \`site/\` (102 pages expected)
 
 ## Initial baseline at \`98df55e\`
 
@@ -116,4 +116,4 @@ ${counts('needs')===0?'PASS':'FAIL'} — Needs reinforcement ${classes['Needs re
 `;
 if(!checkOnly)await writeFile(reportPath,report);
 console.log(`Audited ${pages.length} pages: Strong ${classes.Strong}, Sufficient ${classes.Sufficient}, Needs ${classes['Needs reinforcement']}, Thin ${classes.Thin}, duplicate-risk ${counts('duplicateRisk')}, incomplete ${counts('functionallyIncomplete')}.`);
-if(pages.length!==95||counts('needs'))process.exitCode=1;
+if(pages.length!==102||counts('needs'))process.exitCode=1;
