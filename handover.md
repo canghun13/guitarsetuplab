@@ -52,7 +52,12 @@
 ### Current deployment state
 
 - Final generated inventory: 102 public HTML, 59 Tools, 10 hubs, 14 guides, 10 references, 4 comparisons, 5 basic pages, and 101 sitemap URLs.
-- Implementation commit/push, Quality workflow, Pages deployment, and production verification are the remaining closeout steps for this section. After they complete, record the run URLs, production checks, final remote hashes, and clean-tree state here.
+- Implementation commit: `565a00a8998c894e7ecc38df2c53b492c2a5b4cf` (`Build passive electronics multimeter workflow`), pushed to `origin/main`.
+- Quality checks run `33403805248`: completed successfully for the implementation commit.
+- Pages build and deployment run `33403803918`: completed successfully for the implementation commit.
+- Production HTTP: hub, all four Tools, guide, reference, and sitemap returned 200 and contained the expected new-cluster content.
+- Production functional replay at 390 px: Pickup DCR valid result, Copy, Reset, refill/rerun, H1/header separation, form/result bounds, no horizontal overflow, and console error/warning 0 all passed. Production screenshot is `research/browser-qa-2026-08-31/production-pickup-dcr-390.png`.
+- The final closeout commit contains this deployment record and production screenshot. After pushing it, verify its own Quality and Pages runs, then fetch and record/report exact `HEAD == origin/main ==` advertised remote main with a clean tree.
 - Exact next state after closeout: retain the rejected finalist evidence. Do not add a fifth multimeter page by splitting capacitor or output tests. A later session should begin from a different, non-excluded workflow space and must re-establish a four-tool interactive gap before implementation.
 
 ## 2026-07-31 두 번째 확장 현황 (최신)
