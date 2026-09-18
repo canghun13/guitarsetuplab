@@ -1,6 +1,60 @@
 # Guitar Setup Lab — Project Handover
 
-## 2026-08-31 — Guitar Electronics Multimeter Diagnostic Bench (latest)
+## 2026-09-18 — Targeted GSC crawl/indexability audit (latest)
+
+### Repository and symptom
+
+- Repository: `https://github.com/canghun13/guitarsetuplab`; branch `main`.
+- Start local HEAD and cached `origin/main`: `cc3158ecf19e3761ec039882601731feb6430a8e`.
+- Start actual remote main from `git ls-remote`: `9ec7e0cbda46d777de0d0be8663e57823dc54591`.
+- `git fetch origin main` matched the advertised hash. The clean tree was two commits behind, so `git pull --ff-only origin main` safely fast-forwarded.
+- Audit basis / Start commit: `9ec7e0cbda46d777de0d0be8663e57823dc54591`; no user changes were present or overwritten.
+- Supplied GSC symptom: 82 URLs remain “Discovered - currently not indexed”; all 8 Recording and all 7 Multimeter URLs are in that group with effectively no final crawl date. The audit tested whether those 15 URLs have a site-side defect; it did not infer additional Search Console data.
+
+### Scope
+
+- Recording targets: hub; five Tools; recording-chain guide; level/latency reference — 8 URLs.
+- Multimeter targets: hub; four Tools; passive-electronics guide; resistance/continuity reference — 7 URLs.
+- Controls: home; Fret Buzz; Intonation; String Tension; Pickup Route Clearance; Potentiometer Value Selector; Document Guitar Setup; Geometry Measurement; String Tension Formula; Measurement hub — 10 URLs.
+- Detailed URL table, inbound sources, crawl depth, body sizes, similarity, variant behavior, and evidence: `research/gsc-indexability-audit-2026-09-18.md`.
+
+### Result
+
+- Site-side defect: **No**.
+- Final decision: **NO-CHANGE — No site-side indexability defect found**.
+- All 25 target/control URLs returned 200 to browser and Googlebot Smartphone with identical normalized HTML. Direct HTTPS requests had no redirects, challenges, interstitials, bot differences, soft-404s, or `X-Robots-Tag`.
+- Production robots allows `/` and names the correct sitemap. No target has meta robots/googlebot or a noindex-family directive.
+- Every target has one exact HTTPS apex self-canonical and appears once in both 101-URL repository and production sitemaps.
+- Every target has raw static inbound anchors. Target Tools have 3–5 inbound links at depth 2; target guides/references have 2–4 at depth 1; the two hubs are globally linked at depth 1. Controls range from 1–101 inbound and depth 0–2, so targets have no depth disadvantage and no orphan.
+- Raw target main content ranges from 296–903 words, average 639.2; controls range 307–850, average 603.7. Core titles, inputs, initial results, method, limits, safety, and workflow content are in initial HTML, not a JS-only shell.
+- Highest target five-word-shingle similarity is 0.42. Titles, descriptions, and H1s are unique; JSON-LD is valid with correct page URLs. No critical duplicate/template condition was found.
+- Eight target and four control pages were rendered at 1440/768/390: 36 states, H1/header overlaps 0, horizontal overflow 0, missing core content 0, console errors/warnings 0. Mobile menus opened normally.
+- Production entry/direct/recursive modules returned 200 with JavaScript MIME types and matched the repository. No 404, MIME, import, CSP, syntax, or runtime failure appeared.
+- All 15 target deployment files and sampled controls matched production after newline normalization. Production home matches root `index.html`; its intentional difference from generated `site/index.html` is the preserved user-managed badge block.
+
+### Site-wide minor observations
+
+- `http://guitarsetuplab.com/...` currently serves the same page with 200 rather than redirecting to HTTPS.
+- `https://www.guitarsetuplab.com/...` fails TLS hostname validation (`ERR_TLS_CERT_ALTNAME_INVALID`).
+- These are Type 3 site-wide host/protocol issues present on target and control samples alike. Canonical, sitemap, navigation, Googlebot, and production targets all use the working HTTPS apex host, so neither explains the new-cluster crawl delay. No page-code workaround was made.
+
+### QA and production
+
+- Static: 102 HTML / 59 Tools, 0 failures; broken links 0; orphans 0.
+- Fixtures: geometry 65, pickup-fit 15, control-fit 33, recording 44, electrical-test 30 — all PASS.
+- Content audit: 102 Sufficient; Thin/Needs/duplicate-risk/functionally incomplete all 0.
+- Browser: 36 production states at 1440/768/390 PASS; console error/warning 0.
+- Current `9ec7e0c` Quality run `33404227052` and Pages run `33404226211` completed successfully.
+- Production code/content changes: none. Only this research record and handover are authorized for commit.
+
+### Exact next state
+
+- Observe crawl scheduling/index selection in the next weekly GSC review. An unchanged count alone is not a site-change trigger.
+- Reopen code only for a reproduced URL-specific 4xx/5xx, robots/noindex/canonical/sitemap error, orphan, Googlebot-only response, render/module failure, deploy mismatch, or target-only structural regression.
+- Correct HTTP-to-HTTPS policy and the `www` certificate only at the authenticated DNS/hosting layer; do not rewrite content or URLs as a workaround.
+- Audit documentation commit: the commit containing this entry. Push it, wait for its Quality and Pages runs, verify production content remains unchanged, then fetch and confirm clean `HEAD == origin/main ==` advertised remote main.
+
+## 2026-08-31 — Guitar Electronics Multimeter Diagnostic Bench
 
 ### Repository start and synchronization
 
