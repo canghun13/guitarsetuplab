@@ -276,3 +276,12 @@ Exact evidence: target and control groups are equivalent on status, browser/Goog
 Production changes: **none**. No title, description, body content, internal link, robots rule, sitemap entry, URL, generator, JavaScript, CSS, structured data, or navigation was changed.
 
 Next state: observe Google crawl scheduling and index selection. Recheck the supplied GSC group in the next weekly review, but do not treat an unchanged count alone as authorization to modify the site. Reopen site-side work only if a specific URL develops a reproducible 4xx/5xx, robots/noindex/canonical/sitemap defect, orphan condition, Googlebot-only response, render/module failure, production mismatch, or target-only structural regression. Handle the HTTP redirect and `www` certificate at the DNS/hosting layer when authenticated administration is available; do not use page-content changes as a workaround.
+
+## Deployment closeout
+
+- Audit documentation commit: `06190ab6459a89190a72b273f0ea500ff5dd411f` (`Document GSC indexability audit`), pushed to `origin/main`.
+- Quality checks run [`35293221705`](https://github.com/canghun13/guitarsetuplab/actions/runs/35293221705): completed successfully.
+- Pages build and deployment run [`35293221126`](https://github.com/canghun13/guitarsetuplab/actions/runs/35293221126): completed successfully.
+- Post-deploy replay: all 15 targets again returned 200 to browser and Googlebot Smartphone, browser/bot bodies were identical, every response matched the repository deployment file, robots and sitemap returned 200, the sitemap retained 101 URLs, and all 15 targets remained present.
+- Production HTML/CSS/JavaScript/navigation/sitemap content diff: none. The documentation-only deployment did not change the served site.
+- Final handover closeout commit: the commit containing this subsection. After push, verify its own Quality and Pages runs, then fetch and confirm clean local `HEAD == origin/main ==` advertised remote main.

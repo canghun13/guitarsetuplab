@@ -52,7 +52,15 @@
 - Observe crawl scheduling/index selection in the next weekly GSC review. An unchanged count alone is not a site-change trigger.
 - Reopen code only for a reproduced URL-specific 4xx/5xx, robots/noindex/canonical/sitemap error, orphan, Googlebot-only response, render/module failure, deploy mismatch, or target-only structural regression.
 - Correct HTTP-to-HTTPS policy and the `www` certificate only at the authenticated DNS/hosting layer; do not rewrite content or URLs as a workaround.
-- Audit documentation commit: the commit containing this entry. Push it, wait for its Quality and Pages runs, verify production content remains unchanged, then fetch and confirm clean `HEAD == origin/main ==` advertised remote main.
+- Audit documentation commit: `06190ab6459a89190a72b273f0ea500ff5dd411f` (`Document GSC indexability audit`), pushed to `origin/main`.
+
+### Deployment closeout
+
+- Quality checks run [`35293221705`](https://github.com/canghun13/guitarsetuplab/actions/runs/35293221705): completed successfully for the audit commit.
+- Pages build and deployment run [`35293221126`](https://github.com/canghun13/guitarsetuplab/actions/runs/35293221126): completed successfully for the audit commit.
+- After the documentation-only deployment, all 15 targets again returned 200 to browser and Googlebot Smartphone, browser/bot bodies were identical, all target HTML matched the repository, robots and sitemap returned 200, the sitemap retained 101 URLs, and all 15 target entries remained present.
+- Production content diff: none. The served HTML/CSS/JavaScript/navigation/sitemap was unchanged.
+- Final closeout commit: the commit containing this subsection. Push it, verify its own Quality and Pages runs, then fetch and confirm clean local `HEAD == origin/main ==` advertised remote main.
 
 ## 2026-08-31 — Guitar Electronics Multimeter Diagnostic Bench
 
