@@ -147,6 +147,14 @@ The unchanged start commit was archived to a temporary directory so generated ou
 - Electrical-test fixtures: 30 PASS.
 - Content audit: 102 Sufficient; Needs 0, Thin 0, duplicate-risk 0, incomplete 0.
 
+## Documentation deployment closeout
+
+- Audit documentation commit: `628efc700f6f60bc74b4c316a853c5e722197e07` (`Document HTTPS host normalization blocker`), pushed to `origin/main`.
+- Quality checks run `36070986222`: completed successfully for the audit commit.
+- Pages build and deployment run `36070986055`: completed successfully for the audit commit.
+- Post-deploy production replay remained intentionally unchanged: HTTP apex 200, HTTPS apex 200, HTTP `www` 301 to HTTP apex, and validating HTTPS `www` certificate failure. HTTPS-apex home retained its exact self-canonical and the production sitemap retained 101 HTTPS-apex URLs.
+- Final closeout commit: the commit containing this subsection. Its exact hash is reported after push; it must be fetched and compared with local `HEAD`, `origin/main`, and advertised remote main.
+
 ## Changes and after state
 
 - GitHub setting changes: none.

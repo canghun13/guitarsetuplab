@@ -41,6 +41,14 @@
 - Documentation commit / Final commit: the commit containing this entry; report its exact hash after push.
 - Push / working tree / equality: complete after the documentation-only commit is pushed, fetched, and verified against `origin/main` and advertised remote main.
 
+### Documentation deployment closeout
+
+- Audit documentation commit: `628efc700f6f60bc74b4c316a853c5e722197e07` (`Document HTTPS host normalization blocker`), pushed to `origin/main`.
+- Quality checks run [`36070986222`](https://github.com/canghun13/guitarsetuplab/actions/runs/36070986222): completed successfully.
+- Pages build and deployment run [`36070986055`](https://github.com/canghun13/guitarsetuplab/actions/runs/36070986055): completed successfully.
+- Post-deploy replay confirmed production content and the external blocker were unchanged: HTTP apex 200; HTTPS apex 200 with exact self-canonical; HTTP `www` 301 to HTTP apex; validating HTTPS `www` still failed hostname validation; production sitemap remained 101 HTTPS-apex URLs.
+- Final closeout commit: the commit containing this subsection. Push it, fetch `origin/main`, run `git ls-remote origin refs/heads/main`, and report the exact final hash with a clean tree and exact three-way equality.
+
 ## 2026-09-18 — Targeted GSC crawl/indexability audit (latest)
 
 ### Repository and symptom
