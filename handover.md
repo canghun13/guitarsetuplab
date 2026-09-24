@@ -1,5 +1,46 @@
 # Guitar Setup Lab — Project Handover
 
+## 2026-09-25 — HTTPS / canonical-host normalization audit (latest)
+
+### Repository and issue
+
+- Repository: `https://github.com/canghun13/guitarsetuplab`; branch `main`.
+- Initial local HEAD and cached `origin/main`: `9ec7e0cbda46d777de0d0be8663e57823dc54591`; initial tree clean.
+- Actual remote main from `git ls-remote origin refs/heads/main`: `24fdfbd9b127be668e8b6dd17fcb24a8087d8975`. With no user changes present, `git fetch origin main` and `git pull --ff-only origin main` safely fast-forwarded the checkout to that commit, which is the audit Start commit.
+- The 2026-09-18 GSC indexability audit recorded site-wide HTTP-apex 200 and HTTPS-`www` certificate mismatch conditions. The user additionally supplied 2026-09-25 weekly GSC evidence that an HTTP URL variant received search exposure. Search Console was not authenticated here, so no additional GSC facts were inferred.
+- Detailed current matrix, certificate SANs, DNS, configuration evidence, SEO sanity checks, and exact external procedure: `research/https-host-normalization-2026-09-25.md`.
+
+### Before / reproduced production behavior
+
+- HTTPS apex: 200 with valid TLS and exact HTTPS-apex self-canonical for home, Tool, Guide, and Reference; no redirects.
+- HTTP apex: 200 on the same HTTP URL for every representative path; no `Location`, no HTTPS normalization.
+- HTTP `www`: 301 to the same HTTP-apex path, then 200; path/query preserved but protocol remained HTTP.
+- HTTPS `www`: ordinary validation failed before HTTP with `SEC_E_WRONG_PRINCIPAL` / browser `ERR_CERT_COMMON_NAME_INVALID`. The certificate was `CN=*.github.io` with GitHub-only SANs and did not contain `www.guitarsetuplab.com`.
+- Ignoring TLS validation only for diagnosis exposed the intended HTTPS-`www` 301 to the same HTTPS-apex path. This was not counted as a pass.
+- The 404 matrix behaved analogously: HTTP apex returned HTTP 404 directly; HTTP `www` ended on HTTP-apex 404; insecure-diagnostic HTTPS `www` ended on HTTPS-apex 404.
+- No redirect loop was measured. HSTS was absent. Googlebot Smartphone received the same server behavior as the normal client.
+
+### Configuration and root cause
+
+- DNS: apex uses the four GitHub Pages A records and no observed AAAA/CNAME; `www` is CNAME `canghun13.github.io`; nameservers are `conrad.ns.cloudflare.com` and `jade.ns.cloudflare.com`.
+- Public DNS and `Server: GitHub.com` show traffic going directly to GitHub Pages rather than through a Cloudflare proxy. Cloudflare is authoritative DNS only in the observable path.
+- Repository `CNAME` and production identify the custom domain as `guitarsetuplab.com`. Latest start-commit Quality run `35293419734` and Pages run `35293417835` succeeded.
+- GitHub's authenticated Pages settings/API and Cloudflare's zone dashboard were unavailable: GitHub and Cloudflare browser sessions were signed out, no administration CLI or token signal existed, and the unauthenticated Pages API returned 404.
+- Root cause: GitHub Pages HTTP enforcement is disabled or ineffective, and GitHub's live `www` endpoint lacks a certificate covering the custom hostname. Cloudflare is not in the HTTP/TLS path to correct either condition.
+
+### Settings changed and exact next state
+
+- GitHub setting changes: none — no authenticated administration.
+- Cloudflare setting changes: none — no authenticated administration.
+- Production code changed: **No**. No HTML, CSS, JavaScript, generator, canonical, sitemap, robots, title/meta, internal link, custom-domain, or content change was made.
+- SEO sanity: repository/production canonicals remain exact HTTPS apex; both sitemaps contain 101 unique HTTPS-apex URLs; robots allows crawling and declares the correct sitemap; representative production pages have no noindex; wrong-protocol/`www` absolute internal references found 0.
+- Workflow-equivalent temporary-archive QA: build 102 public HTML / 59 Tools; static checks 0 failures; fixtures geometry 65, pickup-fit 15, control-fit 33, recording 44, electrical-test 30 all PASS; content audit 102 Sufficient with every failure group 0. The repository working tree was not used for generated output.
+- Final decision: **BLOCKED — external account setting required**.
+- Preferred next task: authenticated repository administrator opens **GitHub > canghun13/guitarsetuplab > Settings > Pages**, keeps `guitarsetuplab.com` without delete/re-add, confirms the DNS check, resolves certificate provisioning until SAN covers apex and `www`, and enables **Enforce HTTPS**. Then rerun the documented home/Tool/Guide/Reference/query/404 matrix with normal TLS and Googlebot.
+- Cloudflare fallback only if GitHub cannot provision valid `www` TLS: authenticate at Cloudflare, intentionally adopt proxy/Universal SSL, and use one non-overlapping permanent redirect for HTTP or `www` to the same HTTPS-apex path with query preservation. Do not layer conflicting GitHub and Cloudflare redirect rules or lower TLS verification.
+- Documentation commit / Final commit: the commit containing this entry; report its exact hash after push.
+- Push / working tree / equality: complete after the documentation-only commit is pushed, fetched, and verified against `origin/main` and advertised remote main.
+
 ## 2026-09-18 — Targeted GSC crawl/indexability audit (latest)
 
 ### Repository and symptom
