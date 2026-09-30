@@ -213,6 +213,14 @@ The unchanged Start commit was archived and rebuilt in a disposable temporary ch
 
 This report and the handover are the only intended diff. Commit/push the documentation, verify the commit-specific Quality and Pages runs, then compare local HEAD, fetched `origin/main` and `ls-remote` actual main. The commit containing this report is its review commit; the final response records its exact SHA after creation. CI/deployment status must be reported from live evidence, not predicted here.
 
+### Verified documentation deployment
+
+- Review commit: `5fda977fdb67500f9cc0884855cc8255d1301cc3`, pushed successfully to main.
+- [Quality run 36682594831](https://github.com/canghun13/guitarsetuplab/actions/runs/36682594831): completed / success for that exact commit.
+- [Pages run 36682593456](https://github.com/canghun13/guitarsetuplab/actions/runs/36682593456): completed / success for that exact commit.
+- After deployment, home, neck-relief guide and tuning-stability Tool each returned 200; their served HTML matched repository deployment files after newline normalization. No public content changed.
+- Fetch and advertised-main verification matched the review SHA with a clean tree. The closeout commit containing this evidence must also be pushed and checked; its exact SHA and its own run results are reported in the final response, avoiding a self-referential commit hash.
+
 Next review (at most three actions):
 
 1. Use fresh Performance/Coverage cutoffs and the same seven-/28-day calculations. Specifically inspect crawl/selection changes for the 15 recent Recording/Meter URLs; do not reopen site code for the unchanged discovered count alone.
