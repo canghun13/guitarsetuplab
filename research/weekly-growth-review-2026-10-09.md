@@ -245,6 +245,13 @@ Workflow-equivalent QA used an archive of the synchronized Start commit in a dis
 
 Commit/push the review, verify commit-specific Quality and Pages, replay production, then compare local HEAD, fetched `origin/main` and actual `ls-remote` main. Deployment success must come from live runs, not this planned closeout. A follow-up documentation closeout can record the review deployment without placing a self-referential hash in its own content; verify that final commit separately.
 
+### Verified documentation deployment
+
+- Review commit `fc29cca3d83d6b7c6f6eb41b06d636c33b8cb17a` pushed successfully to main.
+- Commit-specific [Quality 37866529215](https://github.com/canghun13/guitarsetuplab/actions/runs/37866529215) and [Pages 37866528525](https://github.com/canghun13/guitarsetuplab/actions/runs/37866528525): both completed / success.
+- After deployment, all six content samples plus robots/sitemap returned 200 and matched repository files after newline normalization. Public content and managed badges remain unchanged.
+- Review SHA matched local HEAD, fetched `origin/main` and advertised actual main; tree clean. The commit containing this closeout is the final documentation commit. Verify its own runs, final exact three-way SHA equality and clean tree before reporting completion; its exact hash belongs in the final response rather than a self-referential file entry.
+
 ## Exact next state — maximum three actions
 
 1. Next fresh export: recompute identical seven-/28-day windows with actual cutoffs. Check the 14 remaining Recording/Meter URLs and the missing Meter guide using issue-group/URL-inspection evidence; do not call group removal indexed or reopen code for count alone.
