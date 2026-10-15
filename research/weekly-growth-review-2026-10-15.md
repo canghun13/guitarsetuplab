@@ -233,6 +233,13 @@ The synchronized Start commit was archived to a disposable checkout; the actual 
 
 Commit and push the documentation, verify commit-specific Quality/Pages, then replay production and check clean local HEAD, fetched `origin/main` and advertised remote main. Exact commit/run evidence is recorded in deployment closeout and final response, not predicted here.
 
+### Verified review deployment
+
+- Review commit: `9ee594624dfdcd45d43b01d401027348728ae10b`, pushed to main.
+- [Quality run 38665698980](https://github.com/canghun13/guitarsetuplab/actions/runs/38665698980) and [Pages run 38665698933](https://github.com/canghun13/guitarsetuplab/actions/runs/38665698933): completed / success for that exact commit.
+- Post-deploy home, Fret Buzz, Meter guide and resistance reference returned 200 and matched repository HTML after newline normalization. Public content and managed badges remain unchanged.
+- Local HEAD, fetched tracking ref and advertised remote main matched the review SHA; tree clean. The closeout commit containing this evidence is the final documentation commit; verify its own workflows and three-way equality before final reporting. Its exact hash belongs in the final response, avoiding a self-referential file entry.
+
 ## Next state — three actions
 
 1. Fresh report cutoffs: same adjacent seven-/28-day calculations; inspect the 13 remaining recent URLs and the two absent Meter support pages using actual URL-state evidence. Do not infer indexed totals from one group.
