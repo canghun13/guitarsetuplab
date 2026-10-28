@@ -138,6 +138,10 @@ QA executed in an isolated archived checkout of the start commit, not by rebuild
 
 The review commit is the commit containing this report and latest handover entry. Record verified review-SHA Quality/Pages and post-deploy request replay in a closeout; verify that closeout's own workflows, actual remote SHA, tracking SHA and clean tree before final reporting. No deployment success is presumed here.
 
+Verified review deployment: **`b79a246105ff5d543704d5dce811d21b81c74d77`** was pushed and matched advertised remote main. [Quality 40646738504](https://github.com/canghun13/guitarsetuplab/actions/runs/40646738504) and [Pages 40646738511](https://github.com/canghun13/guitarsetuplab/actions/runs/40646738511) completed successfully for that exact SHA. After completion, home, Recording measurement guide, unit-conversion reference, String Action Converter and Fret Buzz all returned 200 with exact canonicals and newline-normalized repository HTML matches. This is request-level post-deploy verification, not new rendered/interaction QA.
+
+Both current Coverage manifests were independently checked against the retained extracted input: 48 and eight unique URLs, zero omitted from this report. The extraction snapshot SHA-256 is `3a43f77c13e030c2f0a02e5fece18d2aad53b3cf9ad9d2d2f9dc0f659384af7d` (derived JSON bytes, **not an original ZIP hash**). The closeout removes one trailing blank line flagged by the initial staged whitespace check; final diff checks are rerun. Final closeout SHA is the commit containing this deployment evidence; verify its own workflows and clean three-way equality before reporting completion.
+
 Next state (three):
 1. Compare future exact URL identities against both manifests below; obtain indexed/URL Inspection evidence for the 22 absent, six HTTPS Crawled and two historical HTTP identities rather than infer indexing.
 2. Obtain matched-window page/query/date and organic landing/engagement detail before one targeted upgrade; monitor newly visible maintenance/spread/Wizard rows without equating one exposure to growth.
@@ -239,4 +243,3 @@ https://guitarsetuplab.com/tools/series-parallel-coil-split-selector.html
 https://guitarsetuplab.com/tools/setup-measurement-sheet.html
 https://guitarsetuplab.com/tools/string-spread-at-pickup.html
 ```
-
