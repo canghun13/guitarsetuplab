@@ -137,7 +137,13 @@ Scope: Maintenance functionality/output/explanation, not global redesign or SEO 
 
 ## Deployment closeout
 
-Pending at review commit: push, exact-SHA Quality/Pages, production response/asset match and real production Run/Copy/Reset/refill/Print/mobile verification. Append observed evidence after deployment; do not infer success from CI alone.
+- Review implementation commit **a306e7c6410d4b3de6039e7c8d5505e5c9f34bcb** committed/pushed and matched actual advertised main. [Quality 42581002035](https://github.com/canghun13/guitarsetuplab/actions/runs/42581002035) and [Pages 42581000525](https://github.com/canghun13/guitarsetuplab/actions/runs/42581000525) both completed successfully for that exact SHA.
+- Post-deploy six-page normal/Googlebot matrix repeated: all 200, same raw bodies, exact canonical/no noindex, current repository HTML match. Robots/sitemap 200/match/101 URLs; both historical-path noncanonical-host triples still direct 301 with validating TLS.
+- Production app.js, maintenance.js, style.css and print.css all 200 and newline-normalized byte match to deployed repository. No stale-old-app/new-module mismatch.
+- Real production Chrome at actual **1440 and 390**: Run, exact Copy clipboard, native Print/beforeprint, Reset→Ready, refill/re-run, invalid future date rejection, uncalculated/error/reset print suppression PASS. Valid print retains current result and hides form/actions. Reminder dates October31/February28 and passed-by-nine-days state correct. Overflow/panel overflow zero, table-heading gap24px, console errors zero. Harness first ignored context.newPage viewport option; corrected to explicit setViewportSize, asserted dimensions, then both completed PASS. No product regression inferred from the harness mistake.
+- Production Condition Report/Fret Buzz/Radius at390: default Run/Reset, no NaN/Infinity or page overflow, no Maintenance print-state attribute. Maintenance mobile menu open/close PASS.
+- Independent connected-browser production390 screenshot visually confirms current generated result, readable dates/units, table-follow-up gap and no clipping; warning/error log empty. Temporary viewport override reset. Screenshot retained as ignored QA artifact, not added as a public page.
+- Staged diff check initially stopped on one report EOF blank line; corrected and passed before implementation commit. No failed check bypassed. Final documentation closeout is the commit containing this evidence; verify its own Quality/Pages, production replay and clean **HEAD = origin/main = actual advertised main** before final reporting. Do not use the implementation SHA as the final documentation SHA.
 
 ## Next state
 
