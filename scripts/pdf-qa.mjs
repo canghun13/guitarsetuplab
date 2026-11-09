@@ -15,7 +15,7 @@ const documents={
   'repair-quote-generator':{values:{customer:'Alexandra Montgomery-Worthington',instrumentName:'North River Custom Extended Model / Serial QA-QUOTE-00001',quoteNumber:'QA-2026-0042',laborRows:Array.from({length:10},(_,i)=>`Labor operation ${i+1} with detailed description | ${i%3+1} | ${45+i*3.25}`).join('\n'),partsRows:Array.from({length:12},(_,i)=>`Replacement part ${i+1} with descriptive catalog wording | ${i%2+1} | ${8.5+i*4.1}`).join('\n'),taxPercent:'8.25',discount:'15',deposit:'100',quoteValidity:'14 days',notes:'Estimate notes and limitations. '.repeat(30)}},
   'parts-labor-job-sheet':{values:{customer:'Alexandra Montgomery-Worthington',instrumentName:'North River Custom Extended Model / Serial QA-JOB-00001',jobNumber:'JOB-2026-0042',technician:'QA Technician',diagnosis:'Detailed diagnosis. '.repeat(45),workPerformed:'Detailed work performed. '.repeat(55),laborRows:Array.from({length:12},(_,i)=>`Labor ${i+1} | ${i+1}.0 hours | verified`).join('\n'),partsRows:Array.from({length:14},(_,i)=>`Part ${i+1} | quantity ${i%3+1} | installed`).join('\n'),before:'Before measurements. '.repeat(25),after:'After measurements. '.repeat(25),additionalIssues:'Additional finding. '.repeat(20),finalTest:'Final test result. '.repeat(24),internalNotes:'Internal note. '.repeat(25)}},
   'customer-approval-checklist':{values:{customer:'Alexandra Montgomery-Worthington',instrumentName:'North River Custom Extended Model / Serial QA-APPROVAL-00001',customSettings:'Custom tuning, pickup switching, tremolo float, preferred action and string gauge details. '.repeat(20),notes:'Customer workflow preference note. '.repeat(25)}},
-  'maintenance-schedule':{values:{lastSetup:'2026-01-15',lastStringChange:'2026-07-01'}},
+  'maintenance-schedule':{values:{lastSetup:'2026-01-31',lastStringChange:'2026-10-01',planningDate:'2026-11-09',stringCheckDays:'30',setupCheckMonths:'1'}},
   'setup-measurement-sheet':{values:{customer:'Alexandra Montgomery-Worthington',instrumentName:'North River Custom Extended Model / Serial QA-MEASURE-00001',relief:'0.20',bassAction:'2.00',trebleAction:'1.60',pickupBass:'2.50',pickupTreble:'2.00',notes:'Repeated measurement context and environmental notes. '.repeat(40)}},
   'before-after-setup-card':{values:{customer:'Alexandra Montgomery-Worthington',instrumentName:'North River Custom Extended Model / Serial QA-BEFORE-AFTER-00001',before:'Before measurements and symptoms. '.repeat(35),work:'Work performed and verification sequence. '.repeat(45),after:'After measurements and play-test observations. '.repeat(35),notes:'Remaining limitations. '.repeat(25)}},
   'guitar-condition-report':{values:{customer:'Alexandra Montgomery-Worthington',instrumentName:'North River Custom Extended Model / Serial QA-CONDITION-00001',playability:'Playability observation. '.repeat(45),notes:'Condition limitation and untested-area note. '.repeat(40)}},
@@ -34,6 +34,11 @@ try{
   for(const [slug,{values,geometry=false}] of Object.entries(wanted)){
     const page=await browser.newPage({viewport:{width:1440,height:1000}});
     await page.goto(`${base}/tools/${slug}.html`,{waitUntil:'load'});
+    if(slug==='maintenance-schedule'){
+      await page.emulateMedia({media:'print'});
+      if(await page.locator('.result').isVisible())throw new Error('Uncalculated maintenance result is printable.');
+      await page.emulateMedia({media:null});
+    }
     const fillAndRun=async(paper)=>page.evaluate(({values,paper})=>{
       const fallback='Long QA text for wrapping, pagination, and black-and-white readability. '.repeat(8);
       for(const el of document.querySelectorAll('input,textarea,select')){
@@ -52,20 +57,43 @@ try{
       await fillAndRun(format);
       await page.waitForFunction(()=>!document.querySelector('.result h2')?.textContent.includes('Ready'));
       const resultText=await page.locator('.result').innerText();
-      if(/Tool error|Check quote rows|Check geometry inputs|invalid input/i.test(resultText))throw new Error(`${slug}: generated an error result`);
+      if(/Tool error|Check quote rows|Check geometry inputs|invalid input|Reminder cannot be calculated/i.test(resultText))throw new Error(`${slug}: generated an error result`);
+      if(slug==='maintenance-schedule'&&(!resultText.includes('2026-10-31')||!resultText.includes('2026-02-28')||!resultText.includes('https://guitarsetuplab.com/tools/maintenance-schedule.html')))throw new Error('Maintenance PDF lacks current reminders or source URL.');
       let calibration=null;
       if(geometry){
         calibration=await page.evaluate(()=>({bar50Px:document.querySelector('.bar-50')?.getBoundingClientRect().width,bar2inPx:document.querySelector('.bar-2in')?.getBoundingClientRect().width,status:document.querySelector('.calibration-status')?.textContent}));
         if(Math.abs(calibration.bar50Px-50*96/25.4)>.2||Math.abs(calibration.bar2inPx-192)>.2||!calibration.status.includes('Within'))throw new Error(`${slug}-${paper}: browser calibration geometry failed`);
       }
       const file=path.join(out,`${slug}-${paper}.pdf`);
+      if(slug==='maintenance-schedule'){
+        await page.emulateMedia({media:'print'});
+        if(!await page.locator('.result').isVisible()||await page.locator('form').isVisible()||await page.locator('header').isVisible()||await page.locator('.result .actions').isVisible())throw new Error('Maintenance print visibility contract failed.');
+        await page.emulateMedia({media:null});
+      }
       const bytes=await page.pdf({path:file,format,landscape:false,printBackground:true,displayHeaderFooter:false,preferCSSPageSize:geometry,scale:1,margin:{top:'10mm',right:'10mm',bottom:'10mm',left:'10mm'}});
       const pdf=await PDFDocument.load(bytes);
       const pages=pdf.getPages(),size=pages[0].getSize();
+      if(slug==='maintenance-schedule'&&pages.length!==2)throw new Error(`${slug}-${paper}: expected two pages for the dated reminder fixture, got ${pages.length}`);
       const sizeOk=Math.abs(size.width-expected[0])<1&&Math.abs(size.height-expected[1])<1;
       const hasContents=pages.every(p=>Boolean(p.node.Contents()));
       report.push({slug,paper,pages:pages.length,widthPt:+size.width.toFixed(2),heightPt:+size.height.toFixed(2),sizeOk,hasContents,bytes:bytes.length,calibration});
       if(!sizeOk||!hasContents)throw new Error(`${slug}-${paper}: PDF structure check failed`);
+    }
+    if(slug==='maintenance-schedule'){
+      await page.evaluate(()=>{window.qaPrintEvents=0;window.addEventListener('beforeprint',()=>window.qaPrintEvents++);});
+      await page.getByRole('button',{name:'Print',exact:true}).click();
+      if(!await page.evaluate(()=>window.qaPrintEvents>0))throw new Error('Print button did not invoke printing.');
+      await page.locator('[name="lastStringChange"]').fill('2026-11-10');
+      await page.getByRole('button',{name:'Run tool',exact:true}).click();
+      if(!await page.getByRole('heading',{name:'Reminder cannot be calculated',exact:true}).isVisible())throw new Error('Future date error missing.');
+      await page.emulateMedia({media:'print'});
+      if(await page.locator('.result').isVisible())throw new Error('Error maintenance result is printable.');
+      await page.emulateMedia({media:null});
+      await page.getByRole('button',{name:'Reset',exact:true}).click();
+      await page.getByRole('heading',{name:'Ready for measurements',exact:true}).waitFor();
+      await page.emulateMedia({media:'print'});
+      if(await page.locator('.result').isVisible())throw new Error('Reset maintenance result is printable.');
+      console.log('Maintenance Print button and initial/error/reset print suppression PASS.');
     }
     await page.close();
   }

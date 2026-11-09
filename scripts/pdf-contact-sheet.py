@@ -8,7 +8,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
 
-ROOT = Path("tests/output/print")
+ROOT = Path(os.environ.get("QA_PDF_OUTPUT", "tests/output/print"))
 RENDERED = ROOT / os.environ.get("QA_RENDER_DIR", "rendered")
 report = json.loads((ROOT / "report.json").read_text(encoding="utf-8"))
 font = ImageFont.load_default()

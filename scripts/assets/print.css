@@ -5,6 +5,7 @@
   header,footer,.tool-form,.tool-depth,.explain,.nav-toggle,.actions,section:has(>.card-grid) { display:none!important; }
   main { padding:0!important;max-width:none!important;width:auto!important; }
   .workspace { display:block!important; }
+  .result[data-print-state="unavailable"] { display:none!important; }
   .tool-hero { padding:0 0 8mm!important;break-after:avoid-page; }
   .tool-hero .lede,.meter { display:none!important; }
   .result { box-shadow:none!important;border:1px solid #555!important;position:static!important;overflow:visible!important;padding:6mm!important;max-width:none!important; }
