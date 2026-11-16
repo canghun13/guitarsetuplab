@@ -11,6 +11,7 @@ const chrome=process.env.CHROME_PATH||'C:\\Program Files\\Google\\Chrome\\Applic
 const selected=process.argv.slice(2);
 
 const documents={
+  'fret-buzz-diagnostic':{values:{instrument:'Electric guitar',construction:'Solid-body',buzzWhere:'Frets 5–12',stringArea:'One string',amplified:'Yes',relief:'0.10',action:'1.50',recentChange:'None',fretCondition:'No visible issue',climate:'Stable'}},
   'guitar-repair-intake':{values:{customer:'Alexandra Montgomery-Worthington — long customer name for pagination QA',brand:'North River Custom Instruments',model:'Extended Model Name with Detailed Shop Identification',serial:'QA-INTAKE-2026-0000000000001',reportedProblem:'Intermittent output loss after transport, crackling when the cable moves, tuning drift after bends, and a high-action concern across the upper register. '.repeat(5),visibleDamage:'Finish checking near the output jack and a small edge mark. Observation only; hidden condition not inferred.',notes:'Long intake note. '.repeat(45)}},
   'repair-quote-generator':{values:{customer:'Alexandra Montgomery-Worthington',instrumentName:'North River Custom Extended Model / Serial QA-QUOTE-00001',quoteNumber:'QA-2026-0042',laborRows:Array.from({length:10},(_,i)=>`Labor operation ${i+1} with detailed description | ${i%3+1} | ${45+i*3.25}`).join('\n'),partsRows:Array.from({length:12},(_,i)=>`Replacement part ${i+1} with descriptive catalog wording | ${i%2+1} | ${8.5+i*4.1}`).join('\n'),taxPercent:'8.25',discount:'15',deposit:'100',quoteValidity:'14 days',notes:'Estimate notes and limitations. '.repeat(30)}},
   'parts-labor-job-sheet':{values:{customer:'Alexandra Montgomery-Worthington',instrumentName:'North River Custom Extended Model / Serial QA-JOB-00001',jobNumber:'JOB-2026-0042',technician:'QA Technician',diagnosis:'Detailed diagnosis. '.repeat(45),workPerformed:'Detailed work performed. '.repeat(55),laborRows:Array.from({length:12},(_,i)=>`Labor ${i+1} | ${i+1}.0 hours | verified`).join('\n'),partsRows:Array.from({length:14},(_,i)=>`Part ${i+1} | quantity ${i%3+1} | installed`).join('\n'),before:'Before measurements. '.repeat(25),after:'After measurements. '.repeat(25),additionalIssues:'Additional finding. '.repeat(20),finalTest:'Final test result. '.repeat(24),internalNotes:'Internal note. '.repeat(25)}},
@@ -34,7 +35,7 @@ try{
   for(const [slug,{values,geometry=false}] of Object.entries(wanted)){
     const page=await browser.newPage({viewport:{width:1440,height:1000}});
     await page.goto(`${base}/tools/${slug}.html`,{waitUntil:'load'});
-    if(slug==='maintenance-schedule'){
+    if(['maintenance-schedule','fret-buzz-diagnostic'].includes(slug)){
       await page.emulateMedia({media:'print'});
       if(await page.locator('.result').isVisible())throw new Error('Uncalculated maintenance result is printable.');
       await page.emulateMedia({media:null});
@@ -59,13 +60,14 @@ try{
       const resultText=await page.locator('.result').innerText();
       if(/Tool error|Check quote rows|Check geometry inputs|invalid input|Reminder cannot be calculated/i.test(resultText))throw new Error(`${slug}: generated an error result`);
       if(slug==='maintenance-schedule'&&(!resultText.includes('2026-10-31')||!resultText.includes('2026-02-28')||!resultText.includes('https://guitarsetuplab.com/tools/maintenance-schedule.html')))throw new Error('Maintenance PDF lacks current reminders or source URL.');
+      if(slug==='fret-buzz-diagnostic'&&(!resultText.includes('0.10 mm')||!resultText.includes('1.50 mm')||!resultText.includes('One-string priority')||!resultText.includes('https://guitarsetuplab.com/tools/fret-buzz-diagnostic.html')))throw new Error('Buzz PDF lacks current observations, local priority or source URL.');
       let calibration=null;
       if(geometry){
         calibration=await page.evaluate(()=>({bar50Px:document.querySelector('.bar-50')?.getBoundingClientRect().width,bar2inPx:document.querySelector('.bar-2in')?.getBoundingClientRect().width,status:document.querySelector('.calibration-status')?.textContent}));
         if(Math.abs(calibration.bar50Px-50*96/25.4)>.2||Math.abs(calibration.bar2inPx-192)>.2||!calibration.status.includes('Within'))throw new Error(`${slug}-${paper}: browser calibration geometry failed`);
       }
       const file=path.join(out,`${slug}-${paper}.pdf`);
-      if(slug==='maintenance-schedule'){
+      if(['maintenance-schedule','fret-buzz-diagnostic'].includes(slug)){
         await page.emulateMedia({media:'print'});
         if(!await page.locator('.result').isVisible()||await page.locator('form').isVisible()||await page.locator('header').isVisible()||await page.locator('.result .actions').isVisible())throw new Error('Maintenance print visibility contract failed.');
         await page.emulateMedia({media:null});
@@ -79,13 +81,18 @@ try{
       report.push({slug,paper,pages:pages.length,widthPt:+size.width.toFixed(2),heightPt:+size.height.toFixed(2),sizeOk,hasContents,bytes:bytes.length,calibration});
       if(!sizeOk||!hasContents)throw new Error(`${slug}-${paper}: PDF structure check failed`);
     }
-    if(slug==='maintenance-schedule'){
+    if(['maintenance-schedule','fret-buzz-diagnostic'].includes(slug)){
       await page.evaluate(()=>{window.qaPrintEvents=0;window.addEventListener('beforeprint',()=>window.qaPrintEvents++);});
       await page.getByRole('button',{name:'Print',exact:true}).click();
       if(!await page.evaluate(()=>window.qaPrintEvents>0))throw new Error('Print button did not invoke printing.');
-      await page.locator('[name="lastStringChange"]').fill('2026-11-10');
+      if(slug==='maintenance-schedule')await page.locator('[name="lastStringChange"]').fill('2026-11-10');
+      else await page.locator('[name="relief"]').fill('-1');
       await page.getByRole('button',{name:'Run tool',exact:true}).click();
-      if(!await page.getByRole('heading',{name:'Reminder cannot be calculated',exact:true}).isVisible())throw new Error('Future date error missing.');
+      if(slug==='maintenance-schedule'){
+        if(!await page.getByRole('heading',{name:'Reminder cannot be calculated',exact:true}).isVisible())throw new Error('Future date error missing.');
+      }else{
+        if(!await page.getByRole('heading',{name:'Check buzz measurements',exact:true}).isVisible())throw new Error('Invalid buzz measurement error missing.');
+      }
       await page.emulateMedia({media:'print'});
       if(await page.locator('.result').isVisible())throw new Error('Error maintenance result is printable.');
       await page.emulateMedia({media:null});
@@ -93,7 +100,7 @@ try{
       await page.getByRole('heading',{name:'Ready for measurements',exact:true}).waitFor();
       await page.emulateMedia({media:'print'});
       if(await page.locator('.result').isVisible())throw new Error('Reset maintenance result is printable.');
-      console.log('Maintenance Print button and initial/error/reset print suppression PASS.');
+      console.log(`${slug}: Print button and initial/error/reset print suppression PASS.`);
     }
     await page.close();
   }
